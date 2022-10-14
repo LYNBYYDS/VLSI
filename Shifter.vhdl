@@ -31,52 +31,52 @@ architecture archi of Shifter is
 
 begin 
 	
-	dout_inter0 <= 	din(30 downto 0)&'0' when shift_lsl = '1' and shift_val(0) = '1' else											--lsl
+	dout_inter0 <= 	din(30 downto 0)&'0' when shift_lsl = '1' and shift_val(0) = '1' else														--lsl
 
-					'0'&din(31 downto 1) when shift_lsr = '1' and shift_val(0) = '1' else											--lsr
+					'0'&din(31 downto 1) when shift_lsr = '1' and shift_val(0) = '1' else														--lsr
 
-					din(31)&din(31 downto 1) when shift_asr = '1' and shift_val(0) = '1' else									--asr
+					din(31)&din(31 downto 1) when shift_asr = '1' and shift_val(0) = '1' else													--asr
 
-					din(0)&din(31 downto 1) when shift_ror = '1' and shift_val(0) = '1' else									--ror
+					din(0)&din(31 downto 1) when shift_ror = '1' and shift_val(0) = '1' else													--ror
 
 				
 					din;
-	dout_inter1 <= 	dout_inter0(29 downto 0)&"00" when shift_lsl = '1' and shift_val(1) = '1' else						--lsl
+	dout_inter1 <= 	dout_inter0(29 downto 0)&"00" when shift_lsl = '1' and shift_val(1) = '1' else												--lsl
 
-					"00"&dout_inter0(31 downto 2) when shift_lsr = '1' and shift_val(1) = '1' else						--lsr
+					"00"&dout_inter0(31 downto 2) when shift_lsr = '1' and shift_val(1) = '1' else												--lsr
 
-					dout_inter0(31)&dout_inter0(31)&dout_inter0(31 downto 2) when shift_asr = '1' and shift_val(1) = '1' else								--asr
+					dout_inter0(31)&dout_inter0(31)&dout_inter0(31 downto 2) when shift_asr = '1' and shift_val(1) = '1' else					--asr
 
-					dout_inter0(1 downto 0)&dout_inter0(31 downto 2) when shift_ror = '1' and shift_val(1) = '1' else--ror
+					dout_inter0(1 downto 0)&dout_inter0(31 downto 2) when shift_ror = '1' and shift_val(1) = '1' else							--ror
 
 					dout_inter0;
-	dout_inter2 <= 	dout_inter1(27 downto 0)&x"0" when shift_lsl = '1' and shift_val(2) = '1' else						--lsl
+	dout_inter2 <= 	dout_inter1(27 downto 0)&x"0" when shift_lsl = '1' and shift_val(2) = '1' else												--lsl
 
-					x"0"&dout_inter1(31 downto 4) when shift_lsr = '1' and shift_val(2) = '1' else						--lsr
+					x"0"&dout_inter1(31 downto 4) when shift_lsr = '1' and shift_val(2) = '1' else												--lsr
 
-					dout_inter1(31)&dout_inter1(31)&dout_inter1(31)&dout_inter1(31)&dout_inter1(31 downto 2) when shift_asr = '1' and shift_val(2) = '1' else									--asr
+					dout_inter1(31)&dout_inter1(31)&dout_inter1(31)&dout_inter1(31)&dout_inter1(31 downto 2) when shift_asr = '1' and shift_val(2) = '1' else																			--asr
 
-					dout_inter1(3 downto 0)&dout_inter1(31 downto 4) when shift_ror = '1' and shift_val(2) = '1' else--ror
+					dout_inter1(3 downto 0)&dout_inter1(31 downto 4) when shift_ror = '1' and shift_val(2) = '1' else							--ror
 
 					dout_inter1;
-	dout_inter3 <= 	dout_inter2(23 downto 0)&x"00" when shift_lsl = '1' and shift_val(3) = '1' else						--lsl
+	dout_inter3 <= 	dout_inter2(23 downto 0)&x"00" when shift_lsl = '1' and shift_val(3) = '1' else												--lsl
 
-					x"00"&dout_inter2(31 downto 8) when shift_lsr = '1' and shift_val(3) = '1' else						--lsr
+					x"00"&dout_inter2(31 downto 8) when shift_lsr = '1' and shift_val(3) = '1' else												--lsr
 
-					dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31 downto 2) when shift_asr = '1' and shift_val(3) = '1' else
+					dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31 downto 2) when shift_asr = '1' and shift_val(3) = '1' else  			--asr
 
-					dout_inter2(7 downto 0)&dout_inter2(31 downto 8) when shift_ror = '1' and shift_val(3) = '1' else--ror
+					dout_inter2(7 downto 0)&dout_inter2(31 downto 8) when shift_ror = '1' and shift_val(3) = '1' else							--ror
 
 					dout_inter2;
-	dout <= 		dout_inter3(15 downto 0)&x"0000" when shift_lsl = '1' and shift_val(4) = '1' else					--lsl
+	dout <= 		dout_inter3(15 downto 0)&x"0000" when shift_lsl = '1' and shift_val(4) = '1' else											--lsl
 
-					"00"&dout_inter2(31 downto 16) when shift_lsr = '1' and shift_val(4) = '1' else						--lsr
+					"00"&dout_inter2(31 downto 16) when shift_lsr = '1' and shift_val(4) = '1' else												--lsr
 
-					dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31 downto 2) when shift_asr = '1' and shift_val(4) = '1' else									--asr
+					dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31 downto 2) when shift_asr = '1' and shift_val(4) = '1' else	--asr
 
-					dout_inter3(15 downto 0)&dout_inter3(31 downto 16) when shift_ror = '1' and shift_val(4) = '1' else	--ror
+					dout_inter3(15 downto 0)&dout_inter3(31 downto 16) when shift_ror = '1' and shift_val(4) = '1' else							--ror
 
-					cin&dout_inter3(31 downto 1) when shift_rrx = '1' else	--rrx
+					cin&dout_inter3(31 downto 1) when shift_rrx = '1' else																		--rrx
 
 					dout_inter3;
 
