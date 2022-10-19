@@ -39,7 +39,7 @@ begin
 				'0';
 	n <= 	'1' when  add_sum(31) = '1' and cmd = "00" else
 				'0';
-	v <= 	'1' when  ((add_sum(31) = '1' and op1(31) = '0' and op2(31) '0') or (add_sum(31) = '0' and op1(31) = '1' and op2(31) = '1')) and cmd = "00" else
+	v <= 	'1' when  ((add_sum(31) = '1' and op1(31) = '0' and op2(31) = '0') or (add_sum(31) = '0' and op1(31) = '1' and op2(31) = '1')) and cmd = "00" else
 				'0';
 	
 

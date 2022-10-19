@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 entity EXec is
 	port(
 	-- Decode interface synchro
-			dec2exe_empty	: in Std_logic;
-			exe_pop			: out Std_logic;
+			--dec2exe_empty	: in Std_logic;
+			--exe_pop			: out Std_logic;
 
 	-- Decode interface operands
 			dec_op1			: in Std_Logic_Vector(31 downto 0); -- first alu input
@@ -136,7 +136,8 @@ architecture Behavior OF EXec is
 			vss		: in bit
 		);
 	end component;
--- signal
+
+	-- signal
 	signal shift_c 		: std_logic;
 	signal alu_c 		: std_logic;
 
@@ -153,7 +154,10 @@ architecture Behavior OF EXec is
 	signal exe2mem_full	: std_logic;
 	signal mem_acces	: std_logic;
 
+
+
 begin
+	
 --  Component instantiation.
 
 		shifter_inst: shifter
@@ -223,7 +227,7 @@ begin
 mem_adr <= x"00000000";
 
 -- cout
-	c
+	
 -- ALU opearandes
 	op1 <= dec_op1;
 	op2 <= op2_shift;

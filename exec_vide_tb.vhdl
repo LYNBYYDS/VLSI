@@ -7,9 +7,9 @@ end exec_vide_tb;
 
 architecture archi of exec_vide_tb is
 -- signaux
-
-    signal dec2exe_empty : Std_logic        := '0';
-	signal exe_pop : Std_logic              := '0';
+    -- Decode interface synchro
+        signal dec2exe_empty    : Std_logic                     := '0';
+        signal exe_pop          : Std_logic                     := '0';
 
     -- Decode interface operands
         signal dec_op1			: Std_Logic_Vector(31 downto 0) := x"00000000"; -- first alu input
@@ -71,7 +71,7 @@ architecture archi of exec_vide_tb is
         signal mem_pop			: Std_logic                     := '0';
 
 begin
-	test : entity work.Alu
+	test : entity work.EXec
 		port map(
                 -- Decode interface synchro
                     dec2exe_empty	=> dec2exe_empty,
@@ -135,8 +135,9 @@ begin
                     exe2mem_empty	=> exe2mem_empty,
                     mem_pop			=> mem_pop);
 
-	op1 <= x"01020301" after 20 ns;
-	op2 <= x"00000001" after 20 ns;
+	dec_op1 <= x"01020301" after 20 ns;
+	dec_op2 <= x"00000001" after 20 ns;
     dec_shift_lsr <= '1' after 50 ns;
-    dec_shift_val <= "00010" after 40 ns
+    dec_shift_val <= "00010" after 40 ns;
+    
 end archi;
