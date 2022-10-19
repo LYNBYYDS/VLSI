@@ -37,9 +37,9 @@ begin
 					'0';
 	z <= 	'1' when (add_sum = x"00000000" and cmd = "00") or (res_signal = x"00000000" and not (cmd = "00")) else
 				'0';
-	n	<= 	'1' when  add_sum(31) = '1' and cmd = "00" else
+	n <= 	'1' when  add_sum(31) = '1' and cmd = "00" else
 				'0';
-	v <= 	'1' when add_cout = '1' and cmd = "00" else
+	v <= 	'1' when  ((add_sum(31) = '1' and op1(31) = '0' and op2(31) '0') or (add_sum(31) = '0' and op1(31) = '1' and op2(31) = '1')) and cmd = "00" else
 				'0';
 	
 

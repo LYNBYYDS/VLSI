@@ -70,7 +70,7 @@ begin
 					dout_inter2;
 	dout <= 		dout_inter3(15 downto 0)&x"0000" when shift_lsl = '1' and shift_val(4) = '1' else											--lsl
 
-					"00"&dout_inter2(31 downto 16) when shift_lsr = '1' and shift_val(4) = '1' else												--lsr
+					x"0000"&dout_inter3(31 downto 16) when shift_lsr = '1' and shift_val(4) = '1' else												--lsr
 
 					dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31 downto 2) when shift_asr = '1' and shift_val(4) = '1' else	--asr
 

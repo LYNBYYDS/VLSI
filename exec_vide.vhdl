@@ -71,55 +71,121 @@ entity EXec is
 			ck					: in Std_logic;
 			reset_n			: in Std_logic;
 			vdd				: in bit;
-			vss				: in bit);
+			vss				: in bit
+	);
 end EXec;
 
 ----------------------------------------------------------------------
 
 architecture Behavior OF EXec is
+--signal dec_op2_after_shifter :  std_logic_vector(31 downto 0);
+--signal dec_alu_cy_after_shifter : std_logic;
 
-component alu
-    port ( op1			: in Std_Logic_Vector(31 downto 0);
-           op2			: in Std_Logic_Vector(31 downto 0);
-           cin			: in Std_Logic;
+-- component entity
+	component shifter
+		port (	shift_lsl : in std_logic;
+				shift_lsr : in std_logic;
+				shift_asr : in std_logic;
+				shift_ror : in std_logic;
+				shift_rrx : in std_logic;
+				shift_val : in std_logic_vector(4 downto 0);
+						
+				din : in Std_Logic_Vector(31 downto 0);
+				cin : in Std_Logic;
+				dout : out Std_Logic_Vector(31 downto 0);
+				cout : out Std_Logic;
 
-           cmd			: in Std_Logic_Vector(1 downto 0);
+				-- global interface
+				vdd : in bit;
+				vss : in bit);	
+	end component;
 
-           res			: out Std_Logic_Vector(31 downto 0);
-           cout		: out Std_Logic;
-           z			: out Std_Logic;
-           n			: out Std_Logic;
-           v			: out Std_Logic;
-			  
-			  vdd			: in bit;
-			  vss			: in bit);
-end component;
+	component alu
+		port ( op1			: in Std_Logic_Vector(31 downto 0);
+			op2			: in Std_Logic_Vector(31 downto 0);
+			cin			: in Std_Logic;
 
-component fifo_72b
-	port(
-		din		: in std_logic_vector(71 downto 0);
-		dout		: out std_logic_vector(71 downto 0);
+			cmd			: in Std_Logic_Vector(1 downto 0);
 
-		-- commands
-		push		: in std_logic;
-		pop		: in std_logic;
+			res			: out Std_Logic_Vector(31 downto 0);
+			cout		: out Std_Logic;
+			z			: out Std_Logic;
+			n			: out Std_Logic;
+			v			: out Std_Logic;
+				
+				vdd			: in bit;
+				vss			: in bit);
+	end component;
 
-		-- flags
-		full		: out std_logic;
-		empty		: out std_logic;
+	component fifo_72b
+		port(
+			din		: in std_logic_vector(71 downto 0);
+			dout		: out std_logic_vector(71 downto 0);
 
-		reset_n	: in std_logic;
-		ck			: in std_logic;
-		vdd		: in bit;
-		vss		: in bit
-	);
-end component;
+			-- commands
+			push		: in std_logic;
+			pop		: in std_logic;
+
+			-- flags
+			full		: out std_logic;
+			empty		: out std_logic;
+
+			reset_n	: in std_logic;
+			ck			: in std_logic;
+			vdd		: in bit;
+			vss		: in bit
+		);
+	end component;
+-- signal
+	signal shift_c 		: std_logic;
+	signal alu_c 		: std_logic;
+
+	signal op2			: std_logic_vector(31 downto 0);
+	signal op2_shift	: std_logic_vector(31 downto 0);
+	signal op1			: std_logic_vector(31 downto 0);
 
 
+	signal alu_res		: std_logic_vector(31 downto 0);
+	signal res_reg		: std_logic_vector(31 downto 0);
+	signal mem_adr		: std_logic_vector(31 downto 0);
 
+	signal exe_push 	: std_logic;
+	signal exe2mem_full	: std_logic;
+	signal mem_acces	: std_logic;
+
+begin
 --  Component instantiation.
-	alu_inst : alu
-	port map (	
+
+		shifter_inst: shifter
+	port map(	shift_lsl 		 => dec_shift_lsl,
+				shift_lsr 		 => dec_shift_lsr,
+				shift_asr 		 => dec_shift_asr,
+				shift_ror 		 => dec_shift_ror,
+				shift_rrx 		 => dec_shift_rrx,
+				shift_val 		 => dec_shift_val,
+						
+				din 			 => dec_op2,
+				cin 			 => dec_cy,
+				dout 			 => op2_shift,
+				cout 			 => shift_c,
+
+				-- global interface
+				vdd 			 => vdd,
+				vss				 => vss );	
+
+		alu_inst : alu
+	port map (		op1		 => op1,
+					op2		 => op2,
+					cin		 => dec_alu_cy,
+					cmd		 => dec_alu_cmd,
+					res		 => alu_res,
+					cout	 => alu_c,
+					z		 => exe_z,
+					n		 => exe_n,
+					v		 => exe_v,
+
+					-- global interface
+					vdd		 => vdd,
 					vss		 => vss);
 
 	exec2mem : fifo_72b
@@ -151,5 +217,16 @@ end component;
 					ck			 => ck,
 					vdd		 => vdd,
 					vss		 => vss);
+
+
+-- synchro
+mem_adr <= x"00000000";
+
+-- cout
+	c
+-- ALU opearandes
+	op1 <= dec_op1;
+	op2 <= op2_shift;
+-- Loop dec
 
 end Behavior;
