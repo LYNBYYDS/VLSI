@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 entity EXec is
 	port(
 	-- Decode interface synchro
-			--dec2exe_empty	: in Std_logic;
-			--exe_pop			: out Std_logic;
+			dec2exe_empty	: in Std_logic;
+			exe_pop			: out Std_logic;
 
 	-- Decode interface operands
 			dec_op1			: in Std_Logic_Vector(31 downto 0); -- first alu input
@@ -167,70 +167,81 @@ begin
 				shift_ror 		 => dec_shift_ror,
 				shift_rrx 		 => dec_shift_rrx,
 				shift_val 		 => dec_shift_val,
-						
 				din 			 => dec_op2,
 				cin 			 => dec_cy,
 				dout 			 => op2_shift,
 				cout 			 => shift_c,
 
-				-- global interface
 				vdd 			 => vdd,
-				vss				 => vss );	
+				vss				 => vss 
+			);	
 
 		alu_inst : alu
-	port map (		op1		 => op1,
-					op2		 => op2,
-					cin		 => dec_alu_cy,
-					cmd		 => dec_alu_cmd,
-					res		 => alu_res,
-					cout	 => alu_c,
-					z		 => exe_z,
-					n		 => exe_n,
-					v		 => exe_v,
-
-					-- global interface
-					vdd		 => vdd,
-					vss		 => vss);
+	port map (	op1		 => op1,
+				op2		 => op2,
+				cin		 => dec_alu_cy,
+				cmd		 => dec_alu_cmd,
+				res		 => alu_res,
+				cout	 => alu_c,
+				z		 => exe_z,
+				n		 => exe_n,
+				v		 => exe_v,
+				
+				vdd		 => vdd,
+				vss		 => vss
+			);
 
 	exec2mem : fifo_72b
-	port map (	din(71)	 => dec_mem_lw,
-					din(70)	 => dec_mem_lb,
-					din(69)	 => dec_mem_sw,
-					din(68)	 => dec_mem_sb,
+	port map (		din(71)	 			=> dec_mem_lw,
+					din(70)	 			=> dec_mem_lb,
+					din(69)	 			=> dec_mem_sw,
+					din(68)	 			=> dec_mem_sb,
 
-					din(67 downto 64) => dec_mem_dest,
-					din(63 downto 32) => dec_mem_data,
-					din(31 downto 0)	 => mem_adr,
+					din(67 downto 64) 	=> dec_mem_dest,
+					din(63 downto 32) 	=> dec_mem_data,
+					din(31 downto 0)	=> mem_adr,
 
-					dout(71)	 => exe_mem_lw,
-					dout(70)	 => exe_mem_lb,
-					dout(69)	 => exe_mem_sw,
-					dout(68)	 => exe_mem_sb,
+					dout(71)	 		=> exe_mem_lw,
+					dout(70)	 		=> exe_mem_lb,
+					dout(69)	 		=> exe_mem_sw,
+					dout(68)	 		=> exe_mem_sb,
 
-					dout(67 downto 64) => exe_mem_dest,
-					dout(63 downto 32) => exe_mem_data,
-					dout(31 downto 0)	 => exe_mem_adr,
+					dout(67 downto 64) 	=> exe_mem_dest,
+					dout(63 downto 32) 	=> exe_mem_data,
+					dout(31 downto 0)	=> exe_mem_adr,
 
-					push		 => exe_push,
-					pop		 => mem_pop,
+					push		 		=> exe_push,
+					pop		 			=> mem_pop,
 
-					empty		 => exe2mem_empty,
-					full		 => exe2mem_full,
+					empty		 		=> exe2mem_empty,
+					full		 		=> exe2mem_full,
 
-					reset_n	 => reset_n,
-					ck			 => ck,
-					vdd		 => vdd,
-					vss		 => vss);
+					reset_n	 			=> reset_n,
+					ck			 		=> ck,
+					vdd		 			=> vdd,
+					vss		 			=> vss);
 
 
 -- synchro
-mem_adr <= x"00000000";
+	mem_adr <= 	alu_res when  dec_pre_index = '0' else 
+				dec_op1;
+	exe_pop <= 	'1' when dec2exe_empty = '0' else -- when there is no instruction in the exe part he need the registre between dec and exe to pop a new instruction ?
+				'0';
+	exe_push	<=	'1' when exe2mem_full = '0' else
+					'0';
+-- no changed ones
 
+	exe_dest 		<= dec_exe_dest;
+	exe_wb 			<= dec_exe_wb;
+	exe_flag_wb 	<= dec_flag_wb;
+			
 -- cout
 	
 -- ALU opearandes
-	op1 <= dec_op1;
-	op2 <= op2_shift;
+	op1 <= 	dec_op1 xor x"FFFFFFFF" when dec_comp_op1 = '1' else
+			dec_op1;
+	op2 <= 	op2_shift xor x"FFFFFFFF" when dec_comp_op2 = '1'else
+			op2_shift;
 -- Loop dec
 
 end Behavior;

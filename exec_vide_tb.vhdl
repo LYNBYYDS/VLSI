@@ -69,7 +69,11 @@ architecture archi of exec_vide_tb is
 
         signal exe2mem_empty	: Std_logic;
         signal mem_pop			: Std_logic                     := '0';
-
+    -- global interface
+		signal ck				: Std_logic                     := '0';
+		signal reset_n			: Std_logic                     := '0';
+		signal vdd				: bit;
+		signal vss				: bit;
 begin
 	test : entity work.EXec
 		port map(
@@ -133,7 +137,14 @@ begin
                     exe_mem_sb		=> exe_mem_sb,
 
                     exe2mem_empty	=> exe2mem_empty,
-                    mem_pop			=> mem_pop);
+                    mem_pop			=> mem_pop,
+                    
+                -- global interface
+                    ck				=> ck,
+                    reset_n			=> reset_n,
+                    vdd				=> vdd,
+                    vss				=> vss
+                );
 
 	dec_op1 <= x"01020301" after 20 ns;
 	dec_op2 <= x"00000001" after 20 ns;
