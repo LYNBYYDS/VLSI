@@ -68,5 +68,38 @@ end Reg;
 
 architecture Behavior OF Reg is
 
+	signal data_r0 : Std_Logic_Vector(31 downto 0);
+	signal data_r1 : Std_Logic_Vector(31 downto 0);
+	signal data_r2 : Std_Logic_Vector(31 downto 0);
+	signal data_r3 : Std_Logic_Vector(31 downto 0);
+	signal data_r4 : Std_Logic_Vector(31 downto 0);
+	signal data_r5 : Std_Logic_Vector(31 downto 0);
+	signal data_r6 : Std_Logic_Vector(31 downto 0);
+	signal data_r7 : Std_Logic_Vector(31 downto 0);
+	signal data_r8 : Std_Logic_Vector(31 downto 0);
+	signal data_r9 : Std_Logic_Vector(31 downto 0);
+	signal data_r10 : Std_Logic_Vector(31 downto 0);
+	signal data_r11 : Std_Logic_Vector(31 downto 0);
+	signal data_r12 : Std_Logic_Vector(31 downto 0);
+	signal data_r13 : Std_Logic_Vector(31 downto 0);
+	signal data_r14 : Std_Logic_Vector(31 downto 0);
+	signal data_pc : Std_Logic_Vector(31 downto 0);
+
+	signal inv_r0 : Std_Logic;
+	signal inv_r1 : Std_Logic;
+	signal inv_r2 : Std_Logic;
+	signal inv_r3 : Std_Logic;
+	signal inv_r4 : Std_Logic;
+	signal inv_r5 : Std_Logic;
+	signal inv_r6 : Std_Logic;
+	signal inv_r7 : Std_Logic;
+	signal inv_r8 : Std_Logic;
+	signal inv_r9 : Std_Logic;
+	signal inv_r10 : Std_Logic;
+	signal inv_r11 : Std_Logic;
+	signal inv_r12 : Std_Logic;
+	signal inv_r13 : Std_Logic;
+	signal inv_r14 : Std_Logic;
+	signal inv_pc : Std_Logic;
 
 end Behavior;
