@@ -67,6 +67,13 @@ entity Reg is
 end Reg;
 
 architecture Behavior OF Reg is
+-- component entity
+	component Add_32
+		port ( 	A, B : in std_logic_vector(31 downto 0);
+				Cin : in std_logic;
+				C : out std_logic;
+				S : out std_logic_vector(31 downto 0));
+	end component;
 
 -- valeurs stockees dans les registres r0-r15
 	signal data_r0 : Std_Logic_Vector(31 downto 0);
@@ -85,6 +92,8 @@ architecture Behavior OF Reg is
 	signal data_SP : Std_Logic_Vector(31 downto 0);
 	signal data_LR : Std_Logic_Vector(31 downto 0);
 	signal data_PC : Std_Logic_Vector(31 downto 0);
+	signal data_PC_plus4 : Std_Logic_Vector(31 downto 0);
+	signal data_PC_plus4_cry : Std_Logic;
 
 -- invalitation des registres r0-r15
 	signal inv_r0 : Std_Logic;
@@ -102,7 +111,6 @@ architecture Behavior OF Reg is
 	signal inv_r12 : Std_Logic;
 	signal inv_SP : Std_Logic;
 	signal inv_LR : Std_Logic;
-	signal inv_PC : Std_Logic;
 
 -- valeurs stockees dans les registres du CDPR
 	signal flag_cry : Std_Logic;
@@ -115,6 +123,13 @@ architecture Behavior OF Reg is
 	signal inv_ovr : Std_Logic;
 
 begin
+	
+	Add32_pc : Add_32
+	port map (	A		 => data_PC,
+				B		 => x"00000004",
+				Cin		 => '0',
+				C		 => data_PC_plus4_cry,
+				S		 => data_PC_plus4);
 	-- R0
 		process(ck, reset_n)
 		begin
@@ -134,7 +149,8 @@ begin
 				inv_r12 <= '0';
 				inv_SP <= '0';
 				inv_LR <= '0';
-				inv_PC <= '0';
+				inv_czn <= '0';
+				inv_ovr <= '0';
 
 			elsif rising_edge(ck) then
 
@@ -217,8 +233,7 @@ begin
 								data_LR <= wdata1;
 							end if;
 							when x"F" =>	
-							if inv_PC = '1' then
-								inv_PC = '0'
+							if inc_pc = '0' then
 								data_PC <= wdata1;
 							end if;
 							
@@ -304,8 +319,7 @@ begin
 								data_LR <= wdata2;
 							end if;
 							when x"F" =>	
-							if inv_PC = '1' then
-								inv_PC = '0'
+							if inc_pc = '0' then
 								data_PC <= wdata2;
 							end if;
 						end case;
@@ -359,8 +373,7 @@ begin
 							reg_rd1 <= data_LR;
 							reg_v1 <= not inv_LR;
 						when x"F" =>
-							reg_rd1 <= data_PC;
-							reg_v1 <= not inv_PC;
+							NULL;
 					end case;
 
 				-- read 2
@@ -411,8 +424,7 @@ begin
 							reg_rd2 <= data_LR;
 							reg_v2 <= not inv_LR;
 						when x"F" =>
-							reg_rd2 <= data_PC;
-							reg_v2 <= not inv_PC;
+							NULL;
 					end case;
 				
 				-- read 3
@@ -463,10 +475,102 @@ begin
 							reg_rd3 <= data_LR;
 							reg_v3 <= not inv_LR;
 						when x"F" =>
-							reg_rd3 <= data_PC;
-							reg_v3 <= not inv_PC;
+							NULL;
 					end case;
-			
+
+				-- changer les status invalitations
+					-- write1
+						if (inval1 = '1') then
+							case inval_adr1 is
+								when x"0" => 
+									inv_r0 <= '1';
+								when x"1" => 
+									inv_r1 <= '1';
+								when x"2" => 
+									inv_r2 <= '1';
+								when x"3" => 
+									inv_r3 <= '1';
+								when x"4" => 
+									inv_r4 <= '1';
+								when x"5" => 
+									inv_r5 <= '1';
+								when x"6" => 
+									inv_r6 <= '1';
+								when x"7" => 
+									inv_r7 <= '1';
+								when x"8" => 
+									inv_r8 <= '1';
+								when x"9" => 
+									inv_r9 <= '1';
+								when x"A" => 
+									inv_r10 <= '1';
+								when x"B" => 
+									inv_r11 <= '1';
+								when x"C" => 
+									inv_r12 <= '1';
+								when x"D" => 
+									inv_SP <= '1';
+								when x"E" => 
+									inv_LR <= '1';
+								when x"F" => 
+									NULL;
+									-- inv_PC <= '1';
+							end case;
+						end if;
+					
+					-- write2
+						if (inval2 = '1') then
+							case inval_adr2 is
+								when x"0" => 
+									inv_r0 <= '1';
+								when x"1" => 
+									inv_r1 <= '1';
+								when x"2" => 
+									inv_r2 <= '1';
+								when x"3" => 
+									inv_r3 <= '1';
+								when x"4" => 
+									inv_r4 <= '1';
+								when x"5" => 
+									inv_r5 <= '1';
+								when x"6" => 
+									inv_r6 <= '1';
+								when x"7" => 
+									inv_r7 <= '1';
+								when x"8" => 
+									inv_r8 <= '1';
+								when x"9" => 
+									inv_r9 <= '1';
+								when x"A" => 
+									inv_r10 <= '1';
+								when x"B" => 
+									inv_r11 <= '1';
+								when x"C" => 
+									inv_r12 <= '1';
+								when x"D" => 
+									inv_SP <= '1';
+								when x"E" => 
+									inv_LR <= '1';
+								when x"F" => 
+									NULL;
+									-- inv_PC <= '1';
+							end case;
+						end if;
+					
+						-- czn
+						if (inval_czn = '1') then
+							inv_czn <= '1';
+						end if;
+					
+					-- overflow
+						if (inval_ovr = '1') then
+							inv_ovr <= '1';
+						end if;
+
+					-- PC registre
+						if (inc_pc = 0) then
+							data_PC <= data_PC + 4;
+
 			end if;
 		
 		end process;

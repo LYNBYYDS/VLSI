@@ -1,20 +1,12 @@
-GHDL = /home/jeanlou/Outils/ghdl/bin/ghdl
-all : alu_tb
+GHDL = ghdl
 
-alu.o : alu.vhdl
-	${GHDL} -a -v alu.vhdl
-
-alu_tb.o : alu_tb.vhdl alu.o
-	${GHDL} -a -v alu_tb.vhdl
-	
-alu_tb : alu.o alu_tb.o 
-	${GHDL} -e -v alu_tb
-
-shifter.o : shifter.vhdl
-	${GHDL} -a -v shifter.vhdl
-
-run : alu_tb
-	./alu_tb --vcd=alu_tb.vcd
-
+Add_1.o : Add_1.vhdl
+	${GHDL} -a -v $<
+Add_4.o : Add_4.vhdl
+	${GHDL} -a -v $<
+Add_16.o : Add_16.vhdl
+	${GHDL} -a -v $<
+Add_32.o : Add_32.vhdl
+	${GHDL} -a -v $<
 clean :
-	rm *.o work-obj93.cf alu_tb alu_tb.vcd
+	rm *.o *.vcd
