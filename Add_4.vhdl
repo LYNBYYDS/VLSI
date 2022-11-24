@@ -12,10 +12,10 @@ architecture archi of Add_4 is
 
 -- Component entity
 	component Add_1 is
-		port(	A, B , Cin : in std_logic;
-				C : out std_logic;
-				S : out std_logic);
-		end component;
+	port(	A, B , Cin : in std_logic;
+			C : out std_logic;
+			S : out std_logic);
+	end component;
 
 -- Signal instantiation
 	signal C_signal : std_logic_vector(2 downto 0);
