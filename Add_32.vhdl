@@ -11,7 +11,7 @@ end Add_32;
 architecture archi of Add_32 is
 
 -- Component entity
-	component Add_16 is
+	component Add_16 
 	port(	A, B : in std_logic_vector(15 downto 0);
 			Cin : in std_logic;
 			C : out std_logic;
