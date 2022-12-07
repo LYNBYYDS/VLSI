@@ -49,26 +49,8 @@ ARCHITECTURE VBE OF reg_model IS
   SIGNAL p135_1_def_92	: BIT;
   SIGNAL p135_1_def_93	: BIT;
   SIGNAL p135_1_def_94	: BIT;
-  SIGNAL p135_1_def_95	: BIT;
-  SIGNAL p135_1_def_96	: BIT;
-  SIGNAL p135_1_def_97	: BIT;
-  SIGNAL p135_1_def_98	: BIT;
-  SIGNAL p135_1_def_99	: BIT;
-  SIGNAL p135_1_def_100	: BIT;
-  SIGNAL p135_1_def_101	: BIT;
+  SIGNAL p135_1_def_108	: BIT;
   SIGNAL p135_1_def_109	: BIT;
-  SIGNAL p135_1_def_110	: BIT;
-  SIGNAL p135_1_def_111	: BIT;
-  SIGNAL p135_1_def_112	: BIT;
-  SIGNAL p135_1_def_113	: BIT;
-  SIGNAL p135_1_def_114	: BIT;
-  SIGNAL p135_1_def_115	: BIT;
-  SIGNAL p135_1_def_116	: BIT;
-  SIGNAL p135_1_def_117	: BIT;
-  SIGNAL p135_1_def_118	: BIT;
-  SIGNAL p135_1_def_119	: BIT;
-  SIGNAL p135_1_def_120	: BIT;
-  SIGNAL p135_1_def_121	: BIT;
   SIGNAL v_ovr	: REG_BIT REGISTER;
   SIGNAL v_czn	: REG_BIT REGISTER;
   SIGNAL data_ovr	: REG_BIT REGISTER;
@@ -246,312 +228,96 @@ BEGIN
   END BLOCK LABEL5;
   LABEL6 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    data_r0(31 downto 11) <= GUARDED wdata1(31 downto 11) WHEN (reset_n AND ((NOT(wadr1(0)) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND NOT(wadr1(3)
-) AND NOT(v_r0) AND wen1) OR (NOT(wadr2(0) OR wadr2(1) OR wadr2(2)) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r0) AND NOT(wen1)) OR (NOT(wadr1(0) OR wadr1(1) OR wadr1(2)
- OR wadr1(3)) AND ((NOT(v_r0) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND NOT(v_r0
-)))))))) ELSE data_r0(31 downto 11);
+    data_r0(31 downto 29) <= GUARDED wdata1(31 downto 29) WHEN (reset_n AND ((NOT(wadr1(1)) AND NOT(wadr1(0)) AND wen1 AND NOT(wadr1(3)) AND 
+NOT(wadr1(2)) AND NOT(v_r0)) OR (wen2 AND ((NOT(wadr2(1)) AND NOT(wadr2(0)) AND 
+NOT(wadr2(3)) AND NOT(wadr2(2)) AND NOT(v_r0)) OR (NOT(wadr1(1) OR wadr1(0) OR NOT
+(wen1) OR wadr1(3) OR wadr1(2)) AND NOT(v_r0)))))) ELSE data_r0(31 downto 29);
   END BLOCK LABEL6;
   LABEL7 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    data_r0(10) <= GUARDED wdata1(10) WHEN (NOT(p135_1_def_91) AND ((p135_1_def_109 AND p135_1_def_110 AND NOT(p135_1_def_92
-)) OR (p135_1_def_93 AND ((p135_1_def_109 AND p135_1_def_110) OR p135_1_def_92))
-)) ELSE data_r0(10);
+    data_r0(28) <= GUARDED wdata1(28) WHEN (NOT(p135_1_def_91) AND (p135_1_def_92 OR p135_1_def_108)) ELSE data_r0(28);
   END BLOCK LABEL7;
   LABEL8 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    data_r0(9 downto 0) <= GUARDED wdata1(9 downto 0) WHEN (reset_n AND ((NOT(wadr1(0)) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND NOT(wadr1(3)
-) AND NOT(v_r0) AND wen1) OR (NOT(wadr2(0) OR wadr2(1) OR wadr2(2)) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r0) AND NOT(wen1)) OR (NOT(wadr1(0) OR wadr1(1) OR wadr1(2)
- OR wadr1(3)) AND ((NOT(v_r0) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND NOT(v_r0
-)))))))) ELSE data_r0(9 downto 0);
+    data_r0(27 downto 1) <= GUARDED wdata1(27 downto 1) WHEN (reset_n AND ((NOT(wadr1(1)) AND NOT(wadr1(0)) AND wen1 AND NOT(wadr1(3)) AND 
+NOT(wadr1(2)) AND NOT(v_r0)) OR (wen2 AND ((NOT(wadr2(1)) AND NOT(wadr2(0)) AND 
+NOT(wadr2(3)) AND NOT(wadr2(2)) AND NOT(v_r0)) OR (NOT(wadr1(1) OR wadr1(0) OR NOT
+(wen1) OR wadr1(3) OR wadr1(2)) AND NOT(v_r0)))))) ELSE data_r0(27 downto 1);
   END BLOCK LABEL8;
   LABEL9 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    v_r0 <= GUARDED '1' WHEN (NOT(reset_n) OR (NOT(wadr1(0)) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND NOT(wadr1(3)
-) AND wen1) OR (NOT(wadr2(0) OR wadr2(1) OR wadr2(2)) AND ((NOT(wadr2(3)) AND wen2
- AND NOT(wen1)) OR (NOT(wadr1(0) OR wadr1(1) OR wadr1(2) OR wadr1(3)) AND (NOT(wadr2(3)
- OR NOT(wen2)) OR wen1))))) ELSE v_r0;
+    data_r0(0) <= GUARDED wdata1(0) WHEN (reset_n AND ((wen1 AND NOT(wadr1(1)) AND NOT(wadr1(0)) AND NOT(wadr1(3)) AND 
+NOT(wadr1(2)) AND NOT(v_r0)) OR (wen2 AND ((NOT(wadr2(1)) AND NOT(wadr2(0)) AND 
+NOT(wadr2(3)) AND NOT(wadr2(2)) AND NOT(v_r0)) OR (wen1 AND NOT(wadr1(1)) AND NOT(wadr1(0)
+) AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND NOT(v_r0)))))) ELSE data_r0(0);
   END BLOCK LABEL9;
   LABEL10 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    data_r1(31 downto 1) <= GUARDED wdata1(31 downto 1) WHEN (reset_n AND ((wadr1(0) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND NOT(wadr1(3)) 
-AND NOT(v_r1) AND wen1) OR (wadr2(0) AND NOT(wadr2(1)) AND NOT(wadr2(2)) AND ((NOT
-(wadr2(3)) AND wen2 AND NOT(v_r1) AND NOT(wen1)) OR (wadr1(0) AND NOT(wadr1(1)) 
-AND NOT(wadr1(2)) AND NOT(wadr1(3)) AND ((NOT(v_r1) AND wen1) OR (NOT(wadr2(3) OR 
-NOT(wen2)) AND NOT(v_r1)))))))) ELSE data_r1(31 downto 1);
+    v_r0 <= GUARDED '1' WHEN (NOT(reset_n) OR (wen1 AND NOT(wadr1(3)) AND NOT(wadr1(1)) AND NOT(wadr1(0)) 
+AND NOT(wadr1(2))) OR (wen2 AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(1)) AND NOT
+(wadr1(0)) AND NOT(wadr1(2))) OR (NOT(wadr2(3)) AND NOT(wadr2(1)) AND NOT(wadr2(0)
+) AND NOT(wadr2(2)))))) ELSE v_r0;
   END BLOCK LABEL10;
   LABEL11 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    data_r1(0) <= GUARDED wdata1(0) WHEN (NOT(p135_1_def_91) AND ((p135_1_def_109 AND p135_1_def_111 AND NOT(p135_1_def_110
-) AND NOT(p135_1_def_92)) OR (NOT(p135_1_def_93 OR NOT(p135_1_def_94)) AND ((p135_1_def_109
- AND p135_1_def_111 AND NOT(p135_1_def_110)) OR p135_1_def_92)))) ELSE data_r1(0);
+    data_r1(31 downto 19) <= GUARDED wdata1(31 downto 19) WHEN (reset_n AND NOT(v_r1) AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND NOT(wadr1(1)
+) AND wadr1(0)) OR (wen2 AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND NOT(wadr1(1)
+) AND wadr1(0)) OR (NOT(wadr2(3)) AND NOT(wadr2(2)) AND NOT(wadr2(1)) AND wadr2(0)
+))))) ELSE data_r1(31 downto 19);
   END BLOCK LABEL11;
   LABEL12 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    v_r1 <= GUARDED '1' WHEN (NOT(reset_n) OR (wadr1(0) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND NOT(wadr1(3)
-) AND wen1) OR (wadr2(0) AND NOT(wadr2(1)) AND NOT(wadr2(2)) AND ((NOT(wadr2(3))
- AND wen2 AND NOT(wen1)) OR (wadr1(0) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND 
-NOT(wadr1(3)) AND (NOT(wadr2(3) OR NOT(wen2)) OR wen1))))) ELSE v_r1;
+    data_r1(18) <= GUARDED wdata1(18) WHEN (NOT(p135_1_def_91) AND ((NOT(p135_1_def_92) AND p135_1_def_93) OR (p135_1_def_109
+ AND (NOT(p135_1_def_92 OR NOT(p135_1_def_93)) OR NOT(p135_1_def_108))))) ELSE data_r1(18);
   END BLOCK LABEL12;
   LABEL13 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    data_r2 <= GUARDED wdata1 WHEN (reset_n AND ((NOT(wadr1(0)) AND wadr1(1) AND NOT(wadr1(2)) AND NOT(wadr1(3)) 
-AND NOT(v_r2) AND wen1) OR (NOT(wadr2(0) OR NOT(wadr2(1)) OR wadr2(2)) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r2) AND NOT(wen1)) OR (NOT(wadr1(0) OR NOT(wadr1(1)) OR wadr1(2)
- OR wadr1(3)) AND ((NOT(v_r2) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND NOT(v_r2
-)))))))) ELSE data_r2;
+    data_r1(17 downto 0) <= GUARDED wdata1(17 downto 0) WHEN (reset_n AND NOT(v_r1) AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND NOT(wadr1(1)
+) AND wadr1(0)) OR (wen2 AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND NOT(wadr1(1)
+) AND wadr1(0)) OR (NOT(wadr2(3)) AND NOT(wadr2(2)) AND NOT(wadr2(1)) AND wadr2(0)
+))))) ELSE data_r1(17 downto 0);
   END BLOCK LABEL13;
   LABEL14 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    v_r2 <= GUARDED '1' WHEN (NOT(reset_n) OR (NOT(wadr1(0)) AND wadr1(1) AND NOT(wadr1(2)) AND NOT(wadr1(3)
-) AND wen1) OR (NOT(wadr2(0) OR NOT(wadr2(1)) OR wadr2(2)) AND ((NOT(wadr2(3)) 
-AND wen2 AND NOT(wen1)) OR (NOT(wadr1(0) OR NOT(wadr1(1)) OR wadr1(2) OR wadr1(3))
- AND (NOT(wadr2(3) OR NOT(wen2)) OR wen1))))) ELSE v_r2;
+    v_r1 <= GUARDED '1' WHEN (NOT(reset_n) OR (wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND NOT(wadr1(1)) 
+AND wadr1(0)) OR (wen2 AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND NOT(wadr1(1)
+) AND wadr1(0)) OR (NOT(wadr2(3)) AND NOT(wadr2(2)) AND NOT(wadr2(1)) AND wadr2(0)
+)))) ELSE v_r1;
   END BLOCK LABEL14;
   LABEL15 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    data_r3(31 downto 24) <= GUARDED wdata1(31 downto 24) WHEN (reset_n AND ((wadr1(0) AND wadr1(1) AND NOT(wadr1(2)) AND NOT(wadr1(3)) AND 
-NOT(v_r3) AND wen1) OR (wadr2(0) AND wadr2(1) AND NOT(wadr2(2)) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r3) AND NOT(wen1)) OR (wadr1(0) AND wadr1(1) AND NOT(wadr1(2)
-) AND NOT(wadr1(3)) AND ((NOT(v_r3) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND
- NOT(v_r3)))))))) ELSE data_r3(31 downto 24);
+    data_r2(31 downto 9) <= GUARDED wdata1(31 downto 9) WHEN (reset_n AND NOT(v_r2) AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND wadr1(1)
+ AND NOT(wadr1(0))) OR (wen2 AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND wadr1(1)
+ AND NOT(wadr1(0))) OR (NOT(wadr2(3)) AND NOT(wadr2(2)) AND wadr2(1) AND NOT(wadr2(0)
+)))))) ELSE data_r2(31 downto 9);
   END BLOCK LABEL15;
   LABEL16 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    data_r3(23) <= GUARDED wdata1(23) WHEN (NOT(p135_1_def_91) AND ((p135_1_def_109 AND NOT(p135_1_def_111) AND p135_1_def_113
- AND NOT(p135_1_def_112) AND NOT(p135_1_def_110) AND NOT(p135_1_def_92)) OR (
-NOT(p135_1_def_93 OR p135_1_def_95 OR p135_1_def_94 OR NOT(p135_1_def_96)) AND ((p135_1_def_109
- AND NOT(p135_1_def_111) AND p135_1_def_113 AND NOT(p135_1_def_112) AND NOT(p135_1_def_110
-)) OR p135_1_def_92)))) ELSE data_r3(23);
+    data_r2(8) <= GUARDED wdata1(8) WHEN (NOT(p135_1_def_91) AND ((NOT(p135_1_def_92) AND p135_1_def_94 AND NOT(p135_1_def_93
+)) OR (NOT(p135_1_def_109) AND (NOT(p135_1_def_92 OR NOT(p135_1_def_94) OR p135_1_def_93
+) OR (((((wen2 = '1') AND NOT(((wen1 = '1') AND (wadr1 = wadr2)))) AND (wadr2 = "0010"
+)) AND (v_r2 = '0')) AND NOT(p135_1_def_108)))))) ELSE data_r2(8);
   END BLOCK LABEL16;
   LABEL17 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    data_r3(22 downto 0) <= GUARDED wdata1(22 downto 0) WHEN (reset_n AND ((wadr1(0) AND wadr1(1) AND NOT(wadr1(2)) AND NOT(wadr1(3)) AND 
-NOT(v_r3) AND wen1) OR (wadr2(0) AND wadr2(1) AND NOT(wadr2(2)) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r3) AND NOT(wen1)) OR (wadr1(0) AND wadr1(1) AND NOT(wadr1(2)
-) AND NOT(wadr1(3)) AND ((NOT(v_r3) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND
- NOT(v_r3)))))))) ELSE data_r3(22 downto 0);
+    data_r2(7 downto 0) <= GUARDED wdata1(7 downto 0) WHEN (reset_n AND NOT(v_r2) AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND wadr1(1)
+ AND NOT(wadr1(0))) OR (wen2 AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND wadr1(1)
+ AND NOT(wadr1(0))) OR (NOT(wadr2(3)) AND NOT(wadr2(2)) AND wadr2(1) AND NOT(wadr2(0)
+)))))) ELSE data_r2(7 downto 0);
   END BLOCK LABEL17;
   LABEL18 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
   BEGIN
-    v_r3 <= GUARDED '1' WHEN (NOT(reset_n) OR (wadr1(0) AND wadr1(1) AND NOT(wadr1(2)) AND NOT(wadr1(3)) AND
- wen1) OR (wadr2(0) AND wadr2(1) AND NOT(wadr2(2)) AND ((NOT(wadr2(3)) AND wen2 
-AND NOT(wen1)) OR (wadr1(0) AND wadr1(1) AND NOT(wadr1(2)) AND NOT(wadr1(3)) AND (
-NOT(wadr2(3) OR NOT(wen2)) OR wen1))))) ELSE v_r3;
+    v_r2 <= GUARDED '1' WHEN (NOT(reset_n) OR (wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND wadr1(1) AND NOT
+(wadr1(0))) OR (wen2 AND ((wen1 AND NOT(wadr1(3)) AND NOT(wadr1(2)) AND wadr1(1)
+ AND NOT(wadr1(0))) OR (NOT(wadr2(3)) AND NOT(wadr2(2)) AND wadr2(1) AND NOT(wadr2(0)
+))))) ELSE v_r2;
   END BLOCK LABEL18;
-  LABEL19 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r4(31 downto 14) <= GUARDED wdata1(31 downto 14) WHEN (reset_n AND ((NOT(wadr1(0)) AND NOT(wadr1(1)) AND wadr1(2) AND NOT(wadr1(3)) 
-AND NOT(v_r4) AND wen1) OR (NOT(wadr2(0) OR wadr2(1) OR NOT(wadr2(2))) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r4) AND NOT(wen1)) OR (NOT(wadr1(0) OR wadr1(1) OR NOT(wadr1(2)
-) OR wadr1(3)) AND ((NOT(v_r4) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND NOT(v_r4
-)))))))) ELSE data_r4(31 downto 14);
-  END BLOCK LABEL19;
-  LABEL20 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r4(13) <= GUARDED wdata1(13) WHEN (NOT(p135_1_def_91) AND ((p135_1_def_109 AND NOT(p135_1_def_111) AND NOT(p135_1_def_113
-) AND p135_1_def_114 AND NOT(p135_1_def_112) AND NOT(p135_1_def_110) AND NOT(p135_1_def_92
-)) OR (NOT(p135_1_def_93 OR p135_1_def_95 OR NOT(p135_1_def_97) OR p135_1_def_94
- OR p135_1_def_96) AND ((p135_1_def_109 AND NOT(p135_1_def_111) AND NOT(p135_1_def_113
-) AND p135_1_def_114 AND NOT(p135_1_def_112) AND NOT(p135_1_def_110)) OR p135_1_def_92
-)))) ELSE data_r4(13);
-  END BLOCK LABEL20;
-  LABEL21 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r4(12 downto 0) <= GUARDED wdata1(12 downto 0) WHEN (reset_n AND ((NOT(wadr1(0)) AND NOT(wadr1(1)) AND wadr1(2) AND NOT(wadr1(3)) 
-AND NOT(v_r4) AND wen1) OR (NOT(wadr2(0) OR wadr2(1) OR NOT(wadr2(2))) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r4) AND NOT(wen1)) OR (NOT(wadr1(0) OR wadr1(1) OR NOT(wadr1(2)
-) OR wadr1(3)) AND ((NOT(v_r4) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND NOT(v_r4
-)))))))) ELSE data_r4(12 downto 0);
-  END BLOCK LABEL21;
-  LABEL22 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    v_r4 <= GUARDED '1' WHEN (NOT(reset_n) OR (NOT(wadr1(0)) AND NOT(wadr1(1)) AND wadr1(2) AND NOT(wadr1(3)
-) AND wen1) OR (NOT(wadr2(0) OR wadr2(1) OR NOT(wadr2(2))) AND ((NOT(wadr2(3)) 
-AND wen2 AND NOT(wen1)) OR (NOT(wadr1(0) OR wadr1(1) OR NOT(wadr1(2)) OR wadr1(3))
- AND (NOT(wadr2(3) OR NOT(wen2)) OR wen1))))) ELSE v_r4;
-  END BLOCK LABEL22;
-  LABEL23 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r5(31 downto 4) <= GUARDED wdata1(31 downto 4) WHEN (reset_n AND ((wadr1(0) AND NOT(wadr1(1)) AND wadr1(2) AND NOT(wadr1(3)) AND 
-NOT(v_r5) AND wen1) OR (wadr2(0) AND NOT(wadr2(1)) AND wadr2(2) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r5) AND NOT(wen1)) OR (wadr1(0) AND NOT(wadr1(1)) AND wadr1(2)
- AND NOT(wadr1(3)) AND ((NOT(v_r5) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND 
-NOT(v_r5)))))))) ELSE data_r5(31 downto 4);
-  END BLOCK LABEL23;
-  LABEL24 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r5(3) <= GUARDED wdata1(3) WHEN (NOT(p135_1_def_91) AND ((p135_1_def_109 AND NOT(p135_1_def_111) AND NOT(p135_1_def_113
-) AND p135_1_def_115 AND NOT(p135_1_def_114) AND NOT(p135_1_def_112) AND NOT(p135_1_def_110
-) AND NOT(p135_1_def_92)) OR (NOT(p135_1_def_93 OR p135_1_def_95 OR p135_1_def_97
- OR p135_1_def_94 OR p135_1_def_96 OR NOT(p135_1_def_98)) AND ((p135_1_def_109 
-AND NOT(p135_1_def_111) AND NOT(p135_1_def_113) AND p135_1_def_115 AND NOT(p135_1_def_114
-) AND NOT(p135_1_def_112) AND NOT(p135_1_def_110)) OR p135_1_def_92)))) ELSE data_r5(3);
-  END BLOCK LABEL24;
-  LABEL25 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r5(2 downto 0) <= GUARDED wdata1(2 downto 0) WHEN (reset_n AND ((wadr1(0) AND NOT(wadr1(1)) AND wadr1(2) AND NOT(wadr1(3)) AND 
-NOT(v_r5) AND wen1) OR (wadr2(0) AND NOT(wadr2(1)) AND wadr2(2) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r5) AND NOT(wen1)) OR (wadr1(0) AND NOT(wadr1(1)) AND wadr1(2)
- AND NOT(wadr1(3)) AND ((NOT(v_r5) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND 
-NOT(v_r5)))))))) ELSE data_r5(2 downto 0);
-  END BLOCK LABEL25;
-  LABEL26 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    v_r5 <= GUARDED '1' WHEN (NOT(reset_n) OR (wadr1(0) AND NOT(wadr1(1)) AND wadr1(2) AND NOT(wadr1(3)) AND
- wen1) OR (wadr2(0) AND NOT(wadr2(1)) AND wadr2(2) AND ((NOT(wadr2(3)) AND wen2 
-AND NOT(wen1)) OR (wadr1(0) AND NOT(wadr1(1)) AND wadr1(2) AND NOT(wadr1(3)) AND (
-NOT(wadr2(3) OR NOT(wen2)) OR wen1))))) ELSE v_r5;
-  END BLOCK LABEL26;
-  LABEL27 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r6 <= GUARDED wdata1 WHEN (reset_n AND ((NOT(wadr1(0)) AND wadr1(1) AND wadr1(2) AND NOT(wadr1(3)) AND 
-NOT(v_r6) AND wen1) OR (NOT(wadr2(0) OR NOT(wadr2(1)) OR NOT(wadr2(2))) AND ((NOT(wadr2(3)
-) AND wen2 AND NOT(v_r6) AND NOT(wen1)) OR (NOT(wadr1(0) OR NOT(wadr1(1)) OR NOT
-(wadr1(2)) OR wadr1(3)) AND ((NOT(v_r6) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2))
- AND NOT(v_r6)))))))) ELSE data_r6;
-  END BLOCK LABEL27;
-  LABEL28 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    v_r6 <= GUARDED '1' WHEN (NOT(reset_n) OR (NOT(wadr1(0)) AND wadr1(1) AND wadr1(2) AND NOT(wadr1(3)) AND
- wen1) OR (NOT(wadr2(0) OR NOT(wadr2(1)) OR NOT(wadr2(2))) AND ((NOT(wadr2(3)) 
-AND wen2 AND NOT(wen1)) OR (NOT(wadr1(0) OR NOT(wadr1(1)) OR NOT(wadr1(2)) OR wadr1(3)
-) AND (NOT(wadr2(3) OR NOT(wen2)) OR wen1))))) ELSE v_r6;
-  END BLOCK LABEL28;
-  LABEL29 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r7(31 downto 27) <= GUARDED wdata1(31 downto 27) WHEN (reset_n AND ((wadr1(0) AND wadr1(1) AND wadr1(2) AND NOT(wadr1(3)) AND NOT(v_r7
-) AND wen1) OR (wadr2(0) AND wadr2(1) AND wadr2(2) AND ((NOT(wadr2(3)) AND wen2 
-AND NOT(v_r7) AND NOT(wen1)) OR (wadr1(0) AND wadr1(1) AND wadr1(2) AND NOT(wadr1(3)
-) AND ((NOT(v_r7) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND NOT(v_r7)))))))) ELSE data_r7(31 downto 27);
-  END BLOCK LABEL29;
-  LABEL30 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r7(26) <= GUARDED wdata1(26) WHEN (NOT(p135_1_def_91) AND ((p135_1_def_109 AND NOT(p135_1_def_111) AND NOT(p135_1_def_113
-) AND NOT(p135_1_def_115) AND p135_1_def_117 AND NOT(p135_1_def_116) AND NOT(p135_1_def_114
-) AND NOT(p135_1_def_112) AND NOT(p135_1_def_110) AND NOT(p135_1_def_92)) OR (
-NOT(p135_1_def_93 OR p135_1_def_95 OR p135_1_def_97 OR p135_1_def_99 OR p135_1_def_96
- OR p135_1_def_94 OR p135_1_def_98 OR NOT(p135_1_def_100)) AND ((p135_1_def_109 
-AND NOT(p135_1_def_111) AND NOT(p135_1_def_113) AND NOT(p135_1_def_115) AND p135_1_def_117
- AND NOT(p135_1_def_116) AND NOT(p135_1_def_114) AND NOT(p135_1_def_112) AND NOT
-(p135_1_def_110)) OR p135_1_def_92)))) ELSE data_r7(26);
-  END BLOCK LABEL30;
-  LABEL31 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r7(25 downto 0) <= GUARDED wdata1(25 downto 0) WHEN (reset_n AND ((wadr1(0) AND wadr1(1) AND wadr1(2) AND NOT(wadr1(3)) AND NOT(v_r7
-) AND wen1) OR (wadr2(0) AND wadr2(1) AND wadr2(2) AND ((NOT(wadr2(3)) AND wen2 
-AND NOT(v_r7) AND NOT(wen1)) OR (wadr1(0) AND wadr1(1) AND wadr1(2) AND NOT(wadr1(3)
-) AND ((NOT(v_r7) AND wen1) OR (NOT(wadr2(3) OR NOT(wen2)) AND NOT(v_r7)))))))) ELSE data_r7(25 downto 0);
-  END BLOCK LABEL31;
-  LABEL32 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    v_r7 <= GUARDED '1' WHEN (NOT(reset_n) OR (wadr1(0) AND wadr1(1) AND wadr1(2) AND NOT(wadr1(3)) AND wen1
-) OR (wadr2(0) AND wadr2(1) AND wadr2(2) AND ((NOT(wadr2(3)) AND wen2 AND NOT(wen1
-)) OR (wadr1(0) AND wadr1(1) AND wadr1(2) AND NOT(wadr1(3)) AND (NOT(wadr2(3) OR
- NOT(wen2)) OR wen1))))) ELSE v_r7;
-  END BLOCK LABEL32;
-  LABEL33 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r8(31 downto 17) <= GUARDED wdata1(31 downto 17) WHEN (reset_n AND ((NOT(wadr1(0)) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND wadr1(3) 
-AND NOT(v_r8) AND wen1) OR (NOT(wadr2(0) OR wadr2(1) OR wadr2(2)) AND ((wadr2(3) 
-AND wen2 AND NOT(v_r8) AND NOT(wen1)) OR (NOT(wadr1(0) OR wadr1(1) OR wadr1(2) OR 
-NOT(wadr1(3))) AND ((NOT(v_r8) AND wen1) OR (wadr2(3) AND wen2 AND NOT(v_r8)))))))
-) ELSE data_r8(31 downto 17);
-  END BLOCK LABEL33;
-  LABEL34 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r8(16) <= GUARDED wdata1(16) WHEN (NOT(p135_1_def_91) AND ((p135_1_def_109 AND NOT(p135_1_def_111) AND NOT(p135_1_def_113
-) AND NOT(p135_1_def_115) AND NOT(p135_1_def_117) AND p135_1_def_118 AND NOT(p135_1_def_116
-) AND NOT(p135_1_def_114) AND NOT(p135_1_def_112) AND NOT(p135_1_def_110) AND 
-NOT(p135_1_def_92)) OR (NOT(p135_1_def_93 OR p135_1_def_95 OR p135_1_def_97 OR p135_1_def_99
- OR NOT(p135_1_def_101) OR p135_1_def_98 OR p135_1_def_96 OR p135_1_def_94 OR p135_1_def_100
-) AND ((p135_1_def_109 AND NOT(p135_1_def_111) AND NOT(p135_1_def_113) AND NOT(p135_1_def_115
-) AND NOT(p135_1_def_117) AND p135_1_def_118 AND NOT(p135_1_def_116) AND NOT(p135_1_def_114
-) AND NOT(p135_1_def_112) AND NOT(p135_1_def_110)) OR p135_1_def_92)))) ELSE data_r8(16);
-  END BLOCK LABEL34;
-  LABEL35 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r8(15 downto 0) <= GUARDED wdata1(15 downto 0) WHEN (reset_n AND ((NOT(wadr1(0)) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND wadr1(3) 
-AND NOT(v_r8) AND wen1) OR (NOT(wadr2(0) OR wadr2(1) OR wadr2(2)) AND ((wadr2(3) 
-AND wen2 AND NOT(v_r8) AND NOT(wen1)) OR (NOT(wadr1(0) OR wadr1(1) OR wadr1(2) OR 
-NOT(wadr1(3))) AND ((NOT(v_r8) AND wen1) OR (wadr2(3) AND wen2 AND NOT(v_r8)))))))
-) ELSE data_r8(15 downto 0);
-  END BLOCK LABEL35;
-  LABEL36 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    v_r8 <= GUARDED '1' WHEN (NOT(reset_n) OR (NOT(wadr1(0)) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND wadr1(3)
- AND wen1) OR (NOT(wadr2(0) OR wadr2(1) OR wadr2(2)) AND ((wadr2(3) AND wen2 AND
- NOT(wen1)) OR (NOT(wadr1(0) OR wadr1(1) OR wadr1(2) OR NOT(wadr1(3))) AND ((wadr2(3)
- AND wen2) OR wen1))))) ELSE v_r8;
-  END BLOCK LABEL36;
-  LABEL37 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r9 <= GUARDED wdata1 WHEN (reset_n AND ((wadr1(0) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND wadr1(3) AND 
-NOT(v_r9) AND wen1) OR (wadr2(0) AND NOT(wadr2(1)) AND NOT(wadr2(2)) AND ((wadr2(3)
- AND wen2 AND NOT(v_r9) AND NOT(wen1)) OR (wadr1(0) AND NOT(wadr1(1)) AND NOT(wadr1(2)
-) AND wadr1(3) AND ((NOT(v_r9) AND wen1) OR (wadr2(3) AND wen2 AND NOT(v_r9)))))
-))) ELSE data_r9;
-  END BLOCK LABEL37;
-  LABEL38 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    v_r9 <= GUARDED '1' WHEN (NOT(reset_n) OR (wadr1(0) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND wadr1(3) AND
- wen1) OR (wadr2(0) AND NOT(wadr2(1)) AND NOT(wadr2(2)) AND ((wadr2(3) AND wen2 
-AND NOT(wen1)) OR (wadr1(0) AND NOT(wadr1(1)) AND NOT(wadr1(2)) AND wadr1(3) AND (
-(wadr2(3) AND wen2) OR wen1))))) ELSE v_r9;
-  END BLOCK LABEL38;
-  LABEL39 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r10 <= GUARDED wdata1 WHEN (reset_n AND ((NOT(wadr1(0)) AND wadr1(1) AND NOT(wadr1(2)) AND wadr1(3) AND 
-NOT(v_r10) AND wen1) OR (NOT(wadr2(0) OR NOT(wadr2(1)) OR wadr2(2)) AND ((wadr2(3)
- AND wen2 AND NOT(v_r10) AND NOT(wen1)) OR (NOT(wadr1(0) OR NOT(wadr1(1)) OR wadr1(2)
- OR NOT(wadr1(3))) AND ((NOT(v_r10) AND wen1) OR (wadr2(3) AND wen2 AND NOT(v_r10
-)))))))) ELSE data_r10;
-  END BLOCK LABEL39;
-  LABEL40 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    v_r10 <= GUARDED '1' WHEN (NOT(reset_n) OR (NOT(wadr1(0)) AND wadr1(1) AND NOT(wadr1(2)) AND wadr1(3) AND
- wen1) OR (NOT(wadr2(0) OR NOT(wadr2(1)) OR wadr2(2)) AND ((wadr2(3) AND wen2 
-AND NOT(wen1)) OR (NOT(wadr1(0) OR NOT(wadr1(1)) OR wadr1(2) OR NOT(wadr1(3))) AND
- ((wadr2(3) AND wen2) OR wen1))))) ELSE v_r10;
-  END BLOCK LABEL40;
-  LABEL41 : BLOCK  ((ck = '1') AND NOT(ck'STABLE) )
-  BEGIN
-    data_r11(26) <= GUARDED wdata1(26) WHEN (NOT(p135_1_def_91) AND ((p135_1_def_109 AND NOT(p135_1_def_111) AND NOT(p135_1_def_113
-) AND NOT(p135_1_def_115) AND NOT(p135_1_def_117) AND NOT(p135_1_def_119) AND p135_1_def_121
- AND NOT(p135_1_def_120) AND NOT(p135_1_def_118) AND NOT(p135_1_def_116) AND NOT
-(p135_1_def_114) AND NOT(p135_1_def_112) AND NOT(p135_1_def_110) AND NOT(p135_1_def_92
-)) OR (NOT(p135_1_def_93 OR p135_1_def_95 OR p135_1_def_97 OR p135_1_def_99 OR p135_1_def_101
- OR ((wadr1 = "1010") AND (v_r10 = '0')) OR ((wadr1 = "1001") AND (v_r9 = '0')) 
-OR p135_1_def_100 OR p135_1_def_98 OR p135_1_def_96 OR p135_1_def_94 OR NOT(((wadr1 = "1011"
-) AND (v_r11 = '0')))) AND ((p135_1_def_109 AND NOT(p135_1_def_111) AND NOT(p135_1_def_113
-) AND NOT(p135_1_def_115) AND NOT(p135_1_def_117) AND NOT(p135_1_def_119) AND p135_1_def_121
- AND NOT(p135_1_def_120) AND NOT(p135_1_def_118) AND NOT(p135_1_def_116) AND NOT
-(p135_1_def_114) AND NOT(p135_1_def_112) AND NOT(p135_1_def_110)) OR p135_1_def_92
-)))) ELSE data_r11(26);
-  END BLOCK LABEL41;
-  p135_1_def_121 <= ((wadr2 = "1011") AND (v_r11 = '0'));
-  p135_1_def_120 <= ((wadr2 = "1010") AND (v_r10 = '0'));
-  p135_1_def_119 <= ((wadr2 = "1001") AND (v_r9 = '0'));
-  p135_1_def_118 <= ((wadr2 = "1000") AND (v_r8 = '0'));
-  p135_1_def_117 <= ((wadr2 = "0111") AND (v_r7 = '0'));
-  p135_1_def_116 <= ((wadr2 = "0110") AND (v_r6 = '0'));
-  p135_1_def_115 <= ((wadr2 = "0101") AND (v_r5 = '0'));
-  p135_1_def_114 <= ((wadr2 = "0100") AND (v_r4 = '0'));
-  p135_1_def_113 <= ((wadr2 = "0011") AND (v_r3 = '0'));
-  p135_1_def_112 <= ((wadr2 = "0010") AND (v_r2 = '0'));
-  p135_1_def_111 <= ((wadr2 = "0001") AND (v_r1 = '0'));
-  p135_1_def_110 <= ((wadr2 = "0000") AND (v_r0 = '0'));
-  p135_1_def_109 <= ((wen2 = '1') AND NOT(((wen1 = '1') AND (wadr1 = wadr2))));
-  p135_1_def_101 <= ((wadr1 = "1000") AND (v_r8 = '0'));
-  p135_1_def_100 <= ((wadr1 = "0111") AND (v_r7 = '0'));
-  p135_1_def_99 <= ((wadr1 = "0110") AND (v_r6 = '0'));
-  p135_1_def_98 <= ((wadr1 = "0101") AND (v_r5 = '0'));
-  p135_1_def_97 <= ((wadr1 = "0100") AND (v_r4 = '0'));
-  p135_1_def_96 <= ((wadr1 = "0011") AND (v_r3 = '0'));
-  p135_1_def_95 <= ((wadr1 = "0010") AND (v_r2 = '0'));
-  p135_1_def_94 <= ((wadr1 = "0001") AND (v_r1 = '0'));
-  p135_1_def_93 <= ((wadr1 = "0000") AND (v_r0 = '0'));
-  p135_1_def_92 <= (wen1 = '1');
+  p135_1_def_109 <= ((((wen2 = '1') AND NOT(((wen1 = '1') AND (wadr1 = wadr2)))) AND (wadr2 = "0001"
+)) AND (v_r1 = '0'));
+  p135_1_def_108 <= ((((wen2 = '1') AND NOT(((wen1 = '1') AND (wadr1 = wadr2)))) AND (wadr2 = "0000"
+)) AND (v_r0 = '0'));
+  p135_1_def_94 <= (((wen1 = '1') AND (wadr1 = "0010")) AND (v_r2 = '0'));
+  p135_1_def_93 <= (((wen1 = '1') AND (wadr1 = "0001")) AND (v_r1 = '0'));
+  p135_1_def_92 <= (((wen1 = '1') AND (wadr1 = "0000")) AND (v_r0 = '0'));
   p135_1_def_91 <= (reset_n = '0');
 END VBE;

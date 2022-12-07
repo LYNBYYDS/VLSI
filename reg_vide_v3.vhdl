@@ -67,13 +67,7 @@ entity Reg is
 end Reg;
 
 architecture Behavior OF Reg is
--- component entity
-	component Add_32
-		port ( 	A, B : in std_logic_vector(31 downto 0);
-				Cin : in std_logic;
-				C : out std_logic;
-				S : out std_logic_vector(31 downto 0));
-	end component;
+
 
 -- valeurs stockees dans les registres r0-r15
 	signal data_r0 : Std_Logic_Vector(31 downto 0);
@@ -92,8 +86,6 @@ architecture Behavior OF Reg is
 	signal data_SP : Std_Logic_Vector(31 downto 0);
 	signal data_LR : Std_Logic_Vector(31 downto 0);
 	signal data_PC : Std_Logic_Vector(31 downto 0);
-	signal data_PC_plus4 : Std_Logic_Vector(31 downto 0);
-	signal data_PC_plus4_cry : Std_Logic;
 
 -- valitation des registres r0-r15
 	signal v_r0 : Std_Logic;
@@ -125,12 +117,6 @@ architecture Behavior OF Reg is
 
 begin
 	
-	Add32_pc : Add_32
-	port map (	A		 => data_PC,
-				B		 => x"00000004",
-				Cin		 => '0',
-				C		 => data_PC_plus4_cry,
-				S		 => data_PC_plus4);
 	-- R0
 		process(ck)
 		begin
@@ -156,10 +142,110 @@ begin
 					v_ovr <= '1';
 
 				else
+					if wen1 = '1' and wadr1 = x"0" and v_r0 = '0' then 			-- adresse of write1 wadr1 write when is invalide
+						v_r0 <= '1'; 								-- when u write it become valide
+						data_r0 <= wdata1; 							-- write the data into the registre
+					elsif wen1 = '1' and wadr1 = x"1" and v_r1 = '0' then
+						v_r1 <= '1';
+						data_r1 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"2" and v_r2 = '0' then
+						v_r2 <= '1';
+						data_r2 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"3" and v_r3 = '0' then
+						v_r3 <= '1';
+						data_r3 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"4" and v_r4 = '0' then
+						v_r4 <= '1';
+						data_r4 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"5" and v_r5 = '0' then
+						v_r5 <= '1';
+						data_r5 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"6" and v_r6 = '0' then
+						v_r6 <= '1';
+						data_r6 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"7" and v_r7 = '0' then
+						v_r7 <= '1';
+						data_r7 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"8" and v_r8 = '0' then
+						v_r8 <= '1';
+						data_r8 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"9" and v_r9 = '0' then
+						v_r9 <= '1';
+						data_r9 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"A" and v_r10 = '0' then
+						v_r10 <= '1';
+						data_r10 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"B" and v_r11 = '0' then
+						v_r11 <= '1';
+						data_r11 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"C" and v_r12 = '0' then
+						v_r12 <= '1';
+						data_r12 <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"D" and v_SP = '0' then
+						v_SP <= '1';
+						data_SP <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"E" and v_LR = '0' then
+						v_LR <= '1';
+						data_LR <= wdata1;
+					elsif wen1 = '1' and wadr1 = x"F" and v_PC = '0' then
+						v_PC <= '1';
+						data_PC <= wdata1;
+					end if;
+
+					if wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"0" and v_r0 = '0' then
+						v_r0 <= '1';
+						data_r0 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"1" and v_r1 = '0' then
+						v_r1 <= '1';
+						data_r1 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"2" and v_r2 = '0' then
+						v_r2 <= '1';
+						data_r2 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"3" and v_r3 = '0' then
+						v_r3 <= '1';
+						data_r3 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"4" and v_r4 = '0' then
+						v_r4 <= '1';
+						data_r4 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"5" and v_r5 = '0' then
+						v_r5 <= '1';
+						data_r5 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"6" and v_r6 = '0' then
+						v_r6 <= '1';
+						data_r6 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"7" and v_r7 = '0' then
+						v_r7 <= '1';
+						data_r7 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"8" and v_r8 = '0' then
+						v_r8 <= '1';
+						data_r8 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"9" and v_r9 = '0' then
+						v_r9 <= '1';
+						data_r9 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"A" and v_r10 = '0' then
+						v_r10 <= '1';
+						data_r10 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"B" and v_r11 = '0' then
+						v_r11 <= '1';
+						data_r11 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"C" and v_r12 = '0' then
+						v_r12 <= '1';
+						data_r12 <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"D" and v_SP = '0' then
+						v_SP <= '1';
+						data_SP <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"E" and v_LR = '0' then
+						v_LR <= '1';
+						data_LR <= wdata1;
+					elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) and wadr2 = x"F" and v_PC = '0' then
+						v_PC <= '1';
+						data_PC <= wdata1;
+					end if;
+
 					
 					
 					-- CDPR
-						if inval_czn = '1' then
+						if (inval_czn = '1') then
 							v_czn <= '0';
 						end if;
 						if (v_czn = '0') then
@@ -181,171 +267,10 @@ begin
 						end if;
 
 					-- PC registre
-						if (inval_adr1 = x"F" and inval1 = '1') or(inval_adr2 = x"F" and inval2 = '1') then
-							v_PC <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"F" and v_PC = '0' then
-							data_pc <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"F" and v_PC = '0' then
-							data_pc <= wdata2;
-						end if;
 						if (v_PC = '1' and inc_pc = '1') then
-							data_PC <= data_PC_plus4;
+							data_PC <= x"00000000";
 						end if ;
-
-					-- Registre 0
-						if (inval_adr1 = x"0" and inval1 = '1') or(inval_adr2 = x"0" and inval2 = '1') then
-							v_r0 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"0" and v_r0 = '0' then
-							data_r0 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"0" and v_r0 = '0' then
-							data_r0 <= wdata2;
-						end if;
-
-					-- Registre 1
-						if (inval_adr1 = x"1" and inval1 = '1') or(inval_adr2 = x"1" and inval2 = '1') then
-							v_r1 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"1" and v_r1 = '0' then
-							data_r1 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"1" and v_r1 = '0' then
-							data_r1 <= wdata2;
-						end if;
-
-					-- Registre 2
-						if (inval_adr1 = x"2" and inval1 = '1') or(inval_adr2 = x"2" and inval2 = '1') then
-							v_r2 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"2" and v_r2 = '0' then
-							data_r2 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"2" and v_r2 = '0' then
-							data_r2 <= wdata2;
-						end if;
-
-					-- Registre 3
-						if (inval_adr1 = x"3" and inval1 = '1') or(inval_adr2 = x"3" and inval2 = '1') then
-							v_r3 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"3" and v_r3 = '0' then
-							data_r3 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"3" and v_r3 = '0' then
-							data_r3 <= wdata2;
-						end if;
-					
-					-- Registre 4
-						if (inval_adr1 = x"4" and inval1 = '1') or(inval_adr2 = x"4" and inval2 = '1') then
-							v_r4 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"4" and v_r4 = '0' then
-							data_r4 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"4" and v_r4 = '0' then
-							data_r4 <= wdata2;
-						end if;
-
-					-- Registre 5
-						if (inval_adr1 = x"5" and inval1 = '1') or(inval_adr2 = x"5" and inval2 = '1') then
-							v_r5 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"5" and v_r5 = '0' then
-							data_r5 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"5" and v_r5 = '0' then
-							data_r5 <= wdata2;
-						end if;
-
-					-- Registre 6
-						if (inval_adr1 = x"6" and inval1 = '1') or(inval_adr2 = x"6" and inval2 = '1') then
-							v_r6 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"6" and v_r6 = '0' then
-							data_r6 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"6" and v_r6 = '0' then
-							data_r6 <= wdata2;
-						end if;
-
-					-- Registre 7
-						if (inval_adr1 = x"7" and inval1 = '1') or(inval_adr2 = x"7" and inval2 = '1') then
-							v_r7 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"7" and v_r7 = '0' then
-							data_r7 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"7" and v_r7 = '0' then
-							data_r7 <= wdata2;
-						end if;
-
-					-- Registre 8
-						if (inval_adr1 = x"8" and inval1 = '1') or(inval_adr2 = x"8" and inval2 = '1') then
-							v_r8 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"8" and v_r8 = '0' then
-							data_r8 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"8" and v_r8 = '0' then
-							data_r8 <= wdata2;
-						end if;
-
-					-- Registre 9
-						if (inval_adr1 = x"9" and inval1 = '1') or(inval_adr2 = x"9" and inval2 = '1') then
-							v_r9 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"9" and v_r9 = '0' then
-							data_r9 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"9" and v_r9 = '0' then
-							data_r9 <= wdata2;
-						end if;
-
-					-- Registre 10
-						if (inval_adr1 = x"A" and inval1 = '1') or(inval_adr2 = x"A" and inval2 = '1') then
-							v_r10 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"A" and v_r10 = '0' then
-							data_r3 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"A" and v_r10 = '0' then
-							data_r3 <= wdata2;
-						end if;
-					
-					-- Registre 11
-						if (inval_adr1 = x"B" and inval1 = '1') or(inval_adr2 = x"B" and inval2 = '1') then
-							v_r11 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"B" and v_r11 = '0' then
-							data_r11 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"B" and v_r11 = '0' then
-							data_r11 <= wdata2;
-						end if;
-
-					-- Registre 12
-						if (inval_adr1 = x"5" and inval1 = '1') or(inval_adr2 = x"5" and inval2 = '1') then
-							v_r5 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"5" and v_r5 = '0' then
-							data_r5 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"5" and v_r5 = '0' then
-							data_r5 <= wdata2;
-						end if;
-
-					-- Registre SP
-						if (inval_adr1 = x"5" and inval1 = '1') or(inval_adr2 = x"5" and inval2 = '1') then
-							v_r5 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"5" and v_r5 = '0' then
-							data_r5 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"5" and v_r5 = '0' then
-							data_r5 <= wdata2;
-						end if;
-
-					-- Registre LR
-						if (inval_adr1 = x"0" and inval1 = '1') or(inval_adr2 = x"0" and inval2 = '1') then
-							v_r0 <= '0';
-						end if;
-						if wen1 = '1' and wadr1 = x"0" and v_r0 = '0' then
-							data_r0 <= wdata1;
-						elsif wen2 = '1' and wadr2 = x"0" and v_r0 = '0' then
-							data_r0 <= wdata2;
-						end if;
-
-
-
-
+						
 				end if;
 			end if;
 		end process;
