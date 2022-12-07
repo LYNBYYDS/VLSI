@@ -17,14 +17,24 @@ port (	op1 : in std_logic_vector(31 downto 0);
 end Alu;
 
 architecture archi of Alu is 
+
+-- Component entity
+component Add_32 
+port(	A, B : in std_logic_vector(31 downto 0);
+		Cin : in std_logic;
+		C : out std_logic;
+		S : out std_logic_vector(31 downto 0));
+end component;
+
+
 signal res_signal : std_logic_vector(31 downto 0);
 signal add_sum : std_logic_vector(31 downto 0);
 signal add_cout : std_logic;
 
 begin 
-
-	ADD32 : entity work.Add_32
-					port map(op1, op2, cin, add_cout, add_sum);
+	-- Component instantiation
+	ADD32:	Add_32
+		port map(op1, op2, cin, add_cout, add_sum);
 
 	res_signal <= 	op1 and op2 when cmd = "01" else
 									op1 or op2 when cmd = "10" else

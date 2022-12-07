@@ -1,34 +1,7 @@
 v 4
-file . "exec_vide.vhdl" "a594fcf6ea35623e7f08a70cab9b392ebd2ec707" "20221021165421.231":
-  entity exec at 1( 0) + 0 on 143;
-  architecture behavior of exec at 80( 2274) + 0 on 144;
-file . "Add_32.vhdl" "ca2f55c074919854d586b52eeda26e04ca02d0b6" "20221012084308.246":
-  entity add_32 at 1( 0) + 0 on 25;
-  architecture archi of add_32 at 11( 208) + 0 on 26;
-file . "Add_4.vhdl" "abf3d72ee3a986106f0ead9f5ba2e4025916ed2f" "20221012073642.405":
-  entity add_4 at 1( 0) + 0 on 17;
-  architecture archi of add_4 at 11( 204) + 0 on 18;
-file . "Add_1.vhdl" "a790347aadd585837cf5c80dd914037c357771f9" "20221123183208.010":
-  entity add_1 at 1( 0) + 0 on 149;
-  architecture archi of add_1 at 10( 149) + 0 on 150;
-file . "tb.vhdl" "1d93ff1f8c5c49f5a4fa1f162a8b8f74df43cc10" "20221012074055.105":
-  entity tb at 1( 0) + 0 on 21;
-  architecture archi of tb at 6( 65) + 0 on 22;
-file . "Add_16.vhdl" "40deba9ae9c7c01e6c6aea4dfd14ed1379d33e26" "20221012084043.739":
-  entity add_16 at 1( 0) + 0 on 23;
-  architecture archi of add_16 at 11( 208) + 0 on 24;
-file . "ALU.vhdl" "71028d18711324be22d30b47abf324b037c628eb" "20221019153659.003":
-  entity alu at 1( 0) + 0 on 125;
-  architecture archi of alu at 19( 430) + 0 on 126;
-file . "Alu_tb.vhdl" "8f4c444da376e67f002b666ae3b0e4876791f94f" "20221013165812.425":
-  entity alu_tb at 1( 0) + 0 on 61;
-  architecture archi of alu_tb at 8( 100) + 0 on 62;
-file . "Shifter.vhdl" "b10723dfbd47cfd1d073ad21b0cb7b0d29212204" "20221020171602.019":
-  entity shifter at 1( 0) + 0 on 137;
-  architecture archi of shifter at 23( 488) + 0 on 138;
-file . "Shifter_tb.vhdl" "8b4926bf371390af80241bf6b5567ff779e0e300" "20221014155120.027":
-  entity shifter_tb at 1( 0) + 0 on 115;
-  architecture archi of shifter_tb at 8( 108) + 0 on 116;
-file . "exec_vide_tb.vhdl" "a5af8dbb73b4f497dab53e9f2b38332c214732c3" "20221021165532.424":
-  entity exec_vide_tb at 1( 0) + 0 on 145;
-  architecture archi of exec_vide_tb at 8( 112) + 0 on 146;
+file . "Alu.vhdl" "87046b706af1ef2c16b819e4f6f7e03b5c93c639" "20221207083216.843":
+  entity alu at 1( 0) + 0 on 11;
+  architecture archi of alu at 19( 430) + 0 on 12;
+file . "reg_vide.vhdl" "c40229741964a0c12648e38b7a619b5ad3e0a117" "20221207123726.303":
+  entity reg at 1( 0) + 0 on 39;
+  architecture behavior of reg at 69( 1627) + 0 on 40;

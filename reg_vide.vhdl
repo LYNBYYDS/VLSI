@@ -95,32 +95,33 @@ architecture Behavior OF Reg is
 	signal data_PC_plus4 : Std_Logic_Vector(31 downto 0);
 	signal data_PC_plus4_cry : Std_Logic;
 
--- invalitation des registres r0-r15
-	signal inv_r0 : Std_Logic;
-	signal inv_r1 : Std_Logic;
-	signal inv_r2 : Std_Logic;
-	signal inv_r3 : Std_Logic;
-	signal inv_r4 : Std_Logic;
-	signal inv_r5 : Std_Logic;
-	signal inv_r6 : Std_Logic;
-	signal inv_r7 : Std_Logic;
-	signal inv_r8 : Std_Logic;
-	signal inv_r9 : Std_Logic;
-	signal inv_r10 : Std_Logic;
-	signal inv_r11 : Std_Logic;
-	signal inv_r12 : Std_Logic;
-	signal inv_SP : Std_Logic;
-	signal inv_LR : Std_Logic;
+-- valitation des registres r0-r15
+	signal v_r0 : Std_Logic;
+	signal v_r1 : Std_Logic;
+	signal v_r2 : Std_Logic;
+	signal v_r3 : Std_Logic;
+	signal v_r4 : Std_Logic;
+	signal v_r5 : Std_Logic;
+	signal v_r6 : Std_Logic;
+	signal v_r7 : Std_Logic;
+	signal v_r8 : Std_Logic;
+	signal v_r9 : Std_Logic;
+	signal v_r10 : Std_Logic;
+	signal v_r11 : Std_Logic;
+	signal v_r12 : Std_Logic;
+	signal v_SP : Std_Logic;
+	signal v_LR : Std_Logic;
+	signal v_PC : Std_logic;
 
 -- valeurs stockees dans les registres du CDPR
-	signal flag_cry : Std_Logic;
-	signal flag_zero : Std_Logic;
-	signal flag_neg : Std_Logic;
-	signal flag_ovr : Std_Logic;
+	signal data_cry : Std_Logic;
+	signal data_zero : Std_Logic;
+	signal data_neg : Std_Logic;
+	signal data_ovr : Std_Logic;
 
--- invlitation du CDPR
-	signal inv_czn : Std_Logic;
-	signal inv_ovr : Std_Logic;
+-- vlaitation du CDPR
+	signal v_czn : Std_Logic;
+	signal v_ovr : Std_Logic;
 
 begin
 	
@@ -131,448 +132,291 @@ begin
 				C		 => data_PC_plus4_cry,
 				S		 => data_PC_plus4);
 	-- R0
-		process(ck, reset_n)
+		process(ck)
 		begin
-			if reset_n = '0' then
-				inv_r0 <= '0'; -- all the register become valide after reset
-				inv_r1 <= '0';
-				inv_r2 <= '0';
-				inv_r3 <= '0';
-				inv_r4 <= '0';
-				inv_r5 <= '0';
-				inv_r6 <= '0';
-				inv_r7 <= '0';
-				inv_r8 <= '0';
-				inv_r9 <= '0';
-				inv_r10 <= '0';
-				inv_r11 <= '0';
-				inv_r12 <= '0';
-				inv_SP <= '0';
-				inv_LR <= '0';
-				inv_czn <= '0';
-				inv_ovr <= '0';
+			if rising_edge(ck) then
+				if reset_n = '0' then
+					v_r0 <= '1'; -- all the register become valide after reset
+					v_r1 <= '1';
+					v_r2 <= '1';
+					v_r3 <= '1';
+					v_r4 <= '1';
+					v_r5 <= '1';
+					v_r6 <= '1';
+					v_r7 <= '1';
+					v_r8 <= '1';
+					v_r9 <= '1';
+					v_r10 <= '1';
+					v_r11 <= '1';
+					v_r12 <= '1';
+					v_SP <= '1';
+					v_LR <= '1';
+					v_PC <= '1';
+					v_czn <= '1';
+					v_ovr <= '1';
 
-			elsif rising_edge(ck) then
+				else
 
-				-- write 1
-					if wen1 = '1' then 
-						case wadr1 is 
-							when x"0" =>	-- the number of the registre
-							if inv_r0 = '1' then
-								inv_r0 = '0' -- when u write it become valide
-								data_r0 <= wdata1; -- write the data into the registre
-							end if;
-							when x"1" =>	
-							if inv_r1 = '1' then
-								inv_r1 = '0'
+					-- write 
+						if wen1 = '1' then 
+							if wadr1 = x"0" and v_r0 = '0' then 			-- adresse of write1 wadr1 write when is invalide
+								v_r0 <= '1'; 								-- when u write it become valide
+								data_r0 <= wdata1; 							-- write the data into the registre
+							elsif wadr1 = x"1" and v_r1 = '0' then
+								v_r1 <= '1';
 								data_r1 <= wdata1;
-							end if;
-							when x"2" =>	
-							if inv_r2 = '1' then
-								inv_r2 = '0'
+							elsif wadr1 = x"2" and v_r2 = '0' then
+								v_r2 <= '1';
 								data_r2 <= wdata1;
-							end if;
-							when x"3" =>	
-							if inv_r3 = '1' then
-								inv_r3 = '0'
+							elsif wadr1 = x"3" and v_r3 = '0' then
+								v_r3 <= '1';
 								data_r3 <= wdata1;
-							end if;
-							when x"4" =>	
-							if inv_r4 = '1' then
-								inv_r4 = '0'
+							elsif wadr1 = x"4" and v_r4 = '0' then
+								v_r4 <= '1';
 								data_r4 <= wdata1;
-							end if;
-							when x"5" =>	
-							if inv_r5 = '1' then
-								inv_r5 = '0'
+							elsif wadr1 = x"5" and v_r5 = '0' then
+								v_r5 <= '1';
 								data_r5 <= wdata1;
-							end if;
-							when x"6" =>	
-							if inv_r6 = '1' then
-								inv_r6 = '0'
+							elsif wadr1 = x"6" and v_r6 = '0' then
+								v_r6 <= '1';
 								data_r6 <= wdata1;
-							end if;
-							when x"7" =>	
-							if inv_r7 = '1' then
-								inv_r7 = '0'
+							elsif wadr1 = x"7" and v_r7 = '0' then
+								v_r7 <= '1';
 								data_r7 <= wdata1;
-							end if;
-							when x"8" =>	
-							if inv_r8 = '1' then
-								inv_r8 = '0'
+							elsif wadr1 = x"8" and v_r8 = '0' then
+								v_r8 <= '1';
 								data_r8 <= wdata1;
-							end if;
-							when x"9" =>	
-							if inv_r9 = '1' then
-								inv_r9 = '0'
+							elsif wadr1 = x"9" and v_r9 = '0' then
+								v_r9 <= '1';
 								data_r9 <= wdata1;
-							end if;
-							when x"A" =>	
-							if inv_r10 = '1' then
-								inv_r10 = '0'
+							elsif wadr1 = x"A" and v_r10 = '0' then
+								v_r10 <= '1';
 								data_r10 <= wdata1;
-							end if;
-							when x"B" =>	
-							if inv_r11 = '1' then
-								inv_r11 = '0'
+							elsif wadr1 = x"B" and v_r11 = '0' then
+								v_r11 <= '1';
 								data_r11 <= wdata1;
-							end if;
-							when x"C" =>	
-							if inv_r12 = '1' then
-								inv_r12 = '0'
+							elsif wadr1 = x"C" and v_r12 = '0' then
+								v_r12 <= '1';
 								data_r12 <= wdata1;
-							end if;
-							when x"D" =>	
-							if inv_SP = '1' then
-								inv_SP = '0'
+							elsif wadr1 = x"D" and v_SP = '0' then
+								v_SP <= '1';
 								data_SP <= wdata1;
-							end if;
-							when x"E" =>	
-							if inv_LR = '1' then
-								inv_LR = '0'
+							elsif wadr1 = x"E" and v_LR = '0' then
+								v_LR <= '1';
 								data_LR <= wdata1;
-							end if;
-							when x"F" =>	
-							if inc_pc = '0' then
+							elsif wadr1 = x"F" and v_PC = '0' then
+								v_PC <= '1';
 								data_PC <= wdata1;
 							end if;
-							
-						end case;
-					end if;
-
-				-- write 2
-					if wen2 = '1' then 
-						case wadr2 is 
-							when x"0" =>	-- the number of the registre
-							if inv_r0 = '1' then
-								inv_r0 = '0' -- when u write it become valide
-								data_r0 <= wdata2; -- write the data into the registre
+						elsif wen2 = '1' and not(wen1='1' and wadr1 = wadr2) then
+							if wadr2 = x"0" and v_r0 = '0'then 			-- adresse of write1 wadr1 write when is invalide
+								v_r0 <= '1'; 								-- when u write it become valide
+								data_r0 <= wdata1; 							-- write the data into the registre
+							elsif wadr2 = x"1" and v_r1 = '0' then
+								v_r1 <= '1';
+								data_r1 <= wdata1;
+							elsif wadr2 = x"2" and v_r2 = '0' then
+								v_r2 <= '1';
+								data_r2 <= wdata1;
+							elsif wadr2 = x"3" and v_r3 = '0' then
+								v_r3 <= '1';
+								data_r3 <= wdata1;
+							elsif wadr2 = x"4" and v_r4 = '0' then
+								v_r4 <= '1';
+								data_r4 <= wdata1;
+							elsif wadr2 = x"5" and v_r5 = '0' then
+								v_r5 <= '1';
+								data_r5 <= wdata1;
+							elsif wadr2 = x"6" and v_r6 = '0' then
+								v_r6 <= '1';
+								data_r6 <= wdata1;
+							elsif wadr2 = x"7" and v_r7 = '0' then
+								v_r7 <= '1';
+								data_r7 <= wdata1;
+							elsif wadr2 = x"8" and v_r8 = '0' then
+								v_r8 <= '1';
+								data_r8 <= wdata1;
+							elsif wadr2 = x"9" and v_r9 = '0' then
+								v_r9 <= '1';
+								data_r9 <= wdata1;
+							elsif wadr2 = x"A" and v_r10 = '0' then
+								v_r10 <= '1';
+								data_r10 <= wdata1;
+							elsif wadr2 = x"B" and v_r11 = '0' then
+								v_r11 <= '1';
+								data_r11 <= wdata1;
+							elsif wadr2 = x"C" and v_r12 = '0' then
+								v_r12 <= '1';
+								data_r12 <= wdata1;
+							elsif wadr2 = x"D" and v_SP = '0' then
+								v_SP <= '1';
+								data_SP <= wdata1;
+							elsif wadr2 = x"E" and v_LR = '0' then
+								v_LR <= '1';
+								data_LR <= wdata1;
+							elsif wadr2 = x"F" and v_PC = '0' then
+								v_PC <= '1';
+								data_PC <= wdata1;
 							end if;
-							when x"1" =>	
-							if inv_r1 = '1' then
-								inv_r1 = '0'
-								data_r1 <= wdata2;
-							end if;
-							when x"2" =>	
-							if inv_r2 = '1' then
-								inv_r2 = '0'
-								data_r2 <= wdata2;
-							end if;
-							when x"3" =>	
-							if inv_r3 = '1' then
-								inv_r3 = '0'
-								data_r3 <= wdata2;
-							end if;
-							when x"4" =>	
-							if inv_r4 = '1' then
-								inv_r4 = '0'
-								data_r4 <= wdata2;
-							end if;
-							when x"5" =>	
-							if inv_r5 = '1' then
-								inv_r5 = '0'
-								data_r5 <= wdata2;
-							end if;
-							when x"6" =>	
-							if inv_r6 = '1' then
-								inv_r6 = '0'
-								data_r6 <= wdata2;
-							end if;
-							when x"7" =>	
-							if inv_r7 = '1' then
-								inv_r7 = '0'
-								data_r7 <= wdata2;
-							end if;
-							when x"8" =>	
-							if inv_r8 = '1' then
-								inv_r8 = '0'
-								data_r8 <= wdata2;
-							end if;
-							when x"9" =>	
-							if inv_r9 = '1' then
-								inv_r9 = '0'
-								data_r9 <= wdata2;
-							end if;
-							when x"A" =>	
-							if inv_r10 = '1' then
-								inv_r10 = '0'
-								data_r10 <= wdata2;
-							end if;
-							when x"B" =>	
-							if inv_r11 = '1' then
-								inv_r11 = '0'
-								data_r11 <= wdata2;
-							end if;
-							when x"C" =>	
-							if inv_r12 = '1' then
-								inv_r12 = '0'
-								data_r12 <= wdata2;
-							end if;
-							when x"D" =>	
-							if inv_SP = '1' then
-								inv_SP = '0'
-								data_SP <= wdata2;
-							end if;
-							when x"E" =>	
-							if inv_LR = '1' then
-								inv_LR = '0'
-								data_LR <= wdata2;
-							end if;
-							when x"F" =>	
-							if inc_pc = '0' then
-								data_PC <= wdata2;
-							end if;
-						end case;
-					end if;
-
-				-- read 1
-					case radr1 is 
-						when x"0" =>
-							reg_rd1 <= data_r0;
-							reg_v1 <= not inv_r0;
-						when x"1" =>
-							reg_rd1 <= data_r1;
-							reg_v1 <= not inv_r1;
-						when x"2" =>
-							reg_rd1 <= data_r2;
-							reg_v1 <= not inv_r2;
-						when x"3" =>
-							reg_rd1 <= data_r3;
-							reg_v1 <= not inv_r3;
-						when x"4" =>
-							reg_rd1 <= data_r4;
-							reg_v1 <= not inv_r4;
-						when x"5" =>
-							reg_rd1 <= data_r5;
-							reg_v1 <= not inv_r5;
-						when x"6" =>
-							reg_rd1 <= data_r6;
-							reg_v1 <= not inv_r6;
-						when x"7" =>
-							reg_rd1 <= data_r7;
-							reg_v1 <= not inv_r7;
-						when x"8" =>
-							reg_rd1 <= data_r8;
-							reg_v1 <= not inv_r8;
-						when x"9" =>
-							reg_rd1 <= data_r9;
-							reg_v1 <= not inv_r9;
-						when x"A" =>
-							reg_rd1 <= data_r10;
-							reg_v1 <= not inv_r10;
-						when x"B" =>
-							reg_rd1 <= data_r11;
-							reg_v1 <= not inv_r11;
-						when x"C" =>
-							reg_rd1 <= data_r12;
-							reg_v1 <= not inv_r12;
-						when x"D" =>
-							reg_rd1 <= data_SP;
-							reg_v1 <= not inv_SP;
-						when x"E" =>
-							reg_rd1 <= data_LR;
-							reg_v1 <= not inv_LR;
-						when x"F" =>
-							NULL;
-					end case;
-
-				-- read 2
-					case radr2 is 
-						when x"0" =>
-							reg_rd2 <= data_r0;
-							reg_v2 <= not inv_r0;
-						when x"1" =>
-							reg_rd2 <= data_r1;
-							reg_v2 <= not inv_r1;
-						when x"2" =>
-							reg_rd2 <= data_r2;
-							reg_v2 <= not inv_r2;
-						when x"3" =>
-							reg_rd2 <= data_r3;
-							reg_v2 <= not inv_r3;
-						when x"4" =>
-							reg_rd2 <= data_r4;
-							reg_v2 <= not inv_r4;
-						when x"5" =>
-							reg_rd2 <= data_r5;
-							reg_v2 <= not inv_r5;
-						when x"6" =>
-							reg_rd2 <= data_r6;
-							reg_v2 <= not inv_r6;
-						when x"7" =>
-							reg_rd2 <= data_r7;
-							reg_v2 <= not inv_r7;
-						when x"8" =>
-							reg_rd2 <= data_r8;
-							reg_v2 <= not inv_r8;
-						when x"9" =>
-							reg_rd2 <= data_r9;
-							reg_v2 <= not inv_r9;
-						when x"A" =>
-							reg_rd2 <= data_r10;
-							reg_v2 <= not inv_r10;
-						when x"B" =>
-							reg_rd2 <= data_r11;
-							reg_v2 <= not inv_r11;
-						when x"C" =>
-							reg_rd2 <= data_r12;
-							reg_v2 <= not inv_r12;
-						when x"D" =>
-							reg_rd2 <= data_SP;
-							reg_v2 <= not inv_SP;
-						when x"E" =>
-							reg_rd2 <= data_LR;
-							reg_v2 <= not inv_LR;
-						when x"F" =>
-							NULL;
-					end case;
-				
-				-- read 3
-					case radr3 is 
-						when x"0" =>
-							reg_rd3 <= data_r0;
-							reg_v3 <= not inv_r0;
-						when x"1" =>
-							reg_rd3 <= data_r1;
-							reg_v3 <= not inv_r1;
-						when x"2" =>
-							reg_rd3 <= data_r2;
-							reg_v3 <= not inv_r2;
-						when x"3" =>
-							reg_rd3 <= data_r3;
-							reg_v3 <= not inv_r3;
-						when x"4" =>
-							reg_rd3 <= data_r4;
-							reg_v3 <= not inv_r4;
-						when x"5" =>
-							reg_rd3 <= data_r5;
-							reg_v3 <= not inv_r5;
-						when x"6" =>
-							reg_rd3 <= data_r6;
-							reg_v3 <= not inv_r6;
-						when x"7" =>
-							reg_rd3 <= data_r7;
-							reg_v3 <= not inv_r7;
-						when x"8" =>
-							reg_rd3 <= data_r8;
-							reg_v3 <= not inv_r8;
-						when x"9" =>
-							reg_rd3 <= data_r9;
-							reg_v3 <= not inv_r9;
-						when x"A" =>
-							reg_rd3 <= data_r10;
-							reg_v3 <= not inv_r10;
-						when x"B" =>
-							reg_rd3 <= data_r11;
-							reg_v3 <= not inv_r11;
-						when x"C" =>
-							reg_rd3 <= data_r12;
-							reg_v3 <= not inv_r12;
-						when x"D" =>
-							reg_rd3 <= data_SP;
-							reg_v3 <= not inv_SP;
-						when x"E" =>
-							reg_rd3 <= data_LR;
-							reg_v3 <= not inv_LR;
-						when x"F" =>
-							NULL;
-					end case;
-
-				-- changer les status invalitations
-					-- write1
-						if (inval1 = '1') then
-							case inval_adr1 is
-								when x"0" => 
-									inv_r0 <= '1';
-								when x"1" => 
-									inv_r1 <= '1';
-								when x"2" => 
-									inv_r2 <= '1';
-								when x"3" => 
-									inv_r3 <= '1';
-								when x"4" => 
-									inv_r4 <= '1';
-								when x"5" => 
-									inv_r5 <= '1';
-								when x"6" => 
-									inv_r6 <= '1';
-								when x"7" => 
-									inv_r7 <= '1';
-								when x"8" => 
-									inv_r8 <= '1';
-								when x"9" => 
-									inv_r9 <= '1';
-								when x"A" => 
-									inv_r10 <= '1';
-								when x"B" => 
-									inv_r11 <= '1';
-								when x"C" => 
-									inv_r12 <= '1';
-								when x"D" => 
-									inv_SP <= '1';
-								when x"E" => 
-									inv_LR <= '1';
-								when x"F" => 
-									NULL;
-									-- inv_PC <= '1';
-							end case;
 						end if;
+
 					
-					-- write2
-						if (inval2 = '1') then
-							case inval_adr2 is
-								when x"0" => 
-									inv_r0 <= '1';
-								when x"1" => 
-									inv_r1 <= '1';
-								when x"2" => 
-									inv_r2 <= '1';
-								when x"3" => 
-									inv_r3 <= '1';
-								when x"4" => 
-									inv_r4 <= '1';
-								when x"5" => 
-									inv_r5 <= '1';
-								when x"6" => 
-									inv_r6 <= '1';
-								when x"7" => 
-									inv_r7 <= '1';
-								when x"8" => 
-									inv_r8 <= '1';
-								when x"9" => 
-									inv_r9 <= '1';
-								when x"A" => 
-									inv_r10 <= '1';
-								when x"B" => 
-									inv_r11 <= '1';
-								when x"C" => 
-									inv_r12 <= '1';
-								when x"D" => 
-									inv_SP <= '1';
-								when x"E" => 
-									inv_LR <= '1';
-								when x"F" => 
-									NULL;
-									-- inv_PC <= '1';
-							end case;
-						end if;
 					
-						-- czn
+					-- CDPR
 						if (inval_czn = '1') then
-							inv_czn <= '1';
+							v_czn <= '0';
 						end if;
-					
+						if (v_czn = '0') then
+							if (cspr_wb = '1') then
+								v_czn <= '1';
+								data_cry <= wcry;
+								data_zero <= wzero;
+								data_neg <= wneg;
+							end if;
+						end if;
+				
 					-- overflow
 						if (inval_ovr = '1') then
-							inv_ovr <= '1';
+							v_ovr <= '0';
+						end if;
+						if (v_ovr = '0'and cspr_wb = '1') then
+							v_ovr <= '1';
+							data_ovr <= wovr;
 						end if;
 
 					-- PC registre
-						if (inc_pc = 0) then
-							data_PC <= data_PC + 4;
+						if (v_PC = '1' and inc_pc = '1') then
+							data_PC <= data_PC_plus4;
+						end if ;
 
+
+
+
+
+
+				end if;
 			end if;
-		
 		end process;
+
+	-- read
+	reg_rd1 <= 	data_r1 when radr1 = x"1" else
+				data_r2 when radr1 = x"2" else
+				data_r3 when radr1 = x"3" else
+				data_r4 when radr1 = x"4" else
+				data_r5 when radr1 = x"5" else
+				data_r6 when radr1 = x"6" else
+				data_r7 when radr1 = x"7" else
+				data_r8 when radr1 = x"8" else
+				data_r9 when radr1 = x"9" else
+				data_r10 when radr1 = x"A" else
+				data_r11 when radr1 = x"B" else
+				data_r12 when radr1 = x"C" else
+				data_SP when radr1 = x"D" else
+				data_LR when radr1 = x"E" else
+				data_PC when radr1 = x"F" else
+				data_r0;
+
+	reg_rd2 <= data_r1 when radr2 = x"1" else
+			data_r2 when radr2 = x"2" else
+			data_r3 when radr2 = x"3" else
+			data_r4 when radr2 = x"4" else
+			data_r5 when radr2 = x"5" else
+			data_r6 when radr2 = x"6" else
+			data_r7 when radr2 = x"7" else
+			data_r8 when radr2 = x"8" else
+			data_r9 when radr2 = x"9" else
+			data_r10 when radr2 = x"A" else
+			data_r11 when radr2 = x"B" else
+			data_r12 when radr2 = x"C" else
+			data_SP when radr2 = x"D" else
+			data_LR when radr2 = x"E" else
+			data_PC when radr2 = x"F" else
+			data_r0;
+
+	reg_rd3 <= data_r1 when radr3 = x"1" else
+			data_r2 when radr3 = x"2" else
+			data_r3 when radr3 = x"3" else
+			data_r4 when radr3 = x"4" else
+			data_r5 when radr3 = x"5" else
+			data_r6 when radr3 = x"6" else
+			data_r7 when radr3 = x"7" else
+			data_r8 when radr3 = x"8" else
+			data_r9 when radr3 = x"9" else
+			data_r10 when radr3 = x"A" else
+			data_r11 when radr3 = x"B" else
+			data_r12 when radr3 = x"C" else
+			data_SP when radr3 = x"D" else
+			data_LR when radr3 = x"E" else
+			data_PC when radr3 = x"F" else
+			data_r0;
+
+	reg_v1 	<= v_r1 when radr1 = x"1" else
+			v_r2 when radr1 = x"2" else
+			v_r3 when radr1 = x"3" else
+			v_r4 when radr1 = x"4" else
+			v_r5 when radr1 = x"5" else
+			v_r6 when radr1 = x"6" else
+			v_r7 when radr1 = x"7" else
+			v_r8 when radr1 = x"8" else
+			v_r9 when radr1 = x"9" else
+			v_r10 when radr1 = x"A" else
+			v_r11 when radr1 = x"B" else
+			v_r12 when radr1 = x"C" else
+			v_SP when radr1 = x"D" else
+			v_LR when radr1 = x"E" else
+			v_PC when radr1 = x"F" else
+			v_r0;
+
+	reg_v2 	<= v_r1 when radr2 = x"1" else
+			v_r2 when radr2 = x"2" else
+			v_r3 when radr2 = x"3" else
+			v_r4 when radr2 = x"4" else
+			v_r5 when radr2 = x"5" else
+			v_r6 when radr2 = x"6" else
+			v_r7 when radr2 = x"7" else
+			v_r8 when radr2 = x"8" else
+			v_r9 when radr2 = x"9" else
+			v_r10 when radr2 = x"A" else
+			v_r11 when radr2 = x"B" else
+			v_r12 when radr2 = x"C" else
+			v_SP when radr2 = x"D" else
+			v_LR when radr2 = x"E" else
+			v_PC when radr2 = x"F" else
+			v_r0;
+
+	reg_v3 	<= v_r1 when radr3 = x"1" else
+			v_r2 when radr3 = x"2" else
+			v_r3 when radr3 = x"3" else
+			v_r4 when radr3 = x"4" else
+			v_r5 when radr3 = x"5" else
+			v_r6 when radr3 = x"6" else
+			v_r7 when radr3 = x"7" else
+			v_r8 when radr3 = x"8" else
+			v_r9 when radr3 = x"9" else
+			v_r10 when radr3 = x"A" else
+			v_r11 when radr3 = x"B" else
+			v_r12 when radr3 = x"C" else
+			v_SP when radr3 = x"D" else
+			v_LR when radr3 = x"E" else
+			v_PC when radr3 = x"F" else
+			v_r0;
+
+
+	
+
+	-- port sortie
+		-- flags
+			reg_cry		<= data_cry;
+			reg_zero	<= data_zero;
+			reg_neg		<= data_neg;
+			reg_cznv	<= v_czn;
+			reg_ovr		<= data_ovr;
+			reg_vv		<= v_ovr;
+		-- registre pc	
+			reg_pc 		<= data_PC;
+			reg_pcv		<= v_PC;
+
+
+
 
 end Behavior;
