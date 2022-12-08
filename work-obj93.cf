@@ -1,10 +1,34 @@
 v 4
-file . "reg_vide.vhdl" "84e1966287bb6a635c6446672502d29b0e024198" "20221207185121.193":
-  entity reg at 1( 0) + 0 on 51;
-  architecture behavior of reg at 69( 1627) + 0 on 52;
+file . "reg_tb.vhdl" "7b075309795758bbdcb0f33ccc83d2b1c6f49294" "20221208185716.918":
+  entity reg_tb at 1( 0) + 0 on 85;
+  architecture archi of reg_tb at 8( 100) + 0 on 86;
+file . "Add_32.vhdl" "3e0ed63af99403c2f321f2ae7a5b0bcac31f387b" "20221208180223.376":
+  entity add_32 at 1( 0) + 0 on 69;
+  architecture archi of add_32 at 11( 208) + 0 on 70;
+file . "Add_4.vhdl" "7e8992565b569f49b7088ed478ba29c70b420555" "20221208180222.887":
+  entity add_4 at 1( 0) + 0 on 65;
+  architecture archi of add_4 at 11( 203) + 0 on 66;
+file . "Alu_tb.vhdl" "48db02a5f2ee5e4fb2356de219eb3e5d3919f078" "20221208182707.061":
+  entity alu_tb at 1( 0) + 0 on 79;
+  architecture archi of alu_tb at 8( 100) + 0 on 80;
+file . "exec_vide.vhdl" "567c93f44a23c67beaaa35eff5f00e47457d6829" "20221208170245.517":
+  entity exec at 1( 0) + 0 on 57;
+  architecture behavior of exec at 80( 2274) + 0 on 58;
+file . "Alu.vhdl" "87046b706af1ef2c16b819e4f6f7e03b5c93c639" "20221208175005.658":
+  entity alu at 1( 0) + 0 on 59;
+  architecture archi of alu at 19( 430) + 0 on 60;
 file . "reg_rw.vhdl" "fff74947ff78c1b2b62d4cf7a6d30c6c3037b5a2" "20221207182015.049":
   entity reg_rw at 1( 0) + 0 on 47;
   architecture behavior of reg_rw at 25( 577) + 0 on 48;
-file . "Alu.vhdl" "87046b706af1ef2c16b819e4f6f7e03b5c93c639" "20221207183106.516":
-  entity alu at 1( 0) + 0 on 49;
-  architecture archi of alu at 19( 430) + 0 on 50;
+file . "reg_vide.vhdl" "1c8f1b88659dcba952676795b0aab15beba4f462" "20221208185136.417":
+  entity reg at 1( 0) + 0 on 83;
+  architecture behavior of reg at 69( 1627) + 0 on 84;
+file . "Add_1.vhdl" "d8f4e4a41e4ae22fdf2168481451360371cec4b4" "20221208180222.616":
+  entity add_1 at 1( 0) + 0 on 63;
+  architecture archi of add_1 at 10( 148) + 0 on 64;
+file . "Add_16.vhdl" "56c003b88770e2eac91d6d7ac58dce82ce84a27f" "20221208180223.100":
+  entity add_16 at 1( 0) + 0 on 67;
+  architecture archi of add_16 at 11( 207) + 0 on 68;
+file . "Add_tb.vhdl" "bd13fd5bcf84990265770cc0ecb4975e7d21124c" "20221208182300.973":
+  entity add_tb at 1( 0) + 0 on 75;
+  architecture archi of add_tb at 6( 73) + 0 on 76;

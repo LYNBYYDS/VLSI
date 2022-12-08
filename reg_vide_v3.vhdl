@@ -67,7 +67,13 @@ entity Reg is
 end Reg;
 
 architecture Behavior OF Reg is
-
+-- component entity
+	component Add_32
+		port ( 	A, B : in std_logic_vector(31 downto 0);
+				Cin : in std_logic;
+				C : out std_logic;
+				S : out std_logic_vector(31 downto 0));
+	end component;
 
 -- valeurs stockees dans les registres r0-r15
 	signal data_r0 : Std_Logic_Vector(31 downto 0);
@@ -86,6 +92,8 @@ architecture Behavior OF Reg is
 	signal data_SP : Std_Logic_Vector(31 downto 0);
 	signal data_LR : Std_Logic_Vector(31 downto 0);
 	signal data_PC : Std_Logic_Vector(31 downto 0);
+	signal data_PC_plus4 : Std_Logic_Vector(31 downto 0);
+	signal data_PC_plus4_cry : Std_Logic;
 
 -- valitation des registres r0-r15
 	signal v_r0 : Std_Logic;
@@ -117,6 +125,12 @@ architecture Behavior OF Reg is
 
 begin
 	
+	Add32_pc : Add_32
+	port map (	A		 => data_PC,
+				B		 => x"00000004",
+				Cin		 => '0',
+				C		 => data_PC_plus4_cry,
+				S		 => data_PC_plus4);
 	-- R0
 		process(ck)
 		begin
@@ -268,7 +282,7 @@ begin
 
 					-- PC registre
 						if (v_PC = '1' and inc_pc = '1') then
-							data_PC <= x"00000000";
+							data_PC <= data_PC_plus4;
 						end if ;
 						
 				end if;

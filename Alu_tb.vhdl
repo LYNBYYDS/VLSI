@@ -17,7 +17,7 @@ architecture archi of ALU_tb is
 begin
 	test : entity work.Alu
 		port map(op1, op2, cin, cmd, res, cout, z, n, v, vdd, vss);
-	op1 <= x"01020301" after 20 ns;
-	op2 <= x"00000001" after 20 ns;
+	op1 <= x"81020301" after 15 ns, x"5C5C5C5C" after 30 ns;
+	op2 <= x"80000001" after 15 ns, x"5C5C5C5C" after 30 ns, x"C5C5C5C5" after 35 ns, x"5C5C5C5C" after 45 ns, x"FFFFFFFF" after 55 ns;
 	cmd <= "00" after 20 ns,"01" after 30 ns,"10" after 40 ns,"11" after 50 ns,"00" after 60 ns;
 end archi;

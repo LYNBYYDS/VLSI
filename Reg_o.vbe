@@ -1,0 +1,234 @@
+-- VHDL data flow description generated from `Reg_o`
+--		date : Thu Dec  8 16:06:53 2022
+
+
+-- Entity Declaration
+
+ENTITY reg_o IS
+  PORT (
+  ck : in BIT;	-- ck
+  reset_n : in BIT;	-- reset_n
+  vdd : in BIT;	-- vdd
+  vss : in BIT;	-- vss
+  wen : in BIT;	-- wen
+  wdata : in bit_vector(31 DOWNTO 0) ;	-- wdata
+  reg_rd : out bit_vector(31 DOWNTO 0) ;	-- reg_rd
+  reg_v : out BIT;	-- reg_v
+  inval : in BIT	-- inval
+  );
+END reg_o;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF reg_o IS
+  SIGNAL data : REG_VECTOR(31 DOWNTO 0) REGISTER;	-- data
+  SIGNAL valitation : REG_BIT REGISTER;	-- valitation
+  SIGNAL aux1 : BIT;		-- aux1
+
+BEGIN
+  aux1 <= NOT((valitation OR NOT(wen)) OR NOT(reset_n));
+  label0 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    valitation <= GUARDED ((NOT(inval) AND valitation) OR NOT(reset_n));
+  END BLOCK label0;
+  label1 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (0) <= GUARDED ((wdata(0) AND aux1) OR (data(0) AND NOT(aux1)));
+  END BLOCK label1;
+  label2 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (1) <= GUARDED ((wdata(1) AND aux1) OR (data(1) AND NOT(aux1)));
+  END BLOCK label2;
+  label3 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (2) <= GUARDED ((wdata(2) AND aux1) OR (data(2) AND NOT(aux1)));
+  END BLOCK label3;
+  label4 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (3) <= GUARDED ((NOT(aux1) OR wdata(3)) AND (data(3) OR aux1));
+  END BLOCK label4;
+  label5 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (4) <= GUARDED ((NOT(aux1) OR wdata(4)) AND (data(4) OR aux1));
+  END BLOCK label5;
+  label6 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (5) <= GUARDED ((wdata(5) AND aux1) OR (data(5) AND NOT(aux1)));
+  END BLOCK label6;
+  label7 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (6) <= GUARDED ((NOT(aux1) OR wdata(6)) AND (data(6) OR aux1));
+  END BLOCK label7;
+  label8 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (7) <= GUARDED ((NOT(aux1) OR wdata(7)) AND (data(7) OR aux1));
+  END BLOCK label8;
+  label9 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (8) <= GUARDED ((NOT(aux1) OR wdata(8)) AND (data(8) OR aux1));
+  END BLOCK label9;
+  label10 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (9) <= GUARDED ((wdata(9) AND aux1) OR (data(9) AND NOT(aux1)));
+  END BLOCK label10;
+  label11 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (10) <= GUARDED ((NOT(aux1) OR wdata(10)) AND (aux1 OR data(10)));
+  END BLOCK label11;
+  label12 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (11) <= GUARDED ((NOT(aux1) OR wdata(11)) AND (data(11) OR aux1));
+  END BLOCK label12;
+  label13 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (12) <= GUARDED ((NOT(aux1) OR wdata(12)) AND (data(12) OR aux1));
+  END BLOCK label13;
+  label14 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (13) <= GUARDED ((NOT(aux1) OR wdata(13)) AND (data(13) OR aux1));
+  END BLOCK label14;
+  label15 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (14) <= GUARDED ((NOT(aux1) OR wdata(14)) AND (aux1 OR data(14)));
+  END BLOCK label15;
+  label16 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (15) <= GUARDED ((wdata(15) AND aux1) OR (data(15) AND NOT(aux1))
+);
+  END BLOCK label16;
+  label17 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (16) <= GUARDED ((NOT(aux1) OR wdata(16)) AND (data(16) OR aux1));
+  END BLOCK label17;
+  label18 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (17) <= GUARDED ((aux1 OR data(17)) AND (NOT(aux1) OR wdata(17)));
+  END BLOCK label18;
+  label19 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (18) <= GUARDED ((NOT(aux1) OR wdata(18)) AND (data(18) OR aux1));
+  END BLOCK label19;
+  label20 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (19) <= GUARDED ((wdata(19) AND aux1) OR (data(19) AND NOT(aux1))
+);
+  END BLOCK label20;
+  label21 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (20) <= GUARDED ((NOT(aux1) OR wdata(20)) AND (aux1 OR data(20)));
+  END BLOCK label21;
+  label22 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (21) <= GUARDED ((NOT(aux1) OR wdata(21)) AND (data(21) OR aux1));
+  END BLOCK label22;
+  label23 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (22) <= GUARDED ((wdata(22) AND aux1) OR (data(22) AND NOT(aux1))
+);
+  END BLOCK label23;
+  label24 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (23) <= GUARDED ((NOT(aux1) OR wdata(23)) AND (data(23) OR aux1));
+  END BLOCK label24;
+  label25 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (24) <= GUARDED ((wdata(24) AND aux1) OR (data(24) AND NOT(aux1))
+);
+  END BLOCK label25;
+  label26 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (25) <= GUARDED ((NOT(aux1) OR wdata(25)) AND (data(25) OR aux1));
+  END BLOCK label26;
+  label27 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (26) <= GUARDED ((NOT(aux1) OR wdata(26)) AND (data(26) OR aux1));
+  END BLOCK label27;
+  label28 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (27) <= GUARDED ((NOT(aux1) OR wdata(27)) AND (aux1 OR data(27)));
+  END BLOCK label28;
+  label29 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (28) <= GUARDED ((NOT(aux1) OR wdata(28)) AND (data(28) OR aux1));
+  END BLOCK label29;
+  label30 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (29) <= GUARDED ((NOT(aux1) OR wdata(29)) AND (aux1 OR data(29)));
+  END BLOCK label30;
+  label31 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (30) <= GUARDED ((NOT(aux1) OR wdata(30)) AND (aux1 OR data(30)));
+  END BLOCK label31;
+  label32 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    data (31) <= GUARDED ((wdata(31) AND aux1) OR (data(31) AND NOT(aux1))
+);
+  END BLOCK label32;
+
+reg_v <= valitation;
+
+reg_rd (0) <= data(0);
+
+reg_rd (1) <= data(1);
+
+reg_rd (2) <= data(2);
+
+reg_rd (3) <= data(3);
+
+reg_rd (4) <= data(4);
+
+reg_rd (5) <= data(5);
+
+reg_rd (6) <= data(6);
+
+reg_rd (7) <= data(7);
+
+reg_rd (8) <= data(8);
+
+reg_rd (9) <= data(9);
+
+reg_rd (10) <= data(10);
+
+reg_rd (11) <= data(11);
+
+reg_rd (12) <= data(12);
+
+reg_rd (13) <= data(13);
+
+reg_rd (14) <= data(14);
+
+reg_rd (15) <= data(15);
+
+reg_rd (16) <= data(16);
+
+reg_rd (17) <= data(17);
+
+reg_rd (18) <= data(18);
+
+reg_rd (19) <= data(19);
+
+reg_rd (20) <= data(20);
+
+reg_rd (21) <= data(21);
+
+reg_rd (22) <= data(22);
+
+reg_rd (23) <= data(23);
+
+reg_rd (24) <= data(24);
+
+reg_rd (25) <= data(25);
+
+reg_rd (26) <= data(26);
+
+reg_rd (27) <= data(27);
+
+reg_rd (28) <= data(28);
+
+reg_rd (29) <= data(29);
+
+reg_rd (30) <= data(30);
+
+reg_rd (31) <= data(31);
+END;

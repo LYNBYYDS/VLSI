@@ -1,0 +1,937 @@
+N:a2_x2_10_sig:-1:324 ps
+N:a2_x2_11_sig:-1:324 ps
+N:a2_x2_12_sig:-1:324 ps
+N:a2_x2_13_sig:-1:324 ps
+N:a2_x2_14_sig:-1:324 ps
+N:a2_x2_15_sig:-1:324 ps
+N:a2_x2_16_sig:-1:324 ps
+N:a2_x2_17_sig:-1:324 ps
+N:a2_x2_18_sig:-1:324 ps
+N:a2_x2_19_sig:-1:324 ps
+N:a2_x2_20_sig:-1:324 ps
+N:a2_x2_21_sig:-1:324 ps
+N:a2_x2_22_sig:-1:324 ps
+N:a2_x2_23_sig:-1:324 ps
+N:a2_x2_24_sig:-1:324 ps
+N:a2_x2_25_sig:-1:324 ps
+N:a2_x2_26_sig:-1:324 ps
+N:a2_x2_27_sig:-1:324 ps
+N:a2_x2_28_sig:-1:324 ps
+N:a2_x2_29_sig:-1:324 ps
+N:a2_x2_2_sig:-1:324 ps
+N:a2_x2_30_sig:-1:324 ps
+N:a2_x2_31_sig:-1:324 ps
+N:a2_x2_32_sig:-1:324 ps
+N:a2_x2_33_sig:-1:753 ps
+N:a2_x2_3_sig:-1:324 ps
+N:a2_x2_4_sig:-1:324 ps
+N:a2_x2_5_sig:-1:324 ps
+N:a2_x2_6_sig:-1:324 ps
+N:a2_x2_7_sig:-1:324 ps
+N:a2_x2_8_sig:-1:324 ps
+N:a2_x2_9_sig:-1:324 ps
+N:a2_x2_sig:-1:324 ps
+N:a3_x2_2_sig:-1:757 ps
+N:a3_x2_3_sig:-1:757 ps
+N:a3_x2_sig:-1:2935 ps
+N:a4_x2_2_sig:-1:1911 ps
+N:a4_x2_3_sig:-1:606 ps
+N:a4_x2_4_sig:-1:1103 ps
+N:a4_x2_5_sig:-1:606 ps
+N:a4_x2_6_sig:-1:1307 ps
+N:a4_x2_sig:-1:1911 ps
+N:add_cout:-1:0 ps
+N:add_sum 0:-1:0 ps
+N:add_sum 1:-1:0 ps
+N:add_sum 2:-1:0 ps
+N:add_sum 3:-1:0 ps
+N:add_sum 4:-1:0 ps
+N:add_sum 5:-1:0 ps
+N:add_sum 6:-1:0 ps
+N:add_sum 7:-1:0 ps
+N:add_sum 8:-1:0 ps
+N:add_sum 9:-1:0 ps
+N:add_sum 10:-1:0 ps
+N:add_sum 11:-1:0 ps
+N:add_sum 12:-1:0 ps
+N:add_sum 13:-1:0 ps
+N:add_sum 14:-1:0 ps
+N:add_sum 15:-1:0 ps
+N:add_sum 16:-1:0 ps
+N:add_sum 17:-1:0 ps
+N:add_sum 18:-1:0 ps
+N:add_sum 19:-1:0 ps
+N:add_sum 20:-1:0 ps
+N:add_sum 21:-1:0 ps
+N:add_sum 22:-1:0 ps
+N:add_sum 23:-1:0 ps
+N:add_sum 24:-1:0 ps
+N:add_sum 25:-1:0 ps
+N:add_sum 26:-1:0 ps
+N:add_sum 27:-1:0 ps
+N:add_sum 28:-1:0 ps
+N:add_sum 29:-1:0 ps
+N:add_sum 30:-1:0 ps
+N:add_sum 31:-1:0 ps
+N:aux3:-1:692 ps
+N:aux4:-1:685 ps
+N:cmd 0:-1:0 ps
+N:cmd 1:-1:0 ps
+N:cout:-1:671 ps
+N:inv_x2_10_sig:-1:232 ps
+N:inv_x2_11_sig:-1:232 ps
+N:inv_x2_12_sig:-1:232 ps
+N:inv_x2_13_sig:-1:232 ps
+N:inv_x2_14_sig:-1:232 ps
+N:inv_x2_15_sig:-1:232 ps
+N:inv_x2_16_sig:-1:232 ps
+N:inv_x2_17_sig:-1:232 ps
+N:inv_x2_18_sig:-1:232 ps
+N:inv_x2_19_sig:-1:232 ps
+N:inv_x2_20_sig:-1:232 ps
+N:inv_x2_21_sig:-1:232 ps
+N:inv_x2_22_sig:-1:232 ps
+N:inv_x2_23_sig:-1:232 ps
+N:inv_x2_24_sig:-1:232 ps
+N:inv_x2_25_sig:-1:232 ps
+N:inv_x2_26_sig:-1:232 ps
+N:inv_x2_27_sig:-1:232 ps
+N:inv_x2_28_sig:-1:232 ps
+N:inv_x2_29_sig:-1:232 ps
+N:inv_x2_2_sig:-1:232 ps
+N:inv_x2_30_sig:-1:232 ps
+N:inv_x2_31_sig:-1:232 ps
+N:inv_x2_32_sig:-1:116 ps
+N:inv_x2_33_sig:-1:116 ps
+N:inv_x2_34_sig:-1:116 ps
+N:inv_x2_35_sig:-1:116 ps
+N:inv_x2_36_sig:-1:116 ps
+N:inv_x2_37_sig:-1:116 ps
+N:inv_x2_38_sig:-1:116 ps
+N:inv_x2_39_sig:-1:116 ps
+N:inv_x2_3_sig:-1:232 ps
+N:inv_x2_40_sig:-1:116 ps
+N:inv_x2_41_sig:-1:116 ps
+N:inv_x2_42_sig:-1:116 ps
+N:inv_x2_43_sig:-1:116 ps
+N:inv_x2_44_sig:-1:116 ps
+N:inv_x2_45_sig:-1:116 ps
+N:inv_x2_46_sig:-1:116 ps
+N:inv_x2_47_sig:-1:116 ps
+N:inv_x2_48_sig:-1:116 ps
+N:inv_x2_49_sig:-1:116 ps
+N:inv_x2_4_sig:-1:232 ps
+N:inv_x2_50_sig:-1:116 ps
+N:inv_x2_51_sig:-1:116 ps
+N:inv_x2_52_sig:-1:116 ps
+N:inv_x2_53_sig:-1:116 ps
+N:inv_x2_54_sig:-1:116 ps
+N:inv_x2_55_sig:-1:1410 ps
+N:inv_x2_56_sig:-1:1410 ps
+N:inv_x2_57_sig:-1:1410 ps
+N:inv_x2_58_sig:-1:232 ps
+N:inv_x2_59_sig:-1:1410 ps
+N:inv_x2_5_sig:-1:232 ps
+N:inv_x2_60_sig:-1:801 ps
+N:inv_x2_61_sig:-1:808 ps
+N:inv_x2_6_sig:-1:232 ps
+N:inv_x2_7_sig:-1:232 ps
+N:inv_x2_8_sig:-1:232 ps
+N:inv_x2_9_sig:-1:232 ps
+N:inv_x2_sig:-1:232 ps
+N:n:-1:685 ps
+N:na2_x1_2_sig:-1:563 ps
+N:na2_x1_sig:-1:901 ps
+N:na3_x1_10_sig:-1:483 ps
+N:na3_x1_11_sig:-1:483 ps
+N:na3_x1_12_sig:-1:483 ps
+N:na3_x1_13_sig:-1:483 ps
+N:na3_x1_14_sig:-1:483 ps
+N:na3_x1_15_sig:-1:483 ps
+N:na3_x1_16_sig:-1:483 ps
+N:na3_x1_17_sig:-1:483 ps
+N:na3_x1_18_sig:-1:483 ps
+N:na3_x1_19_sig:-1:483 ps
+N:na3_x1_20_sig:-1:483 ps
+N:na3_x1_21_sig:-1:483 ps
+N:na3_x1_22_sig:-1:483 ps
+N:na3_x1_23_sig:-1:483 ps
+N:na3_x1_24_sig:-1:483 ps
+N:na3_x1_25_sig:-1:483 ps
+N:na3_x1_26_sig:-1:483 ps
+N:na3_x1_27_sig:-1:483 ps
+N:na3_x1_28_sig:-1:483 ps
+N:na3_x1_29_sig:-1:483 ps
+N:na3_x1_2_sig:-1:483 ps
+N:na3_x1_30_sig:-1:483 ps
+N:na3_x1_31_sig:-1:483 ps
+N:na3_x1_32_sig:-1:2159 ps
+N:na3_x1_33_sig:-1:2159 ps
+N:na3_x1_34_sig:-1:1954 ps
+N:na3_x1_35_sig:-1:853 ps
+N:na3_x1_36_sig:-1:359 ps
+N:na3_x1_37_sig:-1:359 ps
+N:na3_x1_3_sig:-1:483 ps
+N:na3_x1_4_sig:-1:483 ps
+N:na3_x1_5_sig:-1:483 ps
+N:na3_x1_6_sig:-1:483 ps
+N:na3_x1_7_sig:-1:483 ps
+N:na3_x1_8_sig:-1:483 ps
+N:na3_x1_9_sig:-1:483 ps
+N:na3_x1_sig:-1:483 ps
+N:nao22_x1_10_sig:-1:743 ps
+N:nao22_x1_11_sig:-1:743 ps
+N:nao22_x1_12_sig:-1:743 ps
+N:nao22_x1_13_sig:-1:743 ps
+N:nao22_x1_14_sig:-1:743 ps
+N:nao22_x1_15_sig:-1:743 ps
+N:nao22_x1_16_sig:-1:743 ps
+N:nao22_x1_17_sig:-1:743 ps
+N:nao22_x1_18_sig:-1:743 ps
+N:nao22_x1_19_sig:-1:743 ps
+N:nao22_x1_20_sig:-1:743 ps
+N:nao22_x1_21_sig:-1:743 ps
+N:nao22_x1_22_sig:-1:743 ps
+N:nao22_x1_23_sig:-1:743 ps
+N:nao22_x1_24_sig:-1:743 ps
+N:nao22_x1_25_sig:-1:743 ps
+N:nao22_x1_26_sig:-1:743 ps
+N:nao22_x1_27_sig:-1:743 ps
+N:nao22_x1_28_sig:-1:743 ps
+N:nao22_x1_29_sig:-1:743 ps
+N:nao22_x1_2_sig:-1:743 ps
+N:nao22_x1_30_sig:-1:743 ps
+N:nao22_x1_3_sig:-1:743 ps
+N:nao22_x1_4_sig:-1:743 ps
+N:nao22_x1_5_sig:-1:743 ps
+N:nao22_x1_6_sig:-1:743 ps
+N:nao22_x1_7_sig:-1:743 ps
+N:nao22_x1_8_sig:-1:743 ps
+N:nao22_x1_9_sig:-1:743 ps
+N:nao22_x1_sig:-1:743 ps
+N:nao2o22_x1_sig:-1:640 ps
+N:no2_x1_sig:-1:2178 ps
+N:no3_x1_2_sig:-1:299 ps
+N:no3_x1_3_sig:-1:299 ps
+N:no3_x1_4_sig:-1:299 ps
+N:no3_x1_5_sig:-1:299 ps
+N:no3_x1_6_sig:-1:299 ps
+N:no3_x1_7_sig:-1:299 ps
+N:no3_x1_8_sig:-1:299 ps
+N:no3_x1_sig:-1:2488 ps
+N:no4_x1_2_sig:-1:385 ps
+N:no4_x1_3_sig:-1:782 ps
+N:no4_x1_sig:-1:1670 ps
+N:not_add_sum_0:-1:116 ps
+N:not_add_sum_1:-1:116 ps
+N:not_add_sum_2:-1:116 ps
+N:not_add_sum_3:-1:116 ps
+N:not_add_sum_4:-1:116 ps
+N:not_add_sum_5:-1:0 ps
+N:not_add_sum_6:-1:0 ps
+N:not_add_sum_7:-1:116 ps
+N:not_add_sum_8:-1:0 ps
+N:not_add_sum_9:-1:0 ps
+N:not_add_sum_10:-1:0 ps
+N:not_add_sum_11:-1:0 ps
+N:not_add_sum_12:-1:0 ps
+N:not_add_sum_13:-1:0 ps
+N:not_add_sum_14:-1:0 ps
+N:not_add_sum_15:-1:0 ps
+N:not_add_sum_16:-1:0 ps
+N:not_add_sum_17:-1:116 ps
+N:not_add_sum_18:-1:0 ps
+N:not_add_sum_19:-1:0 ps
+N:not_add_sum_20:-1:0 ps
+N:not_add_sum_21:-1:0 ps
+N:not_add_sum_22:-1:0 ps
+N:not_add_sum_23:-1:0 ps
+N:not_add_sum_24:-1:0 ps
+N:not_add_sum_25:-1:0 ps
+N:not_add_sum_26:-1:0 ps
+N:not_add_sum_27:-1:0 ps
+N:not_add_sum_28:-1:0 ps
+N:not_add_sum_29:-1:0 ps
+N:not_add_sum_30:-1:0 ps
+N:not_add_sum_31:-1:116 ps
+N:not_aux0:-1:487 ps
+N:not_aux1:-1:116 ps
+N:not_aux2:-1:116 ps
+N:not_aux5:-1:116 ps
+N:not_cmd_0:-1:144 ps
+N:not_res_signal_10:-1:116 ps
+N:not_res_signal_11:-1:116 ps
+N:not_res_signal_12:-1:116 ps
+N:not_res_signal_13:-1:116 ps
+N:not_res_signal_14:-1:116 ps
+N:not_res_signal_15:-1:116 ps
+N:not_res_signal_16:-1:116 ps
+N:not_res_signal_18:-1:116 ps
+N:not_res_signal_19:-1:116 ps
+N:not_res_signal_20:-1:116 ps
+N:not_res_signal_21:-1:116 ps
+N:not_res_signal_22:-1:116 ps
+N:not_res_signal_23:-1:116 ps
+N:not_res_signal_24:-1:116 ps
+N:not_res_signal_25:-1:116 ps
+N:not_res_signal_26:-1:116 ps
+N:not_res_signal_28:-1:116 ps
+N:not_res_signal_29:-1:116 ps
+N:not_res_signal_30:-1:116 ps
+N:not_res_signal_31:-1:116 ps
+N:not_res_signal_5:-1:116 ps
+N:not_res_signal_6:-1:116 ps
+N:not_res_signal_8:-1:116 ps
+N:not_res_signal_9:-1:116 ps
+N:nxr2_x1_10_sig:-1:345 ps
+N:nxr2_x1_11_sig:-1:345 ps
+N:nxr2_x1_12_sig:-1:345 ps
+N:nxr2_x1_13_sig:-1:345 ps
+N:nxr2_x1_14_sig:-1:345 ps
+N:nxr2_x1_15_sig:-1:345 ps
+N:nxr2_x1_16_sig:-1:345 ps
+N:nxr2_x1_17_sig:-1:345 ps
+N:nxr2_x1_18_sig:-1:345 ps
+N:nxr2_x1_19_sig:-1:345 ps
+N:nxr2_x1_20_sig:-1:345 ps
+N:nxr2_x1_21_sig:-1:345 ps
+N:nxr2_x1_22_sig:-1:345 ps
+N:nxr2_x1_23_sig:-1:345 ps
+N:nxr2_x1_24_sig:-1:345 ps
+N:nxr2_x1_25_sig:-1:345 ps
+N:nxr2_x1_26_sig:-1:345 ps
+N:nxr2_x1_27_sig:-1:345 ps
+N:nxr2_x1_28_sig:-1:345 ps
+N:nxr2_x1_29_sig:-1:345 ps
+N:nxr2_x1_2_sig:-1:345 ps
+N:nxr2_x1_30_sig:-1:345 ps
+N:nxr2_x1_31_sig:-1:345 ps
+N:nxr2_x1_3_sig:-1:345 ps
+N:nxr2_x1_4_sig:-1:345 ps
+N:nxr2_x1_5_sig:-1:345 ps
+N:nxr2_x1_6_sig:-1:345 ps
+N:nxr2_x1_7_sig:-1:345 ps
+N:nxr2_x1_8_sig:-1:345 ps
+N:nxr2_x1_9_sig:-1:345 ps
+N:nxr2_x1_sig:-1:345 ps
+N:o3_x2_sig:-1:1252 ps
+N:on12_x1_sig:-1:302 ps
+N:op1 0:-1:0 ps
+N:op1 1:-1:0 ps
+N:op1 2:-1:0 ps
+N:op1 3:-1:0 ps
+N:op1 4:-1:0 ps
+N:op1 5:-1:0 ps
+N:op1 6:-1:0 ps
+N:op1 7:-1:0 ps
+N:op1 8:-1:0 ps
+N:op1 9:-1:0 ps
+N:op1 10:-1:0 ps
+N:op1 11:-1:0 ps
+N:op1 12:-1:0 ps
+N:op1 13:-1:0 ps
+N:op1 14:-1:0 ps
+N:op1 15:-1:0 ps
+N:op1 16:-1:0 ps
+N:op1 17:-1:0 ps
+N:op1 18:-1:0 ps
+N:op1 19:-1:0 ps
+N:op1 20:-1:0 ps
+N:op1 21:-1:0 ps
+N:op1 22:-1:0 ps
+N:op1 23:-1:0 ps
+N:op1 24:-1:0 ps
+N:op1 25:-1:0 ps
+N:op1 26:-1:0 ps
+N:op1 27:-1:0 ps
+N:op1 28:-1:0 ps
+N:op1 29:-1:0 ps
+N:op1 30:-1:0 ps
+N:op1 31:-1:0 ps
+N:op2 0:-1:0 ps
+N:op2 1:-1:0 ps
+N:op2 2:-1:0 ps
+N:op2 3:-1:0 ps
+N:op2 4:-1:0 ps
+N:op2 5:-1:0 ps
+N:op2 6:-1:0 ps
+N:op2 7:-1:0 ps
+N:op2 8:-1:0 ps
+N:op2 9:-1:0 ps
+N:op2 10:-1:0 ps
+N:op2 11:-1:0 ps
+N:op2 12:-1:0 ps
+N:op2 13:-1:0 ps
+N:op2 14:-1:0 ps
+N:op2 15:-1:0 ps
+N:op2 16:-1:0 ps
+N:op2 17:-1:0 ps
+N:op2 18:-1:0 ps
+N:op2 19:-1:0 ps
+N:op2 20:-1:0 ps
+N:op2 21:-1:0 ps
+N:op2 22:-1:0 ps
+N:op2 23:-1:0 ps
+N:op2 24:-1:0 ps
+N:op2 25:-1:0 ps
+N:op2 26:-1:0 ps
+N:op2 27:-1:0 ps
+N:op2 28:-1:0 ps
+N:op2 29:-1:0 ps
+N:op2 30:-1:0 ps
+N:op2 31:-1:0 ps
+N:res 0:-1:1754 ps
+N:res 1:-1:1754 ps
+N:res 2:-1:1754 ps
+N:res 3:-1:1754 ps
+N:res 4:-1:1754 ps
+N:res 5:-1:811 ps
+N:res 6:-1:811 ps
+N:res 7:-1:1754 ps
+N:res 8:-1:811 ps
+N:res 9:-1:811 ps
+N:res 10:-1:811 ps
+N:res 11:-1:811 ps
+N:res 12:-1:811 ps
+N:res 13:-1:811 ps
+N:res 14:-1:811 ps
+N:res 15:-1:811 ps
+N:res 16:-1:811 ps
+N:res 17:-1:1754 ps
+N:res 18:-1:811 ps
+N:res 19:-1:811 ps
+N:res 20:-1:811 ps
+N:res 21:-1:811 ps
+N:res 22:-1:811 ps
+N:res 23:-1:811 ps
+N:res 24:-1:811 ps
+N:res 25:-1:811 ps
+N:res 26:-1:811 ps
+N:res 27:-1:990 ps
+N:res 28:-1:811 ps
+N:res 29:-1:811 ps
+N:res 30:-1:811 ps
+N:res 31:-1:921 ps
+N:res_signal_0:-1:1294 ps
+N:res_signal_1:-1:1294 ps
+N:res_signal_17:-1:1294 ps
+N:res_signal_2:-1:1294 ps
+N:res_signal_3:-1:1294 ps
+N:res_signal_4:-1:1294 ps
+N:res_signal_7:-1:1294 ps
+N:v:-1:1479 ps
+N:xr2_x1_10_sig:-1:695 ps
+N:xr2_x1_11_sig:-1:695 ps
+N:xr2_x1_12_sig:-1:695 ps
+N:xr2_x1_13_sig:-1:695 ps
+N:xr2_x1_14_sig:-1:695 ps
+N:xr2_x1_15_sig:-1:695 ps
+N:xr2_x1_16_sig:-1:695 ps
+N:xr2_x1_17_sig:-1:695 ps
+N:xr2_x1_18_sig:-1:695 ps
+N:xr2_x1_19_sig:-1:695 ps
+N:xr2_x1_20_sig:-1:695 ps
+N:xr2_x1_21_sig:-1:695 ps
+N:xr2_x1_22_sig:-1:695 ps
+N:xr2_x1_23_sig:-1:695 ps
+N:xr2_x1_24_sig:-1:695 ps
+N:xr2_x1_25_sig:-1:695 ps
+N:xr2_x1_26_sig:-1:695 ps
+N:xr2_x1_27_sig:-1:695 ps
+N:xr2_x1_28_sig:-1:695 ps
+N:xr2_x1_29_sig:-1:695 ps
+N:xr2_x1_2_sig:-1:695 ps
+N:xr2_x1_30_sig:-1:695 ps
+N:xr2_x1_31_sig:-1:695 ps
+N:xr2_x1_32_sig:-1:695 ps
+N:xr2_x1_33_sig:-1:695 ps
+N:xr2_x1_3_sig:-1:695 ps
+N:xr2_x1_4_sig:-1:695 ps
+N:xr2_x1_5_sig:-1:695 ps
+N:xr2_x1_6_sig:-1:357 ps
+N:xr2_x1_7_sig:-1:695 ps
+N:xr2_x1_8_sig:-1:695 ps
+N:xr2_x1_9_sig:-1:695 ps
+N:xr2_x1_sig:-1:695 ps
+N:z:-1:2978 ps
+B:v_ins:-1:1479 ps
+B:inv_x2_61_ins:-1:808 ps
+B:o3_x2_ins:-1:1252 ps
+B:inv_x2_60_ins:-1:801 ps
+B:n_ins:-1:1085 ps
+B:z_ins:32:1682 ps
+B:a4_x2_6_ins:-1:1307 ps
+B:no4_x1_3_ins:-1:782 ps
+B:na3_x1_37_ins:-1:359 ps
+B:na3_x1_36_ins:-1:359 ps
+B:on12_x1_ins:-1:302 ps
+B:a2_x2_33_ins:-1:753 ps
+B:no4_x1_2_ins:-1:385 ps
+B:no3_x1_8_ins:-1:299 ps
+B:a3_x2_3_ins:-1:757 ps
+B:no3_x1_7_ins:-1:299 ps
+B:no3_x1_6_ins:-1:299 ps
+B:no3_x1_5_ins:-1:299 ps
+B:a3_x2_2_ins:-1:757 ps
+B:no3_x1_4_ins:-1:299 ps
+B:no3_x1_3_ins:-1:299 ps
+B:no3_x1_2_ins:-1:299 ps
+B:a3_x2_ins:32:2935 ps
+B:a4_x2_4_ins:-1:1103 ps
+B:a4_x2_5_ins:-1:606 ps
+B:no2_x1_ins:-1:2178 ps
+B:na3_x1_35_ins:-1:853 ps
+B:a4_x2_3_ins:-1:606 ps
+B:na3_x1_34_ins:-1:1954 ps
+B:inv_x2_59_ins:-1:1410 ps
+B:no4_x1_ins:-1:1670 ps
+B:inv_x2_58_ins:-1:232 ps
+B:no3_x1_ins:32:2488 ps
+B:na3_x1_33_ins:-1:2159 ps
+B:a4_x2_2_ins:-1:1911 ps
+B:inv_x2_57_ins:-1:1410 ps
+B:na3_x1_32_ins:32:2159 ps
+B:a4_x2_ins:32:1911 ps
+B:inv_x2_56_ins:-1:1410 ps
+B:inv_x2_55_ins:32:1410 ps
+B:cout_ins:-1:671 ps
+B:res_31:-1:921 ps
+B:res_30:-1:811 ps
+B:inv_x2_54_ins:-1:116 ps
+B:res_29:-1:811 ps
+B:inv_x2_53_ins:-1:116 ps
+B:res_28:-1:811 ps
+B:inv_x2_52_ins:-1:116 ps
+B:res_27:-1:990 ps
+B:res_26:-1:811 ps
+B:inv_x2_51_ins:-1:116 ps
+B:res_25:-1:811 ps
+B:inv_x2_50_ins:-1:116 ps
+B:res_24:-1:811 ps
+B:inv_x2_49_ins:-1:116 ps
+B:res_23:-1:811 ps
+B:inv_x2_48_ins:-1:116 ps
+B:res_22:-1:811 ps
+B:inv_x2_47_ins:-1:116 ps
+B:res_21:-1:811 ps
+B:inv_x2_46_ins:-1:116 ps
+B:res_20:-1:811 ps
+B:inv_x2_45_ins:-1:116 ps
+B:res_19:-1:811 ps
+B:inv_x2_44_ins:-1:116 ps
+B:res_18:-1:811 ps
+B:inv_x2_43_ins:-1:116 ps
+B:res_17:-1:1754 ps
+B:res_16:-1:811 ps
+B:inv_x2_42_ins:-1:116 ps
+B:res_15:-1:811 ps
+B:inv_x2_41_ins:-1:116 ps
+B:res_14:-1:811 ps
+B:inv_x2_40_ins:-1:116 ps
+B:res_13:-1:811 ps
+B:inv_x2_39_ins:-1:116 ps
+B:res_12:-1:811 ps
+B:inv_x2_38_ins:-1:116 ps
+B:res_11:-1:811 ps
+B:inv_x2_37_ins:-1:116 ps
+B:res_10:-1:811 ps
+B:inv_x2_36_ins:-1:116 ps
+B:res_9:-1:811 ps
+B:inv_x2_35_ins:-1:116 ps
+B:res_8:-1:811 ps
+B:inv_x2_34_ins:-1:116 ps
+B:res_7:-1:1754 ps
+B:res_6:-1:811 ps
+B:inv_x2_33_ins:-1:116 ps
+B:res_5:-1:811 ps
+B:inv_x2_32_ins:-1:116 ps
+B:res_4:-1:1754 ps
+B:res_3:-1:1754 ps
+B:res_2:-1:1754 ps
+B:res_1:-1:1754 ps
+B:res_0:-1:1754 ps
+B:res_signal_17_ins:-1:1210 ps
+B:xr2_x1_33_ins:-1:695 ps
+B:a2_x2_32_ins:-1:324 ps
+B:nao22_x1_30_ins:-1:743 ps
+B:nxr2_x1_31_ins:-1:345 ps
+B:na3_x1_31_ins:-1:483 ps
+B:inv_x2_31_ins:-1:232 ps
+B:res_signal_7_ins:-1:1210 ps
+B:xr2_x1_32_ins:-1:695 ps
+B:a2_x2_31_ins:-1:324 ps
+B:nao22_x1_29_ins:-1:743 ps
+B:nxr2_x1_30_ins:-1:345 ps
+B:na3_x1_30_ins:-1:483 ps
+B:inv_x2_30_ins:-1:232 ps
+B:res_signal_4_ins:-1:1210 ps
+B:xr2_x1_31_ins:-1:695 ps
+B:a2_x2_30_ins:-1:324 ps
+B:nao22_x1_28_ins:-1:743 ps
+B:nxr2_x1_29_ins:-1:345 ps
+B:na3_x1_29_ins:-1:483 ps
+B:inv_x2_29_ins:-1:232 ps
+B:res_signal_3_ins:-1:1210 ps
+B:xr2_x1_30_ins:-1:695 ps
+B:a2_x2_29_ins:-1:324 ps
+B:nao22_x1_27_ins:-1:743 ps
+B:nxr2_x1_28_ins:-1:345 ps
+B:na3_x1_28_ins:-1:483 ps
+B:inv_x2_28_ins:-1:232 ps
+B:res_signal_2_ins:-1:1210 ps
+B:xr2_x1_29_ins:-1:695 ps
+B:a2_x2_28_ins:-1:324 ps
+B:nao22_x1_26_ins:-1:743 ps
+B:nxr2_x1_27_ins:-1:345 ps
+B:na3_x1_27_ins:-1:483 ps
+B:inv_x2_27_ins:-1:232 ps
+B:res_signal_1_ins:32:1210 ps
+B:xr2_x1_28_ins:-1:695 ps
+B:a2_x2_27_ins:-1:324 ps
+B:nao22_x1_25_ins:32:743 ps
+B:nxr2_x1_26_ins:-1:345 ps
+B:na3_x1_26_ins:32:483 ps
+B:inv_x2_26_ins:32:232 ps
+B:res_signal_0_ins:-1:1210 ps
+B:xr2_x1_27_ins:-1:695 ps
+B:a2_x2_26_ins:-1:324 ps
+B:nao22_x1_24_ins:-1:743 ps
+B:nxr2_x1_25_ins:-1:345 ps
+B:na3_x1_25_ins:-1:483 ps
+B:inv_x2_25_ins:-1:232 ps
+B:aux3_ins:-1:664 ps
+B:aux4_ins:-1:664 ps
+B:not_cmd_0:32:116 ps
+B:not_add_sum_0:-1:116 ps
+B:not_add_sum_1:-1:116 ps
+B:not_add_sum_2:-1:116 ps
+B:not_add_sum_3:-1:116 ps
+B:not_add_sum_4:-1:116 ps
+B:not_add_sum_7:-1:116 ps
+B:not_add_sum_17:-1:116 ps
+B:not_add_sum_31:-1:116 ps
+B:not_aux5_ins:32:493 ps
+B:not_aux0_ins:-1:358 ps
+B:not_res_signal_5_ins:-1:1007 ps
+B:xr2_x1_26_ins:-1:695 ps
+B:a2_x2_25_ins:-1:324 ps
+B:nao22_x1_23_ins:-1:743 ps
+B:nxr2_x1_24_ins:-1:345 ps
+B:na3_x1_24_ins:-1:483 ps
+B:inv_x2_24_ins:-1:232 ps
+B:not_res_signal_6_ins:-1:1007 ps
+B:xr2_x1_25_ins:-1:695 ps
+B:a2_x2_24_ins:-1:324 ps
+B:nao22_x1_22_ins:-1:743 ps
+B:nxr2_x1_23_ins:-1:345 ps
+B:na3_x1_23_ins:-1:483 ps
+B:inv_x2_23_ins:-1:232 ps
+B:not_res_signal_8_ins:-1:1007 ps
+B:xr2_x1_24_ins:-1:695 ps
+B:a2_x2_23_ins:-1:324 ps
+B:nao22_x1_21_ins:-1:743 ps
+B:nxr2_x1_22_ins:-1:345 ps
+B:na3_x1_22_ins:-1:483 ps
+B:inv_x2_22_ins:-1:232 ps
+B:not_res_signal_9_ins:-1:1007 ps
+B:xr2_x1_23_ins:-1:695 ps
+B:a2_x2_22_ins:-1:324 ps
+B:nao22_x1_20_ins:-1:743 ps
+B:nxr2_x1_21_ins:-1:345 ps
+B:na3_x1_21_ins:-1:483 ps
+B:inv_x2_21_ins:-1:232 ps
+B:not_res_signal_10_ins:-1:1007 ps
+B:xr2_x1_22_ins:-1:695 ps
+B:a2_x2_21_ins:-1:324 ps
+B:nao22_x1_19_ins:-1:743 ps
+B:nxr2_x1_20_ins:-1:345 ps
+B:na3_x1_20_ins:-1:483 ps
+B:inv_x2_20_ins:-1:232 ps
+B:not_res_signal_11_ins:-1:1007 ps
+B:xr2_x1_21_ins:-1:695 ps
+B:a2_x2_20_ins:-1:324 ps
+B:nao22_x1_18_ins:-1:743 ps
+B:nxr2_x1_19_ins:-1:345 ps
+B:na3_x1_19_ins:-1:483 ps
+B:inv_x2_19_ins:-1:232 ps
+B:not_res_signal_12_ins:-1:1007 ps
+B:xr2_x1_20_ins:-1:695 ps
+B:a2_x2_19_ins:-1:324 ps
+B:nao22_x1_17_ins:-1:743 ps
+B:nxr2_x1_18_ins:-1:345 ps
+B:na3_x1_18_ins:-1:483 ps
+B:inv_x2_18_ins:-1:232 ps
+B:not_res_signal_13_ins:-1:1007 ps
+B:xr2_x1_19_ins:-1:695 ps
+B:a2_x2_18_ins:-1:324 ps
+B:nao22_x1_16_ins:-1:743 ps
+B:nxr2_x1_17_ins:-1:345 ps
+B:na3_x1_17_ins:-1:483 ps
+B:inv_x2_17_ins:-1:232 ps
+B:not_res_signal_14_ins:-1:1007 ps
+B:xr2_x1_18_ins:-1:695 ps
+B:a2_x2_17_ins:-1:324 ps
+B:nao22_x1_15_ins:-1:743 ps
+B:nxr2_x1_16_ins:-1:345 ps
+B:na3_x1_16_ins:-1:483 ps
+B:inv_x2_16_ins:-1:232 ps
+B:not_res_signal_15_ins:-1:1007 ps
+B:xr2_x1_17_ins:-1:695 ps
+B:a2_x2_16_ins:-1:324 ps
+B:nao22_x1_14_ins:-1:743 ps
+B:nxr2_x1_15_ins:-1:345 ps
+B:na3_x1_15_ins:-1:483 ps
+B:inv_x2_15_ins:-1:232 ps
+B:not_res_signal_16_ins:-1:1007 ps
+B:xr2_x1_16_ins:-1:695 ps
+B:a2_x2_15_ins:-1:324 ps
+B:nao22_x1_13_ins:-1:743 ps
+B:nxr2_x1_14_ins:-1:345 ps
+B:na3_x1_14_ins:-1:483 ps
+B:inv_x2_14_ins:-1:232 ps
+B:not_res_signal_18_ins:-1:1007 ps
+B:xr2_x1_15_ins:-1:695 ps
+B:a2_x2_14_ins:-1:324 ps
+B:nao22_x1_12_ins:-1:743 ps
+B:nxr2_x1_13_ins:-1:345 ps
+B:na3_x1_13_ins:-1:483 ps
+B:inv_x2_13_ins:-1:232 ps
+B:not_res_signal_19_ins:-1:1007 ps
+B:xr2_x1_14_ins:-1:695 ps
+B:a2_x2_13_ins:-1:324 ps
+B:nao22_x1_11_ins:-1:743 ps
+B:nxr2_x1_12_ins:-1:345 ps
+B:na3_x1_12_ins:-1:483 ps
+B:inv_x2_12_ins:-1:232 ps
+B:not_res_signal_20_ins:-1:1007 ps
+B:xr2_x1_13_ins:-1:695 ps
+B:a2_x2_12_ins:-1:324 ps
+B:nao22_x1_10_ins:-1:743 ps
+B:nxr2_x1_11_ins:-1:345 ps
+B:na3_x1_11_ins:-1:483 ps
+B:inv_x2_11_ins:-1:232 ps
+B:not_res_signal_21_ins:-1:1007 ps
+B:xr2_x1_12_ins:-1:695 ps
+B:a2_x2_11_ins:-1:324 ps
+B:nao22_x1_9_ins:-1:743 ps
+B:nxr2_x1_10_ins:-1:345 ps
+B:na3_x1_10_ins:-1:483 ps
+B:inv_x2_10_ins:-1:232 ps
+B:not_res_signal_22_ins:-1:1007 ps
+B:xr2_x1_11_ins:-1:695 ps
+B:a2_x2_10_ins:-1:324 ps
+B:nao22_x1_8_ins:-1:743 ps
+B:nxr2_x1_9_ins:-1:345 ps
+B:na3_x1_9_ins:-1:483 ps
+B:inv_x2_9_ins:-1:232 ps
+B:not_res_signal_23_ins:-1:1007 ps
+B:xr2_x1_10_ins:-1:695 ps
+B:a2_x2_9_ins:-1:324 ps
+B:nao22_x1_7_ins:-1:743 ps
+B:nxr2_x1_8_ins:-1:345 ps
+B:na3_x1_8_ins:-1:483 ps
+B:inv_x2_8_ins:-1:232 ps
+B:not_res_signal_24_ins:-1:1007 ps
+B:xr2_x1_9_ins:-1:695 ps
+B:a2_x2_8_ins:-1:324 ps
+B:nao22_x1_6_ins:-1:743 ps
+B:nxr2_x1_7_ins:-1:345 ps
+B:na3_x1_7_ins:-1:483 ps
+B:inv_x2_7_ins:-1:232 ps
+B:not_res_signal_25_ins:-1:1007 ps
+B:xr2_x1_8_ins:-1:695 ps
+B:a2_x2_7_ins:-1:324 ps
+B:nao22_x1_5_ins:-1:743 ps
+B:nxr2_x1_6_ins:-1:345 ps
+B:na3_x1_6_ins:-1:483 ps
+B:inv_x2_6_ins:-1:232 ps
+B:not_res_signal_26_ins:-1:1007 ps
+B:xr2_x1_7_ins:-1:695 ps
+B:a2_x2_6_ins:-1:324 ps
+B:nao22_x1_4_ins:-1:743 ps
+B:nxr2_x1_5_ins:-1:345 ps
+B:na3_x1_5_ins:-1:483 ps
+B:inv_x2_5_ins:-1:232 ps
+B:not_aux2_ins:-1:1229 ps
+B:na2_x1_2_ins:-1:563 ps
+B:xr2_x1_6_ins:-1:357 ps
+B:na3_x1_4_ins:-1:483 ps
+B:inv_x2_4_ins:-1:232 ps
+B:na2_x1_ins:-1:901 ps
+B:xr2_x1_5_ins:-1:695 ps
+B:a2_x2_5_ins:-1:324 ps
+B:not_res_signal_28_ins:-1:1007 ps
+B:xr2_x1_4_ins:-1:695 ps
+B:a2_x2_4_ins:-1:324 ps
+B:nao22_x1_3_ins:-1:743 ps
+B:nxr2_x1_4_ins:-1:345 ps
+B:na3_x1_3_ins:-1:483 ps
+B:inv_x2_3_ins:-1:232 ps
+B:not_res_signal_29_ins:-1:1007 ps
+B:xr2_x1_3_ins:-1:695 ps
+B:a2_x2_3_ins:-1:324 ps
+B:nao22_x1_2_ins:-1:743 ps
+B:nxr2_x1_3_ins:-1:345 ps
+B:na3_x1_2_ins:-1:483 ps
+B:inv_x2_2_ins:-1:232 ps
+B:not_res_signal_30_ins:-1:1007 ps
+B:xr2_x1_2_ins:-1:695 ps
+B:a2_x2_2_ins:-1:324 ps
+B:nao22_x1_ins:-1:743 ps
+B:nxr2_x1_2_ins:-1:345 ps
+B:na3_x1_ins:-1:483 ps
+B:inv_x2_ins:-1:232 ps
+B:not_aux1_ins:-1:173 ps
+B:not_res_signal_31_ins:-1:976 ps
+B:xr2_x1_ins:-1:695 ps
+B:a2_x2_ins:-1:324 ps
+B:nao2o22_x1_ins:-1:640 ps
+B:nxr2_x1_ins:-1:345 ps
+C:op1 0:-1:0 ps
+C:op1 1:-1:0 ps
+C:op1 2:-1:0 ps
+C:op1 3:-1:0 ps
+C:op1 4:-1:0 ps
+C:op1 5:-1:0 ps
+C:op1 6:-1:0 ps
+C:op1 7:-1:0 ps
+C:op1 8:-1:0 ps
+C:op1 9:-1:0 ps
+C:op1 10:-1:0 ps
+C:op1 11:-1:0 ps
+C:op1 12:-1:0 ps
+C:op1 13:-1:0 ps
+C:op1 14:-1:0 ps
+C:op1 15:-1:0 ps
+C:op1 16:-1:0 ps
+C:op1 17:-1:0 ps
+C:op1 18:-1:0 ps
+C:op1 19:-1:0 ps
+C:op1 20:-1:0 ps
+C:op1 21:-1:0 ps
+C:op1 22:-1:0 ps
+C:op1 23:-1:0 ps
+C:op1 24:-1:0 ps
+C:op1 25:-1:0 ps
+C:op1 26:-1:0 ps
+C:op1 27:-1:0 ps
+C:op1 28:-1:0 ps
+C:op1 29:-1:0 ps
+C:op1 30:-1:0 ps
+C:op1 31:-1:0 ps
+C:op2 0:-1:0 ps
+C:op2 1:-1:0 ps
+C:op2 2:-1:0 ps
+C:op2 3:-1:0 ps
+C:op2 4:-1:0 ps
+C:op2 5:-1:0 ps
+C:op2 6:-1:0 ps
+C:op2 7:-1:0 ps
+C:op2 8:-1:0 ps
+C:op2 9:-1:0 ps
+C:op2 10:-1:0 ps
+C:op2 11:-1:0 ps
+C:op2 12:-1:0 ps
+C:op2 13:-1:0 ps
+C:op2 14:-1:0 ps
+C:op2 15:-1:0 ps
+C:op2 16:-1:0 ps
+C:op2 17:-1:0 ps
+C:op2 18:-1:0 ps
+C:op2 19:-1:0 ps
+C:op2 20:-1:0 ps
+C:op2 21:-1:0 ps
+C:op2 22:-1:0 ps
+C:op2 23:-1:0 ps
+C:op2 24:-1:0 ps
+C:op2 25:-1:0 ps
+C:op2 26:-1:0 ps
+C:op2 27:-1:0 ps
+C:op2 28:-1:0 ps
+C:op2 29:-1:0 ps
+C:op2 30:-1:0 ps
+C:op2 31:-1:0 ps
+C:cmd 0:32:0 ps
+C:cmd 1:-1:0 ps
+C:res 0:-1:1754 ps
+C:res 1:-1:1754 ps
+C:res 2:-1:1754 ps
+C:res 3:-1:1754 ps
+C:res 4:-1:1754 ps
+C:res 5:-1:811 ps
+C:res 6:-1:811 ps
+C:res 7:-1:1754 ps
+C:res 8:-1:811 ps
+C:res 9:-1:811 ps
+C:res 10:-1:811 ps
+C:res 11:-1:811 ps
+C:res 12:-1:811 ps
+C:res 13:-1:811 ps
+C:res 14:-1:811 ps
+C:res 15:-1:811 ps
+C:res 16:-1:811 ps
+C:res 17:-1:1754 ps
+C:res 18:-1:811 ps
+C:res 19:-1:811 ps
+C:res 20:-1:811 ps
+C:res 21:-1:811 ps
+C:res 22:-1:811 ps
+C:res 23:-1:811 ps
+C:res 24:-1:811 ps
+C:res 25:-1:811 ps
+C:res 26:-1:811 ps
+C:res 27:-1:990 ps
+C:res 28:-1:811 ps
+C:res 29:-1:811 ps
+C:res 30:-1:811 ps
+C:res 31:-1:921 ps
+C:cout:-1:671 ps
+C:z:32:2978 ps
+C:n:-1:685 ps
+C:v:-1:1479 ps
+C:add_cout:-1:0 ps
+C:add_sum 0:-1:0 ps
+C:add_sum 1:-1:0 ps
+C:add_sum 2:-1:0 ps
+C:add_sum 3:-1:0 ps
+C:add_sum 4:-1:0 ps
+C:add_sum 5:-1:0 ps
+C:add_sum 6:-1:0 ps
+C:add_sum 7:-1:0 ps
+C:add_sum 8:-1:0 ps
+C:add_sum 9:-1:0 ps
+C:add_sum 10:-1:0 ps
+C:add_sum 11:-1:0 ps
+C:add_sum 12:-1:0 ps
+C:add_sum 13:-1:0 ps
+C:add_sum 14:-1:0 ps
+C:add_sum 15:-1:0 ps
+C:add_sum 16:-1:0 ps
+C:add_sum 17:-1:0 ps
+C:add_sum 18:-1:0 ps
+C:add_sum 19:-1:0 ps
+C:add_sum 20:-1:0 ps
+C:add_sum 21:-1:0 ps
+C:add_sum 22:-1:0 ps
+C:add_sum 23:-1:0 ps
+C:add_sum 24:-1:0 ps
+C:add_sum 25:-1:0 ps
+C:add_sum 26:-1:0 ps
+C:add_sum 27:-1:0 ps
+C:add_sum 28:-1:0 ps
+C:add_sum 29:-1:0 ps
+C:add_sum 30:-1:0 ps
+C:add_sum 31:-1:0 ps
+P:cmd_0:cmd_0:not_cmd_0:32:345 ps
+P:not_cmd_0:not_cmd_0:not_aux5_ins:32:345 ps
+P:not_aux5_ins:not_aux5:inv_x2_26_ins:32:345 ps
+P:inv_x2_26_ins:inv_x2_26_sig:na3_x1_26_ins:32:345 ps
+P:na3_x1_26_ins:na3_x1_26_sig:nao22_x1_25_ins:32:345 ps
+P:nao22_x1_25_ins:nao22_x1_25_sig:res_signal_1_ins:32:345 ps
+P:res_signal_1_ins:res_signal_1:inv_x2_55_ins:32:345 ps
+P:inv_x2_55_ins:inv_x2_55_sig:a4_x2_ins:32:345 ps
+P:a4_x2_ins:a4_x2_sig:na3_x1_32_ins:32:345 ps
+P:na3_x1_32_ins:na3_x1_32_sig:no3_x1_ins:32:345 ps
+P:no3_x1_ins:no3_x1_sig:a3_x2_ins:32:345 ps
+P:a3_x2_ins:a3_x2_sig:z_ins:32:345 ps
+P:z_ins:z:z:32:345 ps

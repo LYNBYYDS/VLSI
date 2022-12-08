@@ -155,7 +155,6 @@ architecture Behavior OF EXec is
 	signal mem_acces	: std_logic;
 
 
-
 begin
 	
 --  Component instantiation.
@@ -225,24 +224,24 @@ begin
 -- synchro
 	mem_adr <= 	alu_res when  dec_pre_index = '0' else 
 				dec_op1;
-	exe_pop <= 	'1' when dec2exe_empty = '0' else 
-				'0';
-	exe_push	<=	'1' when mem_access else
-					'0';
+	exe_pop <= 	not dec2exe_empty;
 	mem_acces <= dec_mem_lw or dec_mem_lb or dec_mem_sw	or dec_mem_sb;
+	exe_push <=	mem_acces and not exe2mem_full and not dec2exe_empty;
 -- no changed ones
 
 	exe_dest 		<= dec_exe_dest;
 	exe_wb 			<= dec_exe_wb;
 	exe_flag_wb 	<= dec_flag_wb;
-			
--- cout
 	
 -- ALU opearandes
 	op1 <= 	dec_op1 xor x"FFFFFFFF" when dec_comp_op1 = '1' else
 			dec_op1;
 	op2 <= 	op2_shift xor x"FFFFFFFF" when dec_comp_op2 = '1'else
 			op2_shift;
--- Loop dec
+-- exe res
+	exe_res <= alu_res;
+-- flags
+	exe_c <= alu_c when dec_alu_cmd = "00" else
+	shift_c;
 
 end Behavior;

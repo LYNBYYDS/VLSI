@@ -1,0 +1,1134 @@
+-- VHDL data flow description generated from `shifter_o`
+--		date : Thu Dec  8 17:55:29 2022
+
+
+-- Entity Declaration
+
+ENTITY shifter_o IS
+  PORT (
+  shift_lsl : in BIT;	-- shift_lsl
+  shift_lsr : in BIT;	-- shift_lsr
+  shift_asr : in BIT;	-- shift_asr
+  shift_ror : in BIT;	-- shift_ror
+  shift_rrx : in BIT;	-- shift_rrx
+  shift_val : in bit_vector(4 DOWNTO 0) ;	-- shift_val
+  din : in bit_vector(31 DOWNTO 0) ;	-- din
+  cin : in BIT;	-- cin
+  dout : out bit_vector(31 DOWNTO 0) ;	-- dout
+  cout : out BIT;	-- cout
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END shifter_o;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF shifter_o IS
+  SIGNAL dout_inter0_31 : BIT;		-- dout_inter0_31
+  SIGNAL dout_inter0_30 : BIT;		-- dout_inter0_30
+  SIGNAL dout_inter0_29 : BIT;		-- dout_inter0_29
+  SIGNAL dout_inter0_28 : BIT;		-- dout_inter0_28
+  SIGNAL dout_inter0_27 : BIT;		-- dout_inter0_27
+  SIGNAL dout_inter0_26 : BIT;		-- dout_inter0_26
+  SIGNAL dout_inter0_25 : BIT;		-- dout_inter0_25
+  SIGNAL dout_inter0_24 : BIT;		-- dout_inter0_24
+  SIGNAL dout_inter0_23 : BIT;		-- dout_inter0_23
+  SIGNAL dout_inter0_22 : BIT;		-- dout_inter0_22
+  SIGNAL dout_inter0_21 : BIT;		-- dout_inter0_21
+  SIGNAL dout_inter0_20 : BIT;		-- dout_inter0_20
+  SIGNAL dout_inter0_19 : BIT;		-- dout_inter0_19
+  SIGNAL dout_inter0_18 : BIT;		-- dout_inter0_18
+  SIGNAL dout_inter0_17 : BIT;		-- dout_inter0_17
+  SIGNAL dout_inter0_16 : BIT;		-- dout_inter0_16
+  SIGNAL dout_inter0_15 : BIT;		-- dout_inter0_15
+  SIGNAL dout_inter0_14 : BIT;		-- dout_inter0_14
+  SIGNAL dout_inter0_13 : BIT;		-- dout_inter0_13
+  SIGNAL dout_inter0_12 : BIT;		-- dout_inter0_12
+  SIGNAL dout_inter0_11 : BIT;		-- dout_inter0_11
+  SIGNAL dout_inter0_10 : BIT;		-- dout_inter0_10
+  SIGNAL dout_inter0_9 : BIT;		-- dout_inter0_9
+  SIGNAL dout_inter0_8 : BIT;		-- dout_inter0_8
+  SIGNAL dout_inter0_7 : BIT;		-- dout_inter0_7
+  SIGNAL dout_inter0_6 : BIT;		-- dout_inter0_6
+  SIGNAL dout_inter0_5 : BIT;		-- dout_inter0_5
+  SIGNAL dout_inter0_4 : BIT;		-- dout_inter0_4
+  SIGNAL dout_inter0_3 : BIT;		-- dout_inter0_3
+  SIGNAL dout_inter0_2 : BIT;		-- dout_inter0_2
+  SIGNAL dout_inter0_1 : BIT;		-- dout_inter0_1
+  SIGNAL dout_inter0_0 : BIT;		-- dout_inter0_0
+  SIGNAL dout_inter1_31 : BIT;		-- dout_inter1_31
+  SIGNAL dout_inter1_30 : BIT;		-- dout_inter1_30
+  SIGNAL dout_inter1_29 : BIT;		-- dout_inter1_29
+  SIGNAL dout_inter1_28 : BIT;		-- dout_inter1_28
+  SIGNAL dout_inter1_27 : BIT;		-- dout_inter1_27
+  SIGNAL dout_inter1_26 : BIT;		-- dout_inter1_26
+  SIGNAL dout_inter1_25 : BIT;		-- dout_inter1_25
+  SIGNAL dout_inter1_24 : BIT;		-- dout_inter1_24
+  SIGNAL dout_inter1_23 : BIT;		-- dout_inter1_23
+  SIGNAL dout_inter1_22 : BIT;		-- dout_inter1_22
+  SIGNAL dout_inter1_21 : BIT;		-- dout_inter1_21
+  SIGNAL dout_inter1_20 : BIT;		-- dout_inter1_20
+  SIGNAL dout_inter1_19 : BIT;		-- dout_inter1_19
+  SIGNAL dout_inter1_18 : BIT;		-- dout_inter1_18
+  SIGNAL dout_inter1_17 : BIT;		-- dout_inter1_17
+  SIGNAL dout_inter1_16 : BIT;		-- dout_inter1_16
+  SIGNAL dout_inter1_15 : BIT;		-- dout_inter1_15
+  SIGNAL dout_inter1_14 : BIT;		-- dout_inter1_14
+  SIGNAL dout_inter1_13 : BIT;		-- dout_inter1_13
+  SIGNAL dout_inter1_12 : BIT;		-- dout_inter1_12
+  SIGNAL dout_inter1_11 : BIT;		-- dout_inter1_11
+  SIGNAL dout_inter1_10 : BIT;		-- dout_inter1_10
+  SIGNAL dout_inter1_9 : BIT;		-- dout_inter1_9
+  SIGNAL dout_inter1_8 : BIT;		-- dout_inter1_8
+  SIGNAL dout_inter1_7 : BIT;		-- dout_inter1_7
+  SIGNAL dout_inter1_6 : BIT;		-- dout_inter1_6
+  SIGNAL dout_inter1_5 : BIT;		-- dout_inter1_5
+  SIGNAL dout_inter1_4 : BIT;		-- dout_inter1_4
+  SIGNAL dout_inter1_3 : BIT;		-- dout_inter1_3
+  SIGNAL dout_inter1_2 : BIT;		-- dout_inter1_2
+  SIGNAL dout_inter1_1 : BIT;		-- dout_inter1_1
+  SIGNAL dout_inter1_0 : BIT;		-- dout_inter1_0
+  SIGNAL dout_inter2_31 : BIT;		-- dout_inter2_31
+  SIGNAL dout_inter2_30 : BIT;		-- dout_inter2_30
+  SIGNAL dout_inter2_29 : BIT;		-- dout_inter2_29
+  SIGNAL dout_inter2_28 : BIT;		-- dout_inter2_28
+  SIGNAL dout_inter2_27 : BIT;		-- dout_inter2_27
+  SIGNAL dout_inter2_26 : BIT;		-- dout_inter2_26
+  SIGNAL dout_inter2_25 : BIT;		-- dout_inter2_25
+  SIGNAL dout_inter2_24 : BIT;		-- dout_inter2_24
+  SIGNAL dout_inter2_23 : BIT;		-- dout_inter2_23
+  SIGNAL dout_inter2_22 : BIT;		-- dout_inter2_22
+  SIGNAL dout_inter2_21 : BIT;		-- dout_inter2_21
+  SIGNAL dout_inter2_20 : BIT;		-- dout_inter2_20
+  SIGNAL dout_inter2_19 : BIT;		-- dout_inter2_19
+  SIGNAL dout_inter2_18 : BIT;		-- dout_inter2_18
+  SIGNAL dout_inter2_17 : BIT;		-- dout_inter2_17
+  SIGNAL dout_inter2_16 : BIT;		-- dout_inter2_16
+  SIGNAL dout_inter2_15 : BIT;		-- dout_inter2_15
+  SIGNAL dout_inter2_14 : BIT;		-- dout_inter2_14
+  SIGNAL dout_inter2_13 : BIT;		-- dout_inter2_13
+  SIGNAL dout_inter2_12 : BIT;		-- dout_inter2_12
+  SIGNAL dout_inter2_11 : BIT;		-- dout_inter2_11
+  SIGNAL dout_inter2_10 : BIT;		-- dout_inter2_10
+  SIGNAL dout_inter2_9 : BIT;		-- dout_inter2_9
+  SIGNAL dout_inter2_8 : BIT;		-- dout_inter2_8
+  SIGNAL dout_inter2_7 : BIT;		-- dout_inter2_7
+  SIGNAL dout_inter2_6 : BIT;		-- dout_inter2_6
+  SIGNAL dout_inter2_5 : BIT;		-- dout_inter2_5
+  SIGNAL dout_inter2_4 : BIT;		-- dout_inter2_4
+  SIGNAL dout_inter2_3 : BIT;		-- dout_inter2_3
+  SIGNAL dout_inter2_2 : BIT;		-- dout_inter2_2
+  SIGNAL dout_inter2_1 : BIT;		-- dout_inter2_1
+  SIGNAL dout_inter2_0 : BIT;		-- dout_inter2_0
+  SIGNAL dout_inter3_31 : BIT;		-- dout_inter3_31
+  SIGNAL dout_inter3_30 : BIT;		-- dout_inter3_30
+  SIGNAL dout_inter3_29 : BIT;		-- dout_inter3_29
+  SIGNAL dout_inter3_28 : BIT;		-- dout_inter3_28
+  SIGNAL dout_inter3_27 : BIT;		-- dout_inter3_27
+  SIGNAL dout_inter3_26 : BIT;		-- dout_inter3_26
+  SIGNAL dout_inter3_25 : BIT;		-- dout_inter3_25
+  SIGNAL dout_inter3_24 : BIT;		-- dout_inter3_24
+  SIGNAL dout_inter3_23 : BIT;		-- dout_inter3_23
+  SIGNAL dout_inter3_22 : BIT;		-- dout_inter3_22
+  SIGNAL dout_inter3_21 : BIT;		-- dout_inter3_21
+  SIGNAL dout_inter3_20 : BIT;		-- dout_inter3_20
+  SIGNAL dout_inter3_19 : BIT;		-- dout_inter3_19
+  SIGNAL dout_inter3_18 : BIT;		-- dout_inter3_18
+  SIGNAL dout_inter3_17 : BIT;		-- dout_inter3_17
+  SIGNAL dout_inter3_16 : BIT;		-- dout_inter3_16
+  SIGNAL dout_inter3_15 : BIT;		-- dout_inter3_15
+  SIGNAL dout_inter3_14 : BIT;		-- dout_inter3_14
+  SIGNAL dout_inter3_13 : BIT;		-- dout_inter3_13
+  SIGNAL dout_inter3_12 : BIT;		-- dout_inter3_12
+  SIGNAL dout_inter3_11 : BIT;		-- dout_inter3_11
+  SIGNAL dout_inter3_10 : BIT;		-- dout_inter3_10
+  SIGNAL dout_inter3_9 : BIT;		-- dout_inter3_9
+  SIGNAL dout_inter3_8 : BIT;		-- dout_inter3_8
+  SIGNAL dout_inter3_7 : BIT;		-- dout_inter3_7
+  SIGNAL dout_inter3_6 : BIT;		-- dout_inter3_6
+  SIGNAL dout_inter3_5 : BIT;		-- dout_inter3_5
+  SIGNAL dout_inter3_4 : BIT;		-- dout_inter3_4
+  SIGNAL dout_inter3_3 : BIT;		-- dout_inter3_3
+  SIGNAL dout_inter3_2 : BIT;		-- dout_inter3_2
+  SIGNAL dout_inter3_1 : BIT;		-- dout_inter3_1
+  SIGNAL dout_inter3_0 : BIT;		-- dout_inter3_0
+  SIGNAL aux1 : BIT;		-- aux1
+  SIGNAL aux2 : BIT;		-- aux2
+  SIGNAL aux3 : BIT;		-- aux3
+  SIGNAL aux4 : BIT;		-- aux4
+  SIGNAL aux5 : BIT;		-- aux5
+  SIGNAL aux7 : BIT;		-- aux7
+  SIGNAL aux8 : BIT;		-- aux8
+  SIGNAL aux9 : BIT;		-- aux9
+  SIGNAL aux11 : BIT;		-- aux11
+  SIGNAL aux13 : BIT;		-- aux13
+  SIGNAL aux15 : BIT;		-- aux15
+  SIGNAL aux17 : BIT;		-- aux17
+  SIGNAL aux19 : BIT;		-- aux19
+  SIGNAL aux21 : BIT;		-- aux21
+  SIGNAL aux23 : BIT;		-- aux23
+  SIGNAL aux25 : BIT;		-- aux25
+  SIGNAL aux27 : BIT;		-- aux27
+  SIGNAL aux29 : BIT;		-- aux29
+  SIGNAL aux31 : BIT;		-- aux31
+  SIGNAL aux33 : BIT;		-- aux33
+  SIGNAL aux35 : BIT;		-- aux35
+  SIGNAL aux37 : BIT;		-- aux37
+  SIGNAL aux41 : BIT;		-- aux41
+  SIGNAL aux42 : BIT;		-- aux42
+  SIGNAL aux46 : BIT;		-- aux46
+  SIGNAL aux47 : BIT;		-- aux47
+  SIGNAL aux51 : BIT;		-- aux51
+  SIGNAL aux52 : BIT;		-- aux52
+  SIGNAL aux56 : BIT;		-- aux56
+  SIGNAL aux57 : BIT;		-- aux57
+  SIGNAL aux61 : BIT;		-- aux61
+  SIGNAL aux62 : BIT;		-- aux62
+  SIGNAL aux66 : BIT;		-- aux66
+  SIGNAL aux67 : BIT;		-- aux67
+  SIGNAL aux71 : BIT;		-- aux71
+  SIGNAL aux72 : BIT;		-- aux72
+  SIGNAL aux76 : BIT;		-- aux76
+  SIGNAL aux77 : BIT;		-- aux77
+  SIGNAL aux81 : BIT;		-- aux81
+  SIGNAL aux82 : BIT;		-- aux82
+  SIGNAL aux86 : BIT;		-- aux86
+  SIGNAL aux87 : BIT;		-- aux87
+  SIGNAL aux91 : BIT;		-- aux91
+  SIGNAL aux92 : BIT;		-- aux92
+  SIGNAL aux96 : BIT;		-- aux96
+  SIGNAL aux97 : BIT;		-- aux97
+  SIGNAL aux101 : BIT;		-- aux101
+  SIGNAL aux102 : BIT;		-- aux102
+  SIGNAL aux106 : BIT;		-- aux106
+  SIGNAL aux107 : BIT;		-- aux107
+  SIGNAL aux111 : BIT;		-- aux111
+  SIGNAL aux112 : BIT;		-- aux112
+  SIGNAL aux113 : BIT;		-- aux113
+  SIGNAL aux114 : BIT;		-- aux114
+  SIGNAL aux115 : BIT;		-- aux115
+  SIGNAL aux116 : BIT;		-- aux116
+  SIGNAL aux117 : BIT;		-- aux117
+  SIGNAL aux118 : BIT;		-- aux118
+  SIGNAL aux119 : BIT;		-- aux119
+  SIGNAL aux120 : BIT;		-- aux120
+  SIGNAL aux121 : BIT;		-- aux121
+  SIGNAL aux122 : BIT;		-- aux122
+  SIGNAL aux123 : BIT;		-- aux123
+  SIGNAL aux124 : BIT;		-- aux124
+  SIGNAL aux125 : BIT;		-- aux125
+  SIGNAL aux126 : BIT;		-- aux126
+  SIGNAL aux127 : BIT;		-- aux127
+  SIGNAL aux128 : BIT;		-- aux128
+  SIGNAL aux129 : BIT;		-- aux129
+  SIGNAL aux130 : BIT;		-- aux130
+  SIGNAL aux131 : BIT;		-- aux131
+  SIGNAL aux132 : BIT;		-- aux132
+  SIGNAL aux133 : BIT;		-- aux133
+  SIGNAL aux134 : BIT;		-- aux134
+  SIGNAL aux135 : BIT;		-- aux135
+  SIGNAL aux136 : BIT;		-- aux136
+  SIGNAL aux137 : BIT;		-- aux137
+  SIGNAL aux138 : BIT;		-- aux138
+  SIGNAL aux139 : BIT;		-- aux139
+  SIGNAL aux140 : BIT;		-- aux140
+  SIGNAL aux141 : BIT;		-- aux141
+  SIGNAL aux142 : BIT;		-- aux142
+  SIGNAL aux143 : BIT;		-- aux143
+  SIGNAL aux144 : BIT;		-- aux144
+  SIGNAL aux145 : BIT;		-- aux145
+  SIGNAL aux146 : BIT;		-- aux146
+  SIGNAL aux147 : BIT;		-- aux147
+  SIGNAL aux148 : BIT;		-- aux148
+  SIGNAL aux149 : BIT;		-- aux149
+  SIGNAL aux150 : BIT;		-- aux150
+  SIGNAL aux151 : BIT;		-- aux151
+  SIGNAL aux152 : BIT;		-- aux152
+  SIGNAL aux153 : BIT;		-- aux153
+  SIGNAL aux154 : BIT;		-- aux154
+  SIGNAL aux155 : BIT;		-- aux155
+  SIGNAL aux156 : BIT;		-- aux156
+  SIGNAL aux157 : BIT;		-- aux157
+  SIGNAL aux158 : BIT;		-- aux158
+  SIGNAL aux159 : BIT;		-- aux159
+  SIGNAL aux160 : BIT;		-- aux160
+  SIGNAL aux161 : BIT;		-- aux161
+  SIGNAL aux162 : BIT;		-- aux162
+  SIGNAL aux163 : BIT;		-- aux163
+  SIGNAL aux164 : BIT;		-- aux164
+  SIGNAL aux165 : BIT;		-- aux165
+  SIGNAL aux166 : BIT;		-- aux166
+  SIGNAL aux167 : BIT;		-- aux167
+  SIGNAL aux168 : BIT;		-- aux168
+  SIGNAL aux169 : BIT;		-- aux169
+  SIGNAL aux170 : BIT;		-- aux170
+  SIGNAL aux171 : BIT;		-- aux171
+  SIGNAL aux172 : BIT;		-- aux172
+  SIGNAL aux173 : BIT;		-- aux173
+  SIGNAL aux174 : BIT;		-- aux174
+  SIGNAL aux175 : BIT;		-- aux175
+  SIGNAL aux176 : BIT;		-- aux176
+  SIGNAL aux177 : BIT;		-- aux177
+  SIGNAL aux178 : BIT;		-- aux178
+  SIGNAL aux179 : BIT;		-- aux179
+  SIGNAL aux180 : BIT;		-- aux180
+  SIGNAL aux182 : BIT;		-- aux182
+  SIGNAL aux184 : BIT;		-- aux184
+  SIGNAL aux185 : BIT;		-- aux185
+  SIGNAL aux186 : BIT;		-- aux186
+  SIGNAL aux187 : BIT;		-- aux187
+  SIGNAL aux188 : BIT;		-- aux188
+  SIGNAL aux189 : BIT;		-- aux189
+  SIGNAL aux190 : BIT;		-- aux190
+  SIGNAL aux191 : BIT;		-- aux191
+  SIGNAL aux192 : BIT;		-- aux192
+  SIGNAL aux193 : BIT;		-- aux193
+  SIGNAL aux195 : BIT;		-- aux195
+  SIGNAL aux198 : BIT;		-- aux198
+  SIGNAL aux199 : BIT;		-- aux199
+  SIGNAL aux200 : BIT;		-- aux200
+
+BEGIN
+  aux200 <= (aux5 AND aux4);
+  aux199 <= (NOT(shift_val(3)) AND shift_val(2));
+  aux198 <= (NOT(shift_val(3)) AND (NOT(shift_val(2)) AND (
+NOT(shift_val(4)) AND shift_val(1))));
+  aux195 <= (NOT(shift_val(4)) AND (NOT(shift_val(1)) AND 
+shift_val(0)));
+  aux193 <= (shift_val(0) AND shift_lsl);
+  aux192 <= (shift_val(0) AND NOT(shift_lsl));
+  aux191 <= (shift_val(1) AND shift_lsl);
+  aux190 <= (shift_val(1) AND NOT(shift_lsl));
+  aux189 <= (shift_val(2) AND shift_asr AND NOT(shift_lsr));
+  aux188 <= (NOT(shift_lsr) AND NOT(shift_ror));
+  aux187 <= (NOT(shift_asr) AND aux186);
+  aux186 <= (NOT(shift_lsr) AND shift_ror);
+  aux185 <= (shift_val(3) AND shift_asr AND NOT(shift_lsr));
+  aux184 <= (shift_asr AND (NOT(shift_lsr) AND shift_val(4)));
+  aux182 <= (NOT(shift_asr) AND (NOT(shift_lsr) AND 
+shift_val(4) AND shift_ror));
+  aux180 <= (NOT(shift_ror) AND NOT(shift_rrx));
+  aux179 <= (NOT(shift_ror) AND shift_rrx);
+  aux178 <= (dout_inter0_31 AND shift_asr);
+  aux177 <= (dout_inter1_31 AND shift_val(2));
+  aux176 <= (dout_inter1_30 AND shift_val(2));
+  aux175 <= (dout_inter1_29 AND shift_val(2));
+  aux174 <= (dout_inter1_28 AND shift_val(2));
+  aux173 <= (dout_inter1_27 AND shift_val(2));
+  aux172 <= (dout_inter1_26 AND shift_val(2));
+  aux171 <= (dout_inter1_25 AND shift_val(2));
+  aux170 <= (dout_inter1_24 AND shift_val(2));
+  aux169 <= (dout_inter1_23 AND shift_val(2));
+  aux168 <= (dout_inter1_22 AND shift_val(2));
+  aux167 <= (dout_inter1_21 AND shift_val(2));
+  aux166 <= (dout_inter1_20 AND shift_val(2));
+  aux165 <= (dout_inter1_19 AND shift_val(2));
+  aux164 <= (dout_inter1_18 AND shift_val(2));
+  aux163 <= (dout_inter1_17 AND shift_val(2));
+  aux162 <= (dout_inter1_16 AND shift_val(2));
+  aux161 <= (dout_inter1_15 AND shift_val(2));
+  aux160 <= (dout_inter1_14 AND shift_val(2));
+  aux159 <= (dout_inter1_13 AND shift_val(2));
+  aux158 <= (dout_inter1_12 AND shift_val(2));
+  aux157 <= (dout_inter1_3 AND shift_val(2));
+  aux156 <= (dout_inter1_11 AND shift_val(2));
+  aux155 <= (dout_inter1_2 AND shift_val(2));
+  aux154 <= (dout_inter1_10 AND shift_val(2));
+  aux153 <= (dout_inter1_1 AND shift_val(2));
+  aux152 <= (dout_inter1_9 AND shift_val(2));
+  aux151 <= (dout_inter1_0 AND shift_val(2));
+  aux150 <= (dout_inter1_8 AND shift_val(2));
+  aux149 <= (dout_inter1_7 AND shift_val(2));
+  aux148 <= (dout_inter1_6 AND shift_val(2));
+  aux147 <= (dout_inter1_5 AND shift_val(2));
+  aux146 <= (dout_inter1_4 AND shift_val(2));
+  aux145 <= (dout_inter2_31 AND shift_val(3));
+  aux144 <= (dout_inter2_30 AND shift_val(3));
+  aux143 <= (dout_inter2_29 AND shift_val(3));
+  aux142 <= (dout_inter2_28 AND shift_val(3));
+  aux141 <= (dout_inter2_27 AND shift_val(3));
+  aux140 <= (dout_inter2_26 AND shift_val(3));
+  aux139 <= (dout_inter2_25 AND shift_val(3));
+  aux138 <= (dout_inter2_24 AND shift_val(3));
+  aux137 <= (dout_inter2_7 AND shift_val(3));
+  aux136 <= (dout_inter2_23 AND shift_val(3));
+  aux135 <= (dout_inter2_6 AND shift_val(3));
+  aux134 <= (dout_inter2_22 AND shift_val(3));
+  aux133 <= (dout_inter2_5 AND shift_val(3));
+  aux132 <= (dout_inter2_21 AND shift_val(3));
+  aux131 <= (dout_inter2_4 AND shift_val(3));
+  aux130 <= (dout_inter2_20 AND shift_val(3));
+  aux129 <= (dout_inter2_3 AND shift_val(3));
+  aux128 <= (dout_inter2_19 AND shift_val(3));
+  aux127 <= (dout_inter2_2 AND shift_val(3));
+  aux126 <= (dout_inter2_18 AND shift_val(3));
+  aux125 <= (dout_inter2_1 AND shift_val(3));
+  aux124 <= (dout_inter2_17 AND shift_val(3));
+  aux123 <= (dout_inter2_0 AND shift_val(3));
+  aux122 <= (dout_inter2_16 AND shift_val(3));
+  aux121 <= (dout_inter2_15 AND shift_val(3));
+  aux120 <= (dout_inter2_14 AND shift_val(3));
+  aux119 <= (dout_inter2_13 AND shift_val(3));
+  aux118 <= (dout_inter2_12 AND shift_val(3));
+  aux117 <= (dout_inter2_11 AND shift_val(3));
+  aux116 <= (dout_inter2_10 AND shift_val(3));
+  aux115 <= (dout_inter2_9 AND shift_val(3));
+  aux114 <= (dout_inter2_8 AND shift_val(3));
+  aux113 <= (dout_inter3_15 AND shift_val(4));
+  aux112 <= (dout_inter3_31 AND NOT(shift_val(4)));
+  aux111 <= ((((dout_inter3_31 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux107 <= (dout_inter3_30 AND NOT(shift_val(4)));
+  aux106 <= ((((dout_inter3_30 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux102 <= (dout_inter3_29 AND NOT(shift_val(4)));
+  aux101 <= ((((dout_inter3_29 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux97 <= (dout_inter3_28 AND NOT(shift_val(4)));
+  aux96 <= ((((dout_inter3_28 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux92 <= (dout_inter3_27 AND NOT(shift_val(4)));
+  aux91 <= ((((dout_inter3_27 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux87 <= (dout_inter3_26 AND NOT(shift_val(4)));
+  aux86 <= ((((dout_inter3_26 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux82 <= (dout_inter3_25 AND NOT(shift_val(4)));
+  aux81 <= ((((dout_inter3_25 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux77 <= (dout_inter3_24 AND NOT(shift_val(4)));
+  aux76 <= ((((dout_inter3_24 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux72 <= (dout_inter3_23 AND NOT(shift_val(4)));
+  aux71 <= ((((dout_inter3_23 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux67 <= (dout_inter3_22 AND NOT(shift_val(4)));
+  aux66 <= ((((dout_inter3_22 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux62 <= (dout_inter3_21 AND NOT(shift_val(4)));
+  aux61 <= ((((dout_inter3_21 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux57 <= (dout_inter3_20 AND NOT(shift_val(4)));
+  aux56 <= ((((dout_inter3_20 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux52 <= (dout_inter3_19 AND NOT(shift_val(4)));
+  aux51 <= ((((dout_inter3_19 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux47 <= (dout_inter3_18 AND NOT(shift_val(4)));
+  aux46 <= ((((dout_inter3_18 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux42 <= (dout_inter3_17 AND NOT(shift_val(4)));
+  aux41 <= ((((dout_inter3_17 AND NOT(shift_asr)) AND NOT(
+shift_lsr)) AND shift_val(4)) AND NOT(shift_ror));
+  aux37 <= (aux5 AND (aux4 AND dout_inter3_15));
+  aux35 <= (aux5 AND (aux4 AND dout_inter3_14));
+  aux33 <= (aux5 AND (aux4 AND dout_inter3_13));
+  aux31 <= (aux5 AND (aux4 AND dout_inter3_12));
+  aux29 <= (aux5 AND (aux4 AND dout_inter3_11));
+  aux27 <= (aux5 AND (aux4 AND dout_inter3_10));
+  aux25 <= (aux5 AND (aux4 AND dout_inter3_9));
+  aux23 <= (aux5 AND (aux4 AND dout_inter3_8));
+  aux21 <= (aux5 AND (aux4 AND dout_inter3_7));
+  aux19 <= (aux5 AND (aux4 AND dout_inter3_6));
+  aux17 <= (aux5 AND (aux4 AND dout_inter3_5));
+  aux15 <= (aux5 AND (aux4 AND dout_inter3_4));
+  aux13 <= (aux5 AND (aux4 AND dout_inter3_3));
+  aux11 <= (aux5 AND (aux4 AND dout_inter3_2));
+  aux9 <= (NOT(shift_val(4)) OR NOT(shift_lsl));
+  aux8 <= NOT(shift_asr AND NOT(shift_lsr));
+  aux7 <= (aux5 AND (aux4 AND dout_inter3_1));
+  aux5 <= (NOT(shift_val(4)) OR NOT(shift_ror));
+  aux4 <= (aux2 OR NOT(shift_val(4)));
+  aux3 <= (NOT(aux2) OR shift_ror);
+  aux2 <= (NOT(shift_asr) AND NOT(shift_lsr));
+  aux1 <= ((cin AND NOT(shift_asr)) AND NOT(shift_lsr));
+  dout_inter3_0 <= ((((aux114 AND shift_lsr) OR (dout_inter2_2 AND 
+aux185) OR (aux114 AND aux187) OR (dout_inter2_0 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter2_0 AND NOT(shift_val(3))));
+  dout_inter3_1 <= ((((aux115 AND shift_lsr) OR (dout_inter2_3 AND 
+aux185) OR (aux115 AND aux187) OR (dout_inter2_1 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter2_1 AND NOT(shift_val(3))));
+  dout_inter3_2 <= ((((aux116 AND shift_lsr) OR (dout_inter2_4 AND 
+aux185) OR (aux116 AND aux187) OR (dout_inter2_2 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter2_2 AND NOT(shift_val(3))));
+  dout_inter3_3 <= ((((aux117 AND shift_lsr) OR (dout_inter2_5 AND 
+aux185) OR (aux117 AND aux187) OR (dout_inter2_3 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter2_3 AND NOT(shift_val(3))));
+  dout_inter3_4 <= ((((aux118 AND shift_lsr) OR (dout_inter2_6 AND 
+aux185) OR (aux118 AND aux187) OR (dout_inter2_4 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter2_4 AND NOT(shift_val(3))));
+  dout_inter3_5 <= ((((aux119 AND shift_lsr) OR (dout_inter2_7 AND 
+aux185) OR (aux119 AND aux187) OR (dout_inter2_5 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter2_5 AND NOT(shift_val(3))));
+  dout_inter3_6 <= ((((aux120 AND shift_lsr) OR (dout_inter2_8 AND 
+aux185) OR (aux120 AND aux187) OR (dout_inter2_6 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter2_6 AND NOT(shift_val(3))));
+  dout_inter3_7 <= ((((aux121 AND shift_lsr) OR (dout_inter2_9 AND 
+aux185) OR (aux121 AND aux187) OR (dout_inter2_7 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter2_7 AND NOT(shift_val(3))));
+  dout_inter3_8 <= ((dout_inter2_8 AND NOT(shift_val(3))) OR (aux123
+ AND shift_lsl) OR (((aux122 AND shift_lsr) OR (
+dout_inter2_10 AND aux185) OR (aux122 AND aux187) OR (
+dout_inter2_8 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_9 <= ((dout_inter2_9 AND NOT(shift_val(3))) OR (aux125
+ AND shift_lsl) OR (((aux124 AND shift_lsr) OR (
+dout_inter2_11 AND aux185) OR (aux124 AND aux187) OR (
+dout_inter2_9 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_10 <= ((dout_inter2_10 AND NOT(shift_val(3))) OR (
+aux127 AND shift_lsl) OR (((aux126 AND shift_lsr) OR (
+dout_inter2_12 AND aux185) OR (aux126 AND aux187) OR (
+dout_inter2_10 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_11 <= ((dout_inter2_11 AND NOT(shift_val(3))) OR (
+aux129 AND shift_lsl) OR (((aux128 AND shift_lsr) OR (
+dout_inter2_13 AND aux185) OR (aux128 AND aux187) OR (
+dout_inter2_11 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_12 <= ((dout_inter2_12 AND NOT(shift_val(3))) OR (
+aux131 AND shift_lsl) OR (((aux130 AND shift_lsr) OR (
+dout_inter2_14 AND aux185) OR (aux130 AND aux187) OR (
+dout_inter2_12 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_13 <= ((dout_inter2_13 AND NOT(shift_val(3))) OR (
+aux133 AND shift_lsl) OR (((aux132 AND shift_lsr) OR (
+dout_inter2_15 AND aux185) OR (aux132 AND aux187) OR (
+dout_inter2_13 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_14 <= ((dout_inter2_14 AND NOT(shift_val(3))) OR (
+aux135 AND shift_lsl) OR (((aux134 AND shift_lsr) OR (
+dout_inter2_16 AND aux185) OR (aux134 AND aux187) OR (
+dout_inter2_14 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_15 <= ((dout_inter2_15 AND NOT(shift_val(3))) OR (
+aux137 AND shift_lsl) OR (((aux136 AND shift_lsr) OR (
+dout_inter2_17 AND aux185) OR (aux136 AND aux187) OR (
+dout_inter2_15 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_16 <= ((dout_inter2_16 AND NOT(shift_val(3))) OR (
+aux114 AND shift_lsl) OR (((aux138 AND shift_lsr) OR (
+dout_inter2_18 AND aux185) OR (aux138 AND aux187) OR (
+dout_inter2_16 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_17 <= ((dout_inter2_17 AND NOT(shift_val(3))) OR (
+aux115 AND shift_lsl) OR (((aux139 AND shift_lsr) OR (
+dout_inter2_19 AND aux185) OR (aux139 AND aux187) OR (
+dout_inter2_17 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_18 <= ((dout_inter2_18 AND NOT(shift_val(3))) OR (
+aux116 AND shift_lsl) OR (((aux140 AND shift_lsr) OR (
+dout_inter2_20 AND aux185) OR (aux140 AND aux187) OR (
+dout_inter2_18 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_19 <= ((dout_inter2_19 AND NOT(shift_val(3))) OR (
+aux117 AND shift_lsl) OR (((aux141 AND shift_lsr) OR (
+dout_inter2_21 AND aux185) OR (aux141 AND aux187) OR (
+dout_inter2_19 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_20 <= ((dout_inter2_20 AND NOT(shift_val(3))) OR (
+aux118 AND shift_lsl) OR (((aux142 AND shift_lsr) OR (
+dout_inter2_22 AND aux185) OR (aux142 AND aux187) OR (
+dout_inter2_20 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_21 <= ((dout_inter2_21 AND NOT(shift_val(3))) OR (
+aux119 AND shift_lsl) OR (((aux143 AND shift_lsr) OR (
+dout_inter2_23 AND aux185) OR (aux143 AND aux187) OR (
+dout_inter2_21 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_22 <= ((dout_inter2_22 AND NOT(shift_val(3))) OR (
+aux120 AND shift_lsl) OR (((aux144 AND shift_lsr) OR (
+dout_inter2_24 AND aux185) OR (aux144 AND aux187) OR (
+dout_inter2_22 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_23 <= ((dout_inter2_23 AND NOT(shift_val(3))) OR (
+aux121 AND shift_lsl) OR (((aux145 AND shift_lsr) OR (
+dout_inter2_25 AND aux185) OR (aux145 AND aux187) OR (
+dout_inter2_23 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter3_24 <= ((dout_inter2_24 AND NOT(shift_val(3))) OR (
+aux122 AND shift_lsl) OR (((dout_inter2_26 AND aux185) 
+OR (aux123 AND aux187) OR (dout_inter2_24 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter3_25 <= ((dout_inter2_25 AND NOT(shift_val(3))) OR (
+aux124 AND shift_lsl) OR (((dout_inter2_27 AND aux185) 
+OR (aux125 AND aux187) OR (dout_inter2_25 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter3_26 <= ((dout_inter2_26 AND NOT(shift_val(3))) OR (
+aux126 AND shift_lsl) OR (((dout_inter2_28 AND aux185) 
+OR (aux127 AND aux187) OR (dout_inter2_26 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter3_27 <= ((dout_inter2_27 AND NOT(shift_val(3))) OR (
+aux128 AND shift_lsl) OR (((dout_inter2_29 AND aux185) 
+OR (aux129 AND aux187) OR (dout_inter2_27 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter3_28 <= ((dout_inter2_28 AND NOT(shift_val(3))) OR (
+aux130 AND shift_lsl) OR (((dout_inter2_30 AND aux185) 
+OR (aux131 AND aux187) OR (dout_inter2_28 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter3_29 <= ((dout_inter2_29 AND NOT(shift_val(3))) OR (
+aux132 AND shift_lsl) OR (((dout_inter2_31 AND aux185) 
+OR (aux133 AND aux187) OR (dout_inter2_29 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter3_30 <= ((dout_inter2_30 AND NOT(shift_val(3))) OR (
+aux134 AND shift_lsl) OR (((dout_inter2_31 AND aux185) 
+OR (aux135 AND aux187) OR (dout_inter2_30 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter3_31 <= ((dout_inter2_31 AND NOT(shift_val(3))) OR (
+aux136 AND shift_lsl) OR (((dout_inter2_31 AND aux185) 
+OR (aux137 AND aux187) OR (dout_inter2_31 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter2_0 <= ((((aux146 AND shift_lsr) OR (dout_inter1_2 AND 
+aux189) OR (aux146 AND aux187) OR (dout_inter1_0 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter1_0 AND NOT(shift_val(2))));
+  dout_inter2_1 <= ((((aux147 AND shift_lsr) OR (dout_inter1_3 AND 
+aux189) OR (aux147 AND aux187) OR (dout_inter1_1 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter1_1 AND NOT(shift_val(2))));
+  dout_inter2_2 <= ((((aux148 AND shift_lsr) OR (dout_inter1_4 AND 
+aux189) OR (aux148 AND aux187) OR (dout_inter1_2 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter1_2 AND NOT(shift_val(2))));
+  dout_inter2_3 <= ((((aux149 AND shift_lsr) OR (dout_inter1_5 AND 
+aux189) OR (aux149 AND aux187) OR (dout_inter1_3 AND 
+NOT(shift_asr) AND aux188)) AND NOT(shift_lsl)) OR (
+dout_inter1_3 AND NOT(shift_val(2))));
+  dout_inter2_4 <= ((dout_inter1_4 AND NOT(shift_val(2))) OR (aux151
+ AND shift_lsl) OR (((aux150 AND shift_lsr) OR (
+dout_inter1_6 AND aux189) OR (aux150 AND aux187) OR (
+dout_inter1_4 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_5 <= ((dout_inter1_5 AND NOT(shift_val(2))) OR (aux153
+ AND shift_lsl) OR (((aux152 AND shift_lsr) OR (
+dout_inter1_7 AND aux189) OR (aux152 AND aux187) OR (
+dout_inter1_5 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_6 <= ((dout_inter1_6 AND NOT(shift_val(2))) OR (aux155
+ AND shift_lsl) OR (((aux154 AND shift_lsr) OR (
+dout_inter1_8 AND aux189) OR (aux154 AND aux187) OR (
+dout_inter1_6 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_7 <= ((dout_inter1_7 AND NOT(shift_val(2))) OR (aux157
+ AND shift_lsl) OR (((aux156 AND shift_lsr) OR (
+dout_inter1_9 AND aux189) OR (aux156 AND aux187) OR (
+dout_inter1_7 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_8 <= ((dout_inter1_8 AND NOT(shift_val(2))) OR (aux146
+ AND shift_lsl) OR (((aux158 AND shift_lsr) OR (
+dout_inter1_10 AND aux189) OR (aux158 AND aux187) OR (
+dout_inter1_8 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_9 <= ((dout_inter1_9 AND NOT(shift_val(2))) OR (aux147
+ AND shift_lsl) OR (((aux159 AND shift_lsr) OR (
+dout_inter1_11 AND aux189) OR (aux159 AND aux187) OR (
+dout_inter1_9 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_10 <= ((dout_inter1_10 AND NOT(shift_val(2))) OR (
+aux148 AND shift_lsl) OR (((aux160 AND shift_lsr) OR (
+dout_inter1_12 AND aux189) OR (aux160 AND aux187) OR (
+dout_inter1_10 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_11 <= ((dout_inter1_11 AND NOT(shift_val(2))) OR (
+aux149 AND shift_lsl) OR (((aux161 AND shift_lsr) OR (
+dout_inter1_13 AND aux189) OR (aux161 AND aux187) OR (
+dout_inter1_11 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_12 <= ((dout_inter1_12 AND NOT(shift_val(2))) OR (
+aux150 AND shift_lsl) OR (((aux162 AND shift_lsr) OR (
+dout_inter1_14 AND aux189) OR (aux162 AND aux187) OR (
+dout_inter1_12 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_13 <= ((dout_inter1_13 AND NOT(shift_val(2))) OR (
+aux152 AND shift_lsl) OR (((aux163 AND shift_lsr) OR (
+dout_inter1_15 AND aux189) OR (aux163 AND aux187) OR (
+dout_inter1_13 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_14 <= ((dout_inter1_14 AND NOT(shift_val(2))) OR (
+aux154 AND shift_lsl) OR (((aux164 AND shift_lsr) OR (
+dout_inter1_16 AND aux189) OR (aux164 AND aux187) OR (
+dout_inter1_14 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_15 <= ((dout_inter1_15 AND NOT(shift_val(2))) OR (
+aux156 AND shift_lsl) OR (((aux165 AND shift_lsr) OR (
+dout_inter1_17 AND aux189) OR (aux165 AND aux187) OR (
+dout_inter1_15 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_16 <= ((dout_inter1_16 AND NOT(shift_val(2))) OR (
+aux158 AND shift_lsl) OR (((aux166 AND shift_lsr) OR (
+dout_inter1_18 AND aux189) OR (aux166 AND aux187) OR (
+dout_inter1_16 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_17 <= ((dout_inter1_17 AND NOT(shift_val(2))) OR (
+aux159 AND shift_lsl) OR (((aux167 AND shift_lsr) OR (
+dout_inter1_19 AND aux189) OR (aux167 AND aux187) OR (
+dout_inter1_17 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_18 <= ((dout_inter1_18 AND NOT(shift_val(2))) OR (
+aux160 AND shift_lsl) OR (((aux168 AND shift_lsr) OR (
+dout_inter1_20 AND aux189) OR (aux168 AND aux187) OR (
+dout_inter1_18 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_19 <= ((dout_inter1_19 AND NOT(shift_val(2))) OR (
+aux161 AND shift_lsl) OR (((aux169 AND shift_lsr) OR (
+dout_inter1_21 AND aux189) OR (aux169 AND aux187) OR (
+dout_inter1_19 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_20 <= ((dout_inter1_20 AND NOT(shift_val(2))) OR (
+aux162 AND shift_lsl) OR (((aux170 AND shift_lsr) OR (
+dout_inter1_22 AND aux189) OR (aux170 AND aux187) OR (
+dout_inter1_20 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_21 <= ((dout_inter1_21 AND NOT(shift_val(2))) OR (
+aux163 AND shift_lsl) OR (((aux171 AND shift_lsr) OR (
+dout_inter1_23 AND aux189) OR (aux171 AND aux187) OR (
+dout_inter1_21 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_22 <= ((dout_inter1_22 AND NOT(shift_val(2))) OR (
+aux164 AND shift_lsl) OR (((aux172 AND shift_lsr) OR (
+dout_inter1_24 AND aux189) OR (aux172 AND aux187) OR (
+dout_inter1_22 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_23 <= ((dout_inter1_23 AND NOT(shift_val(2))) OR (
+aux165 AND shift_lsl) OR (((aux173 AND shift_lsr) OR (
+dout_inter1_25 AND aux189) OR (aux173 AND aux187) OR (
+dout_inter1_23 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_24 <= ((dout_inter1_24 AND NOT(shift_val(2))) OR (
+aux166 AND shift_lsl) OR (((aux174 AND shift_lsr) OR (
+dout_inter1_26 AND aux189) OR (aux174 AND aux187) OR (
+dout_inter1_24 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_25 <= ((dout_inter1_25 AND NOT(shift_val(2))) OR (
+aux167 AND shift_lsl) OR (((aux175 AND shift_lsr) OR (
+dout_inter1_27 AND aux189) OR (aux175 AND aux187) OR (
+dout_inter1_25 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_26 <= ((dout_inter1_26 AND NOT(shift_val(2))) OR (
+aux168 AND shift_lsl) OR (((aux176 AND shift_lsr) OR (
+dout_inter1_28 AND aux189) OR (aux176 AND aux187) OR (
+dout_inter1_26 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_27 <= ((dout_inter1_27 AND NOT(shift_val(2))) OR (
+aux169 AND shift_lsl) OR (((aux177 AND shift_lsr) OR (
+dout_inter1_29 AND aux189) OR (aux177 AND aux187) OR (
+dout_inter1_27 AND NOT(shift_asr) AND aux188)) AND NOT(
+shift_lsl)));
+  dout_inter2_28 <= ((dout_inter1_28 AND NOT(shift_val(2))) OR (
+aux170 AND shift_lsl) OR (((dout_inter1_30 AND aux189) 
+OR (aux151 AND aux187) OR (dout_inter1_28 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter2_29 <= ((dout_inter1_29 AND NOT(shift_val(2))) OR (
+aux171 AND shift_lsl) OR (((dout_inter1_31 AND aux189) 
+OR (aux153 AND aux187) OR (dout_inter1_29 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter2_30 <= ((dout_inter1_30 AND NOT(shift_val(2))) OR (
+aux172 AND shift_lsl) OR (((dout_inter1_31 AND aux189) 
+OR (aux155 AND aux187) OR (dout_inter1_30 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter2_31 <= ((dout_inter1_31 AND NOT(shift_val(2))) OR (
+aux173 AND shift_lsl) OR (((dout_inter1_31 AND aux189) 
+OR (aux157 AND aux187) OR (dout_inter1_31 AND NOT(
+shift_asr) AND aux188)) AND NOT(shift_lsl)));
+  dout_inter1_0 <= ((((dout_inter0_2 AND aux3) OR (dout_inter0_0 AND
+ NOT(aux3))) AND aux190) OR (dout_inter0_0 AND NOT
+(shift_val(1))));
+  dout_inter1_1 <= ((((dout_inter0_3 AND aux3) OR (dout_inter0_1 AND
+ NOT(aux3))) AND aux190) OR (dout_inter0_1 AND NOT
+(shift_val(1))));
+  dout_inter1_2 <= ((dout_inter0_2 AND NOT(shift_val(1))) OR (
+dout_inter0_0 AND aux191) OR (((dout_inter0_4 AND aux3) OR (
+dout_inter0_2 AND NOT(aux3))) AND aux190));
+  dout_inter1_3 <= ((dout_inter0_3 AND NOT(shift_val(1))) OR (
+dout_inter0_1 AND aux191) OR (((dout_inter0_5 AND aux3) OR (
+dout_inter0_3 AND NOT(aux3))) AND aux190));
+  dout_inter1_4 <= ((dout_inter0_4 AND NOT(shift_val(1))) OR (
+dout_inter0_2 AND aux191) OR (((dout_inter0_6 AND aux3) OR (
+dout_inter0_4 AND NOT(aux3))) AND aux190));
+  dout_inter1_5 <= ((dout_inter0_5 AND NOT(shift_val(1))) OR (
+dout_inter0_3 AND aux191) OR (((dout_inter0_7 AND aux3) OR (
+dout_inter0_5 AND NOT(aux3))) AND aux190));
+  dout_inter1_6 <= ((dout_inter0_6 AND NOT(shift_val(1))) OR (
+dout_inter0_4 AND aux191) OR (((dout_inter0_8 AND aux3) OR (
+dout_inter0_6 AND NOT(aux3))) AND aux190));
+  dout_inter1_7 <= ((dout_inter0_7 AND NOT(shift_val(1))) OR (
+dout_inter0_5 AND aux191) OR (((dout_inter0_9 AND aux3) OR (
+dout_inter0_7 AND NOT(aux3))) AND aux190));
+  dout_inter1_8 <= ((dout_inter0_8 AND NOT(shift_val(1))) OR (
+dout_inter0_6 AND aux191) OR (((dout_inter0_10 AND aux3) OR (
+dout_inter0_8 AND NOT(aux3))) AND aux190));
+  dout_inter1_9 <= ((dout_inter0_9 AND NOT(shift_val(1))) OR (
+dout_inter0_7 AND aux191) OR (((dout_inter0_11 AND aux3) OR (
+dout_inter0_9 AND NOT(aux3))) AND aux190));
+  dout_inter1_10 <= ((dout_inter0_10 AND NOT(shift_val(1))) OR (
+dout_inter0_8 AND aux191) OR (((dout_inter0_12 AND aux3) OR (
+dout_inter0_10 AND NOT(aux3))) AND aux190));
+  dout_inter1_11 <= ((dout_inter0_11 AND NOT(shift_val(1))) OR (
+dout_inter0_9 AND aux191) OR (((dout_inter0_13 AND aux3) OR (
+dout_inter0_11 AND NOT(aux3))) AND aux190));
+  dout_inter1_12 <= ((dout_inter0_12 AND NOT(shift_val(1))) OR (
+dout_inter0_10 AND aux191) OR (((dout_inter0_14 AND aux3) OR (
+dout_inter0_12 AND NOT(aux3))) AND aux190));
+  dout_inter1_13 <= ((dout_inter0_13 AND NOT(shift_val(1))) OR (
+dout_inter0_11 AND aux191) OR (((dout_inter0_15 AND aux3) OR (
+dout_inter0_13 AND NOT(aux3))) AND aux190));
+  dout_inter1_14 <= ((dout_inter0_14 AND NOT(shift_val(1))) OR (
+dout_inter0_12 AND aux191) OR (((dout_inter0_16 AND aux3) OR (
+dout_inter0_14 AND NOT(aux3))) AND aux190));
+  dout_inter1_15 <= ((dout_inter0_15 AND NOT(shift_val(1))) OR (
+dout_inter0_13 AND aux191) OR (((dout_inter0_17 AND aux3) OR (
+dout_inter0_15 AND NOT(aux3))) AND aux190));
+  dout_inter1_16 <= ((dout_inter0_16 AND NOT(shift_val(1))) OR (
+dout_inter0_14 AND aux191) OR (((dout_inter0_18 AND aux3) OR (
+dout_inter0_16 AND NOT(aux3))) AND aux190));
+  dout_inter1_17 <= ((dout_inter0_17 AND NOT(shift_val(1))) OR (
+dout_inter0_15 AND aux191) OR (((dout_inter0_19 AND aux3) OR (
+dout_inter0_17 AND NOT(aux3))) AND aux190));
+  dout_inter1_18 <= ((dout_inter0_18 AND NOT(shift_val(1))) OR (
+dout_inter0_16 AND aux191) OR (((dout_inter0_20 AND aux3) OR (
+dout_inter0_18 AND NOT(aux3))) AND aux190));
+  dout_inter1_19 <= ((dout_inter0_19 AND NOT(shift_val(1))) OR (
+dout_inter0_17 AND aux191) OR (((dout_inter0_21 AND aux3) OR (
+dout_inter0_19 AND NOT(aux3))) AND aux190));
+  dout_inter1_20 <= ((dout_inter0_20 AND NOT(shift_val(1))) OR (
+dout_inter0_18 AND aux191) OR (((dout_inter0_22 AND aux3) OR (
+dout_inter0_20 AND NOT(aux3))) AND aux190));
+  dout_inter1_21 <= ((dout_inter0_21 AND NOT(shift_val(1))) OR (
+dout_inter0_19 AND aux191) OR (((dout_inter0_23 AND aux3) OR (
+dout_inter0_21 AND NOT(aux3))) AND aux190));
+  dout_inter1_22 <= ((dout_inter0_22 AND NOT(shift_val(1))) OR (
+dout_inter0_20 AND aux191) OR (((dout_inter0_24 AND aux3) OR (
+dout_inter0_22 AND NOT(aux3))) AND aux190));
+  dout_inter1_23 <= ((dout_inter0_23 AND NOT(shift_val(1))) OR (
+dout_inter0_21 AND aux191) OR (((dout_inter0_25 AND aux3) OR (
+dout_inter0_23 AND NOT(aux3))) AND aux190));
+  dout_inter1_24 <= ((dout_inter0_24 AND NOT(shift_val(1))) OR (
+dout_inter0_22 AND aux191) OR (((dout_inter0_26 AND aux3) OR (
+dout_inter0_24 AND NOT(aux3))) AND aux190));
+  dout_inter1_25 <= ((dout_inter0_25 AND NOT(shift_val(1))) OR (
+dout_inter0_23 AND aux191) OR (((dout_inter0_27 AND aux3) OR (
+dout_inter0_25 AND NOT(aux3))) AND aux190));
+  dout_inter1_26 <= ((dout_inter0_26 AND NOT(shift_val(1))) OR (
+dout_inter0_24 AND aux191) OR (((dout_inter0_28 AND aux3) OR (
+dout_inter0_26 AND NOT(aux3))) AND aux190));
+  dout_inter1_27 <= ((dout_inter0_27 AND NOT(shift_val(1))) OR (
+dout_inter0_25 AND aux191) OR (((dout_inter0_29 AND aux3) OR (
+dout_inter0_27 AND NOT(aux3))) AND aux190));
+  dout_inter1_28 <= ((dout_inter0_28 AND NOT(shift_val(1))) OR (
+dout_inter0_26 AND aux191) OR (((dout_inter0_30 AND aux3) OR (
+dout_inter0_28 AND NOT(aux3))) AND aux190));
+  dout_inter1_29 <= ((dout_inter0_29 AND NOT(shift_val(1))) OR (
+dout_inter0_27 AND aux191) OR (((dout_inter0_31 AND aux3) OR (
+dout_inter0_29 AND NOT(aux3))) AND aux190));
+  dout_inter1_30 <= ((dout_inter0_30 AND NOT(shift_val(1))) OR (
+dout_inter0_28 AND aux191) OR (((aux178 AND NOT(shift_lsr)) OR 
+(dout_inter0_0 AND aux187) OR (dout_inter0_30 AND 
+NOT(shift_asr) AND aux188)) AND aux190));
+  dout_inter1_31 <= ((dout_inter0_31 AND NOT(shift_val(1))) OR (
+dout_inter0_29 AND aux191) OR ((((aux178 OR (dout_inter0_1 AND 
+NOT(shift_asr))) AND aux186) OR (dout_inter0_31 AND 
+aux188)) AND aux190));
+  dout_inter0_0 <= ((((din(1) AND shift_ror) OR ((NOT(aux2) OR 
+din(0)) AND (din(1) OR aux2) AND NOT(shift_ror))) AND 
+aux192) OR (din(0) AND NOT(shift_val(0))));
+  dout_inter0_1 <= ((din(1) AND NOT(shift_val(0))) OR (din(0) AND 
+aux193) OR (((din(2) AND aux3) OR (din(1) AND NOT(aux3)
+)) AND aux192));
+  dout_inter0_2 <= ((din(2) AND NOT(shift_val(0))) OR (din(1) AND 
+aux193) OR (((din(3) AND aux3) OR (din(2) AND NOT(aux3)
+)) AND aux192));
+  dout_inter0_3 <= ((din(3) AND NOT(shift_val(0))) OR (din(2) AND 
+aux193) OR (((din(4) AND aux3) OR (din(3) AND NOT(aux3)
+)) AND aux192));
+  dout_inter0_4 <= ((din(4) AND NOT(shift_val(0))) OR (din(3) AND 
+aux193) OR (((din(5) AND aux3) OR (din(4) AND NOT(aux3)
+)) AND aux192));
+  dout_inter0_5 <= ((din(5) AND NOT(shift_val(0))) OR (din(4) AND 
+aux193) OR (((din(6) AND aux3) OR (din(5) AND NOT(aux3)
+)) AND aux192));
+  dout_inter0_6 <= ((din(6) AND NOT(shift_val(0))) OR (din(5) AND 
+aux193) OR (((din(7) AND aux3) OR (din(6) AND NOT(aux3)
+)) AND aux192));
+  dout_inter0_7 <= ((din(7) AND NOT(shift_val(0))) OR (din(6) AND 
+aux193) OR (((din(8) AND aux3) OR (din(7) AND NOT(aux3)
+)) AND aux192));
+  dout_inter0_8 <= ((din(8) AND NOT(shift_val(0))) OR (din(7) AND 
+aux193) OR (((din(9) AND shift_ror) OR ((aux2 OR din(9)
+) AND (din(8) OR shift_asr OR shift_lsr) AND NOT(
+shift_ror))) AND aux192));
+  dout_inter0_9 <= ((din(9) AND NOT(shift_val(0))) OR (din(8) AND 
+aux193) OR (((din(10) AND shift_ror) OR ((NOT(aux2) OR 
+din(9)) AND (din(10) OR aux2) AND NOT(shift_ror))) AND 
+aux192));
+  dout_inter0_10 <= ((din(10) AND NOT(shift_val(0))) OR (din(9) AND 
+aux193) OR ((NOT(aux3) OR din(11)) AND (din(10) OR 
+shift_asr OR NOT(aux188)) AND aux192));
+  dout_inter0_11 <= ((din(11) AND NOT(shift_val(0))) OR (din(10) AND 
+aux193) OR ((aux3 OR din(11)) AND (NOT(aux3) OR din(12)
+) AND aux192));
+  dout_inter0_12 <= ((din(12) AND NOT(shift_val(0))) OR (din(11) AND 
+aux193) OR ((aux3 OR din(12)) AND (din(13) OR NOT(aux3)
+) AND aux192));
+  dout_inter0_13 <= ((din(13) AND NOT(shift_val(0))) OR (din(12) AND 
+aux193) OR (((din(14) AND aux3) OR (din(13) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_14 <= ((din(14) AND NOT(shift_val(0))) OR (din(13) AND 
+aux193) OR (((din(15) AND aux3) OR (din(14) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_15 <= ((din(15) AND NOT(shift_val(0))) OR (din(14) AND 
+aux193) OR (((din(16) AND aux3) OR (din(15) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_16 <= ((din(16) AND NOT(shift_val(0))) OR (din(15) AND 
+aux193) OR (((din(17) AND aux3) OR (din(16) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_17 <= ((din(17) AND NOT(shift_val(0))) OR (din(16) AND 
+aux193) OR (((din(18) AND shift_ror) OR ((aux2 OR 
+din(18)) AND (din(17) OR shift_asr OR shift_lsr) AND NOT
+(shift_ror))) AND aux192));
+  dout_inter0_18 <= ((din(18) AND NOT(shift_val(0))) OR (din(17) AND 
+aux193) OR (((din(19) AND shift_ror) OR ((NOT(aux2) OR 
+din(18)) AND (aux2 OR din(19)) AND NOT(shift_ror))) AND 
+aux192));
+  dout_inter0_19 <= ((din(19) AND NOT(shift_val(0))) OR (din(18) AND 
+aux193) OR (((din(20) AND shift_ror) OR ((NOT(aux2) OR 
+din(19)) AND (din(20) OR aux2) AND NOT(shift_ror))) AND 
+aux192));
+  dout_inter0_20 <= ((din(20) AND NOT(shift_val(0))) OR (din(19) AND 
+aux193) OR ((NOT(aux3) OR din(21)) AND (din(20) OR 
+shift_asr OR NOT(aux188)) AND aux192));
+  dout_inter0_21 <= ((din(21) AND NOT(shift_val(0))) OR (din(20) AND 
+aux193) OR ((aux3 OR din(21)) AND (NOT(aux3) OR din(22)
+) AND aux192));
+  dout_inter0_22 <= ((din(22) AND NOT(shift_val(0))) OR (din(21) AND 
+aux193) OR (((din(23) AND shift_ror) OR ((NOT(aux2) OR 
+din(22)) AND (din(23) OR aux2) AND NOT(shift_ror))) AND 
+aux192));
+  dout_inter0_23 <= ((din(23) AND NOT(shift_val(0))) OR (din(22) AND 
+aux193) OR (((din(24) AND aux3) OR (din(23) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_24 <= ((din(24) AND NOT(shift_val(0))) OR (din(23) AND 
+aux193) OR (((din(25) AND shift_ror) OR ((aux2 OR 
+din(25)) AND (din(24) OR shift_asr OR shift_lsr) AND NOT
+(shift_ror))) AND aux192));
+  dout_inter0_25 <= ((din(25) AND NOT(shift_val(0))) OR (din(24) AND 
+aux193) OR (((din(26) AND shift_ror) OR ((NOT(aux2) OR 
+din(25)) AND (din(26) OR aux2) AND NOT(shift_ror))) AND 
+aux192));
+  dout_inter0_26 <= ((din(26) AND NOT(shift_val(0))) OR (din(25) AND 
+aux193) OR (((din(27) AND aux3) OR (din(26) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_27 <= ((din(27) AND NOT(shift_val(0))) OR (din(26) AND 
+aux193) OR (((din(28) AND aux3) OR (din(27) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_28 <= ((din(28) AND NOT(shift_val(0))) OR (din(27) AND 
+aux193) OR (((din(29) AND aux3) OR (din(28) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_29 <= ((din(29) AND NOT(shift_val(0))) OR (din(28) AND 
+aux193) OR (((din(30) AND aux3) OR (din(29) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_30 <= ((din(30) AND NOT(shift_val(0))) OR (din(29) AND 
+aux193) OR (((din(31) AND aux3) OR (din(30) AND NOT(
+aux3))) AND aux192));
+  dout_inter0_31 <= ((din(31) AND NOT(shift_val(0))) OR (din(30) AND 
+aux193) OR ((((shift_asr OR din(0)) AND (din(31) OR NOT
+(shift_asr)) AND aux186) OR (din(31) AND aux188)) 
+AND aux192));
+
+cout <= ((((NOT(shift_val(3)) AND din(31) AND NOT(
+shift_val(2)) AND aux195) OR (dout_inter0_30 AND aux198) OR (
+dout_inter3_16 AND shift_val(4)) OR (((dout_inter1_28 AND 
+aux199) OR aux138) AND NOT(shift_val(4)))) AND 
+shift_lsl) OR (((((NOT(shift_val(3)) AND NOT(shift_val(2))
+ AND din(0) AND aux195) OR (dout_inter0_1 AND 
+aux198) OR aux113 OR (((dout_inter1_3 AND aux199) OR 
+aux137) AND NOT(shift_val(4)))) AND aux3) OR (aux2 AND 
+din(0) AND aux179) OR (aux1 AND aux180)) AND NOT(
+shift_lsl)));
+
+dout (0) <= (aux9 AND ((aux3 AND ((dout_inter3_16 AND aux8) 
+OR (dout_inter3_2 AND NOT(aux8))) AND shift_val(4))
+ OR (aux7 AND shift_rrx) OR (aux200 AND 
+dout_inter3_0 AND NOT(shift_rrx))));
+
+dout (1) <= (aux9 AND ((aux3 AND ((dout_inter3_17 AND aux8) 
+OR (dout_inter3_3 AND NOT(aux8))) AND shift_val(4))
+ OR (aux11 AND shift_rrx) OR (aux7 AND NOT(
+shift_rrx))));
+
+dout (2) <= (aux9 AND ((aux3 AND ((dout_inter3_18 AND aux8) 
+OR (dout_inter3_4 AND NOT(aux8))) AND shift_val(4))
+ OR (aux13 AND shift_rrx) OR (aux11 AND NOT(
+shift_rrx))));
+
+dout (3) <= (aux9 AND ((aux3 AND ((dout_inter3_19 AND aux8) 
+OR (dout_inter3_5 AND NOT(aux8))) AND shift_val(4))
+ OR (aux15 AND shift_rrx) OR (aux13 AND NOT(
+shift_rrx))));
+
+dout (4) <= (aux9 AND ((aux3 AND ((dout_inter3_20 AND aux8) 
+OR (dout_inter3_6 AND NOT(aux8))) AND shift_val(4))
+ OR (aux17 AND shift_rrx) OR (aux15 AND NOT(
+shift_rrx))));
+
+dout (5) <= (aux9 AND ((aux3 AND ((dout_inter3_21 AND aux8) 
+OR (dout_inter3_7 AND NOT(aux8))) AND shift_val(4))
+ OR (aux19 AND shift_rrx) OR (aux17 AND NOT(
+shift_rrx))));
+
+dout (6) <= (aux9 AND ((aux3 AND ((dout_inter3_22 AND aux8) 
+OR (dout_inter3_8 AND NOT(aux8))) AND shift_val(4))
+ OR (aux21 AND shift_rrx) OR (aux19 AND NOT(
+shift_rrx))));
+
+dout (7) <= (aux9 AND ((aux3 AND ((dout_inter3_23 AND aux8) 
+OR (dout_inter3_9 AND NOT(aux8))) AND shift_val(4))
+ OR (aux23 AND shift_rrx) OR (aux21 AND NOT(
+shift_rrx))));
+
+dout (8) <= (aux9 AND ((aux3 AND ((dout_inter3_24 AND aux8) 
+OR (dout_inter3_10 AND NOT(aux8))) AND shift_val(4)
+) OR (aux25 AND shift_rrx) OR (aux23 AND NOT(
+shift_rrx))));
+
+dout (9) <= (aux9 AND ((aux3 AND ((dout_inter3_25 AND aux8) 
+OR (dout_inter3_11 AND NOT(aux8))) AND shift_val(4)
+) OR (aux27 AND shift_rrx) OR (aux25 AND NOT(
+shift_rrx))));
+
+dout (10) <= (aux9 AND ((aux3 AND ((dout_inter3_26 AND aux8) 
+OR (dout_inter3_12 AND NOT(aux8))) AND shift_val(4)
+) OR (aux29 AND shift_rrx) OR (aux27 AND NOT(
+shift_rrx))));
+
+dout (11) <= (aux9 AND ((aux3 AND ((dout_inter3_27 AND aux8) 
+OR (dout_inter3_13 AND NOT(aux8))) AND shift_val(4)
+) OR (aux31 AND shift_rrx) OR (aux29 AND NOT(
+shift_rrx))));
+
+dout (12) <= (aux9 AND ((aux3 AND ((dout_inter3_28 AND aux8) 
+OR (dout_inter3_14 AND NOT(aux8))) AND shift_val(4)
+) OR (aux33 AND shift_rrx) OR (aux31 AND NOT(
+shift_rrx))));
+
+dout (13) <= (aux9 AND ((aux3 AND ((dout_inter3_29 AND aux8) 
+OR (dout_inter3_15 AND NOT(aux8))) AND shift_val(4)
+) OR (aux35 AND shift_rrx) OR (aux33 AND NOT(
+shift_rrx))));
+
+dout (14) <= (aux9 AND ((aux3 AND ((dout_inter3_30 AND aux8) 
+OR (dout_inter3_16 AND NOT(aux8))) AND shift_val(4)
+) OR (aux37 AND shift_rrx) OR (aux35 AND NOT(
+shift_rrx))));
+
+dout (15) <= (aux9 AND ((aux3 AND ((dout_inter3_31 AND aux8) 
+OR (dout_inter3_17 AND NOT(aux8))) AND shift_val(4)
+) OR (aux200 AND dout_inter3_16 AND shift_rrx) OR 
+(aux37 AND NOT(shift_rrx))));
+
+dout (16) <= ((dout_inter3_0 AND aux182) OR (aux42 AND 
+shift_rrx) OR (dout_inter3_16 AND NOT(shift_val(4)) AND 
+NOT(shift_rrx)) OR (dout_inter3_0 AND shift_val(4) 
+AND shift_lsl) OR (((dout_inter3_18 AND aux184) OR (
+aux41 AND shift_rrx) OR (dout_inter3_16 AND NOT(
+shift_asr) AND NOT(shift_lsr) AND shift_val(4) AND aux180)
+) AND NOT(shift_lsl)));
+
+dout (17) <= ((dout_inter3_1 AND aux182) OR (aux47 AND 
+shift_rrx) OR (aux42 AND NOT(shift_rrx)) OR (dout_inter3_1
+ AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_19 AND aux184) OR (aux46 AND shift_rrx) OR (aux41 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (18) <= ((dout_inter3_2 AND aux182) OR (aux52 AND 
+shift_rrx) OR (aux47 AND NOT(shift_rrx)) OR (dout_inter3_2
+ AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_20 AND aux184) OR (aux51 AND shift_rrx) OR (aux46 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (19) <= ((dout_inter3_3 AND aux182) OR (aux57 AND 
+shift_rrx) OR (aux52 AND NOT(shift_rrx)) OR (dout_inter3_3
+ AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_21 AND aux184) OR (aux56 AND shift_rrx) OR (aux51 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (20) <= ((dout_inter3_4 AND aux182) OR (aux62 AND 
+shift_rrx) OR (aux57 AND NOT(shift_rrx)) OR (dout_inter3_4
+ AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_22 AND aux184) OR (aux61 AND shift_rrx) OR (aux56 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (21) <= ((dout_inter3_5 AND aux182) OR (aux67 AND 
+shift_rrx) OR (aux62 AND NOT(shift_rrx)) OR (dout_inter3_5
+ AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_23 AND aux184) OR (aux66 AND shift_rrx) OR (aux61 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (22) <= ((dout_inter3_6 AND aux182) OR (aux72 AND 
+shift_rrx) OR (aux67 AND NOT(shift_rrx)) OR (dout_inter3_6
+ AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_24 AND aux184) OR (aux71 AND shift_rrx) OR (aux66 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (23) <= ((dout_inter3_7 AND aux182) OR (aux77 AND 
+shift_rrx) OR (aux72 AND NOT(shift_rrx)) OR (dout_inter3_7
+ AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_25 AND aux184) OR (aux76 AND shift_rrx) OR (aux71 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (24) <= ((dout_inter3_8 AND aux182) OR (aux82 AND 
+shift_rrx) OR (aux77 AND NOT(shift_rrx)) OR (dout_inter3_8
+ AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_26 AND aux184) OR (aux81 AND shift_rrx) OR (aux76 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (25) <= ((dout_inter3_9 AND aux182) OR (aux87 AND 
+shift_rrx) OR (aux82 AND NOT(shift_rrx)) OR (dout_inter3_9
+ AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_27 AND aux184) OR (aux86 AND shift_rrx) OR (aux81 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (26) <= ((dout_inter3_10 AND aux182) OR (aux92 AND 
+shift_rrx) OR (aux87 AND NOT(shift_rrx)) OR (
+dout_inter3_10 AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_28 AND aux184) OR (aux91 AND shift_rrx) OR (aux86 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (27) <= ((dout_inter3_11 AND aux182) OR (aux97 AND 
+shift_rrx) OR (aux92 AND NOT(shift_rrx)) OR (
+dout_inter3_11 AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_29 AND aux184) OR (aux96 AND shift_rrx) OR (aux91 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (28) <= ((dout_inter3_12 AND aux182) OR (aux102 AND 
+shift_rrx) OR (aux97 AND NOT(shift_rrx)) OR (
+dout_inter3_12 AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_30 AND aux184) OR (aux101 AND shift_rrx) OR (aux96 
+AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (29) <= ((dout_inter3_13 AND aux182) OR (aux107 AND 
+shift_rrx) OR (aux102 AND NOT(shift_rrx)) OR (
+dout_inter3_13 AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_31 AND aux184) OR (aux106 AND shift_rrx) OR (aux101
+ AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (30) <= ((dout_inter3_14 AND aux182) OR (aux112 AND 
+shift_rrx) OR (aux107 AND NOT(shift_rrx)) OR (
+dout_inter3_14 AND shift_val(4) AND shift_lsl) OR (((
+dout_inter3_31 AND aux184) OR (aux111 AND shift_rrx) OR (aux106
+ AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+
+dout (31) <= ((dout_inter3_15 AND aux182) OR (cin AND NOT(
+shift_val(4)) AND shift_rrx) OR (aux112 AND NOT(shift_rrx)) 
+OR (aux113 AND shift_lsl) OR (((dout_inter3_31 AND 
+aux184) OR (aux1 AND shift_val(4) AND aux179) OR (
+aux111 AND NOT(shift_rrx))) AND NOT(shift_lsl)));
+END;
