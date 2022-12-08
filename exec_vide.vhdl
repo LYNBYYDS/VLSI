@@ -225,10 +225,11 @@ begin
 -- synchro
 	mem_adr <= 	alu_res when  dec_pre_index = '0' else 
 				dec_op1;
-	exe_pop <= 	'1' when dec2exe_empty = '0' else -- when there is no instruction in the exe part he need the registre between dec and exe to pop a new instruction ?
+	exe_pop <= 	'1' when dec2exe_empty = '0' else 
 				'0';
-	exe_push	<=	'1' when exe2mem_full = '0' else
+	exe_push	<=	'1' when mem_access else
 					'0';
+	mem_acces <= dec_mem_lw or dec_mem_lb or dec_mem_sw	or dec_mem_sb;
 -- no changed ones
 
 	exe_dest 		<= dec_exe_dest;
