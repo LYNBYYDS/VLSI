@@ -5,7 +5,7 @@ end Add_tb;
 
 architecture archi of Add_tb is
 	--signal horloge : std_logic := '0';
-	signal Cin_signal : std_logic := '0';
+	signal Cin_signal : std_logic := '1';
 	signal Cout : std_logic;
 	signal S : std_logic_vector(31 downto 0); 
 	signal a,b : std_logic_vector(31 downto 0) := x"00000000";

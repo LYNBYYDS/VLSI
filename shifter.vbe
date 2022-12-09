@@ -20,12 +20,6 @@ END shifter;
 
 ARCHITECTURE VBE OF shifter IS
 
-  SIGNAL rtlexts_5	: BIT_VECTOR(31 DOWNTO 0);
-  SIGNAL rtlexts_4	: BIT_VECTOR(33 DOWNTO 0);
-  SIGNAL rtlexts_3	: BIT_VECTOR(31 DOWNTO 0);
-  SIGNAL rtlexts_2	: BIT_VECTOR(37 DOWNTO 0);
-  SIGNAL rtlexts_1	: BIT_VECTOR(31 DOWNTO 0);
-  SIGNAL rtlexts_0	: BIT_VECTOR(45 DOWNTO 0);
   SIGNAL cout_left	: BIT;
   SIGNAL cout_right	: BIT;
   SIGNAL dout_inter0	: BIT_VECTOR(31 DOWNTO 0);
@@ -34,18 +28,6 @@ ARCHITECTURE VBE OF shifter IS
   SIGNAL dout_inter3	: BIT_VECTOR(31 DOWNTO 0);
 BEGIN
 
-  rtlexts_5 <= rtlexts_4(31 downto 0);
-  rtlexts_4 <= ((((dout_inter1(31) & dout_inter1(31)) & dout_inter1(31)) & dout_inter1(31)) & dout_inter1(31 downto 2)
-);
-  rtlexts_3 <= rtlexts_2(31 downto 0);
-  rtlexts_2 <= ((((((((dout_inter2(31) & dout_inter2(31)) & dout_inter2(31)) & dout_inter2(31)
-) & dout_inter2(31)) & dout_inter2(31)) & dout_inter2(31)) & dout_inter2(31)) & dout_inter2(31 downto 2)
-);
-  rtlexts_1 <= rtlexts_0(31 downto 0);
-  rtlexts_0 <= ((((((((((((((((dout_inter3(31) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)
-) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)
-) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)
-) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31 downto 2));
   cout <= cout_left WHEN (shift_lsl = '1') ELSE
      cout_right WHEN (((shift_lsr = '1') OR (shift_asr = '1')) OR (shift_ror = '1')) ELSE
      din(0) WHEN (shift_rrx = '1') ELSE
@@ -64,18 +46,24 @@ BEGIN
      '0';
   dout <= (dout_inter3(15 downto 0) & "0000000000000000") WHEN ((shift_lsl = '1') AND (shift_val(4) = '1')) ELSE
      ("0000000000000000" & dout_inter3(31 downto 16)) WHEN ((shift_lsr = '1') AND (shift_val(4) = '1')) ELSE
-     rtlexts_1 WHEN ((shift_asr = '1') AND (shift_val(4) = '1')) ELSE
+     ((((((((((((((((dout_inter3(31) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)
+) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)
+) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31)
+) & dout_inter3(31)) & dout_inter3(31)) & dout_inter3(31 downto 16)) WHEN ((shift_asr = '1') AND (shift_val(4) = '1')) ELSE
      (dout_inter3(15 downto 0) & dout_inter3(31 downto 16)) WHEN ((shift_ror = '1') AND (shift_val(4) = '1')) ELSE
      (cin & dout_inter3(31 downto 1)) WHEN (shift_rrx = '1') ELSE
      dout_inter3;
   dout_inter3 <= (dout_inter2(23 downto 0) & "00000000") WHEN ((shift_lsl = '1') AND (shift_val(3) = '1')) ELSE
      ("00000000" & dout_inter2(31 downto 8)) WHEN ((shift_lsr = '1') AND (shift_val(3) = '1')) ELSE
-     rtlexts_3 WHEN ((shift_asr = '1') AND (shift_val(3) = '1')) ELSE
+     ((((((((dout_inter2(31) & dout_inter2(31)) & dout_inter2(31)) & dout_inter2(31)
+) & dout_inter2(31)) & dout_inter2(31)) & dout_inter2(31)) & dout_inter2(31)) & dout_inter2(31 downto 8)
+) WHEN ((shift_asr = '1') AND (shift_val(3) = '1')) ELSE
      (dout_inter2(7 downto 0) & dout_inter2(31 downto 8)) WHEN ((shift_ror = '1') AND (shift_val(3) = '1')) ELSE
      dout_inter2;
   dout_inter2 <= (dout_inter1(27 downto 0) & "0000") WHEN ((shift_lsl = '1') AND (shift_val(2) = '1')) ELSE
      ("0000" & dout_inter1(31 downto 4)) WHEN ((shift_lsr = '1') AND (shift_val(2) = '1')) ELSE
-     rtlexts_5 WHEN ((shift_asr = '1') AND (shift_val(2) = '1')) ELSE
+     ((((dout_inter1(31) & dout_inter1(31)) & dout_inter1(31)) & dout_inter1(31)) & dout_inter1(31 downto 4)
+) WHEN ((shift_asr = '1') AND (shift_val(2) = '1')) ELSE
      (dout_inter1(3 downto 0) & dout_inter1(31 downto 4)) WHEN ((shift_ror = '1') AND (shift_val(2) = '1')) ELSE
      dout_inter1;
   dout_inter1 <= (dout_inter0(29 downto 0) & "00") WHEN ((shift_lsl = '1') AND (shift_val(1) = '1')) ELSE

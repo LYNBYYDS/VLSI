@@ -54,7 +54,8 @@ begin
 
 					x"0"&dout_inter1(31 downto 4) when shift_lsr = '1' and shift_val(2) = '1' else												--lsr
 
-					dout_inter1(31)&dout_inter1(31)&dout_inter1(31)&dout_inter1(31)&dout_inter1(31 downto 2) when shift_asr = '1' and shift_val(2) = '1' else																			--asr
+					dout_inter1(31)&dout_inter1(31)&dout_inter1(31)&dout_inter1(31)&
+					dout_inter1(31 downto 4) when shift_asr = '1' and shift_val(2) = '1' else																			--asr
 
 					dout_inter1(3 downto 0)&dout_inter1(31 downto 4) when shift_ror = '1' and shift_val(2) = '1' else							--ror
 
@@ -63,7 +64,9 @@ begin
 
 					x"00"&dout_inter2(31 downto 8) when shift_lsr = '1' and shift_val(3) = '1' else												--lsr
 
-					dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31 downto 2) when shift_asr = '1' and shift_val(3) = '1' else  			--asr
+					dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&
+					dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&dout_inter2(31)&
+					dout_inter2(31 downto 8) when shift_asr = '1' and shift_val(3) = '1' else  			--asr
 
 					dout_inter2(7 downto 0)&dout_inter2(31 downto 8) when shift_ror = '1' and shift_val(3) = '1' else							--ror
 
@@ -72,7 +75,11 @@ begin
 
 					x"0000"&dout_inter3(31 downto 16) when shift_lsr = '1' and shift_val(4) = '1' else												--lsr
 
-					dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31 downto 2) when shift_asr = '1' and shift_val(4) = '1' else	--asr
+					dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&
+					dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&
+					dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&
+					dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&dout_inter3(31)&
+					dout_inter3(31 downto 16) when shift_asr = '1' and shift_val(4) = '1' else	--asr
 
 					dout_inter3(15 downto 0)&dout_inter3(31 downto 16) when shift_ror = '1' and shift_val(4) = '1' else							--ror
 

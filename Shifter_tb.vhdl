@@ -11,9 +11,9 @@ architecture archi of Shifter_tb is
 	signal shift_asr : std_logic:= '0';
 	signal shift_ror : std_logic:= '0';
 	signal shift_rrx : std_logic:= '0';
-	signal shift_val : std_logic_vector(4 downto 0) := (others => '0');
-	signal din : std_logic_vector(31 downto 0):= x"01234567";
-	signal cin : std_logic:= '1';
+	signal shift_val : std_logic_vector(4 downto 0) := "00001";
+	signal din : std_logic_vector(31 downto 0):= x"87653210";
+	signal cin : std_logic:= '0';
 	signal dout : std_logic_vector(31 downto 0);
 	signal cout : std_logic;
 	signal vdd : bit:= '0';
@@ -23,29 +23,15 @@ begin
 	shifter : entity work.Shifter
 						port map(shift_lsl, shift_lsr, shift_asr, shift_ror, shift_rrx, shift_val, din, cin, dout, cout, vdd, vss);
 
-
-
-						shift_lsl <= '1' after 10 ns, '0' after 20 ns;
-						shift_lsr <= '1' after 20 ns, '0' after 30 ns;
-						shift_asr <= '1' after 30 ns, '0' after 40 ns;	
-						shift_ror <= '1' after 40 ns, '0' after 50 ns;
-						shift_rrx <= '1' after 50 ns, '0' after 60 ns;
+						shift_val <= "00010" after 12 ns, "00100" after 14 ns, "01000" after 16 ns, "10000" after 18 ns, "10110" after 20 ns;
+						cin <= '1' after 60 ns;
+						shift_lsl <= '1' after 10 ns, '0' after 20 ns, '1' after 60 ns, '0' after 65 ns;
+						shift_lsr <= '1' after 20 ns, '0' after 30 ns, '1' after 65 ns, '0' after 70 ns;
+						shift_asr <= '1' after 30 ns, '0' after 40 ns, '1' after 70 ns, '0' after 75 ns;	
+						shift_ror <= '1' after 40 ns, '0' after 50 ns, '1' after 75 ns, '0' after 80 ns;
+						shift_rrx <= '1' after 50 ns, '0' after 60 ns, '1' after 80 ns, '0' after 85 ns;
 
 						
-	test: process (clk)
-	begin
-		clk <= not clk after 60 ns;
-			case shift_val is
-				when "00000" =>	shift_val <= "00001";
-				when "00001" => shift_val <= "00010";
-				when "00010" => shift_val <= "00100";
-				when "00100" => shift_val <= "01000";
-				when "01000" => shift_val <= "10000";
-				when others => shift_val <= "00000";
-			end case;
-		
-		
-	end process;
 
 end archi;
 

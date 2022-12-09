@@ -37,8 +37,8 @@ begin
 		port map(op1, op2, cin, add_cout, add_sum);
 
 	res_signal <= 	op1 and op2 when cmd = "01" else
-									op1 or op2 when cmd = "10" else
-									op1 xor op2;
+					op1 or op2 when cmd = "10" else
+					op1 xor op2;
 	
 	res <= 	add_sum when cmd = "00" else
 					res_signal;
