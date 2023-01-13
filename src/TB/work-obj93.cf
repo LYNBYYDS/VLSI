@@ -1,0 +1,40 @@
+v 4
+file . "../DECOD/reg.vhdl" "1c8f1b88659dcba952676795b0aab15beba4f462" "20230113145948.978":
+  entity reg at 1( 0) + 0 on 37;
+  architecture behavior of reg at 69( 1627) + 0 on 38;
+file . "../FIFO/fifo_32b.vhdl" "e6fd85a5677e903dbc8ff3bf53748da9cdc6f051" "20230113145948.886":
+  entity fifo_32b at 1( 0) + 0 on 33;
+  architecture dataflow of fifo_32b at 24( 385) + 0 on 34;
+file . "../EXEC/exec.vhdl" "9727273ac6f6dd06d83ea933ab0c1646820dde36" "20230113145658.019":
+  entity exec at 1( 0) + 0 on 29;
+  architecture behavior of exec at 80( 2274) + 0 on 30;
+file . "../FIFO/fifo_72b.vhdl" "0e754650560b07c0738e014e3462a20b160d92f7" "20230113145643.302":
+  entity fifo at 1( 0) + 0 on 25;
+  architecture dataflow of fifo at 24( 377) + 0 on 26;
+file . "../EXEC/add_1.vhdl" "aa7f30a28aa252118a32fa8c3fcd02cfc0fcc3ea" "20230113145234.517":
+  entity add_1 at 1( 0) + 0 on 21;
+  architecture archi of add_1 at 10( 148) + 0 on 22;
+file . "main_tb.vhdl" "c616ea2d841e1249ce5264316814fa2c4a29d28f" "20230113142829.526":
+  entity main_tb at 1( 0) + 0 on 19;
+  architecture behav of main_tb at 14( 180) + 0 on 20;
+file . "icache.vhdl" "7ed8f6502e51831d37788841eb96febf8ccad09f" "20230113142744.251":
+  entity icache at 1( 0) + 0 on 13;
+  architecture behavior of icache at 20( 398) + 0 on 14;
+file . "ram.vhdl" "590c7c18afda585ad1a0caf256cf688264c8e28d" "20230113142730.790":
+  package ram at 1( 0) + 0 on 11 body;
+  package body ram at 26( 915) + 0 on 12;
+file . "dcache.vhdl" "253c47942f1791113ced310a3e406e8c882db18d" "20230113142753.577":
+  entity dcache at 1( 0) + 0 on 15;
+  architecture behavior of dcache at 26( 532) + 0 on 16;
+file . "../EXEC/alu.vhdl" "2935bcf34f89c0961f63c3c50819dbd6f4f2a3ae" "20230113145340.707":
+  entity alu at 1( 0) + 0 on 23;
+  architecture archi of alu at 19( 430) + 0 on 24;
+file . "../EXEC/shifter.vhdl" "106fb55ae7d3209da55e66caa0e0f4dd6c95fc8f" "20230113145657.759":
+  entity shifter at 1( 0) + 0 on 27;
+  architecture archi of shifter at 23( 488) + 0 on 28;
+file . "../IFETCH/ifetch.vhdl" "2046c1ba88a156d843dc6a0e68a324de586ecf5b" "20230113145854.245":
+  entity ifetch at 1( 0) + 0 on 31;
+  architecture behavior of ifetch at 32( 727) + 0 on 32;
+file . "../FIFO/fifo_127b.vhdl" "04c30ccc0e64e6fc24a7facbefb7be0e777bfbcf" "20230113145948.932":
+  entity fifo_127b at 1( 0) + 0 on 35;
+  architecture dataflow of fifo_127b at 24( 389) + 0 on 36;
