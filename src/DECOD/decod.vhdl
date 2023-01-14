@@ -527,7 +527,7 @@ begin
 											if_ir(24 downto 21) = X"6" or
 											if_ir(24 downto 21) = X"7" or
 											if_ir(24 downto 21) = X"10" or
-											if_ir(24 downto 21) = X"11" or) else '0';
+											if_ir(24 downto 21) = X"11") else '0';
 	-- comparation instructions : AND0 EOR1 TST8 TEQ9 ORR12 MOV13 BIC14 MVN15
 	regopns_t <= '1' when regop_t = '1' and (	if_ir(24 downto 21) = X"0" or
 												if_ir(24 downto 21) = X"1" or
@@ -536,7 +536,7 @@ begin
 												if_ir(24 downto 21) = X"12" or
 												if_ir(24 downto 21) = X"13" or
 												if_ir(24 downto 21) = X"14" or
-												if_ir(24 downto 21) = X"15" or) else '0';
+												if_ir(24 downto 21) = X"15") else '0';
 	and_i <= '1' when regop_t = '1' and if_ir(24 downto 21) = X"0" else '0';
 	eor_i <= '1' when regop_t = '1' and if_ir(24 downto 21) = X"1" else '0';
 	sub_i <= '1' when regop_t = '1' and if_ir(24 downto 21) = X"2" else '0';
