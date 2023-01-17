@@ -529,12 +529,21 @@ begin
 
 
 -- Decode interface operands
-	op1 <=	rdata1 when regop_t = '1' and not(mov_i = '1' or mvn_i = '1') else
+	op1 <=	rdata1 when regop_t = '1' and not(mov_i or mvn_i) = '1' else
 			X"00000000"; -- mov or mvn
 
-	op2	<=  x"000000"&"000"&if_ir(11 downto 7) when if_ir(4) = '0' and regop_t = '1' and if_ir(25) = '0' else
+	op2	<=  --regop_y = '1' is a calcule instruction
+	
+			-- if_ir(25) = '0' means op2 is not an immediate operand so we have 2nd operand in a register and its number is in if_ir(3 downto 0)
 			rdata2 when if_ir(4) = '0' and regop_t = '1' and if_ir(25) = '0' else
+
+			-- if_ir(25) = '1' means op2 is an immediate operand so we have the 2nd oprand in the instruction if_ir(7 downto 0) 8bit
 			x"000000"&if_ir(7 downto 0) when regop_t = '1' and if_ir(25) = '1' else
+
+			x"000000"&"000"&if_ir(11 downto 7) when regop_t = '1' and if_ir(25) = '0' and if_ir(4) = '0' and else
+
+			
+			
 			x"00000000";
 	
 	alu_dest <=	if_ir(15 downto 12) when regop_t = '1' and not(tst_i = '1' or teq_i = '1' or cmp_i = '1' or cmn_i = '1') else
@@ -604,7 +613,7 @@ begin
 
 	shift_val <=	if_ir(11 downto 7) when regop_t = '1' and if_ir(4) = '0' and if_ir(25) = '0' else 
 					rdata3(4 downto 0) when regop_t = '1' and if_ir(4) = '1'  and if_ir(25) = '0'else 
-					'0'&if_ir(11 downto 8) when regop_t = '1' and if_ir(25) = '1' else
+					if_ir(11 downto 8)&'0' when regop_t = '1' and if_ir(25) = '1' else
 					"00000";
 
 -- Alu operand selection

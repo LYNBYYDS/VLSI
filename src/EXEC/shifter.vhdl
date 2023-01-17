@@ -8,6 +8,7 @@ port (	shift_lsl : in std_logic;
 		shift_asr : in std_logic;
 		shift_ror : in std_logic;
 		shift_rrx : in std_logic;
+		shift_rot : in std_logic;
 		shift_val : in std_logic_vector(4 downto 0);
 				
 		din : in Std_Logic_Vector(31 downto 0);
