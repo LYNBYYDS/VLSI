@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.NUMERIC_STD.all;
 	
-entity Shifter is
+entity shifter is
 port (	shift_lsl : in std_logic;
 		shift_lsr : in std_logic;
 		shift_asr : in std_logic;
@@ -18,9 +18,9 @@ port (	shift_lsl : in std_logic;
 		-- global interface
 		vdd : in bit;
 		vss : in bit);
-end Shifter;
+end shifter;
 
-architecture archi of Shifter is 
+architecture archi of shifter is 
 	
 	signal cout_left : std_logic;
 	signal cout_right : std_logic;
