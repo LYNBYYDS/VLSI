@@ -180,39 +180,24 @@ begin
 					-- CDPR
 						if inval_czn = '1' then
 							v_czn <= '0';
-							if v_czn = '0' and cspr_wb = '1' then
-								
-								data_cry <= wcry;
-								data_zero <= wzero;
-								data_neg <= wneg;
-									
-								
-							end if;
-						else 
-							if v_czn = '0' and cspr_wb = '1' then
+						end if;
+						if (v_czn = '0') then
+							if (cspr_wb = '1') then
 								v_czn <= '1';
 								data_cry <= wcry;
 								data_zero <= wzero;
 								data_neg <= wneg;
-								
-									
-							end if;	
+							end if;
 						end if;
-						
 				
 					-- overflow
-						if inval_ovr = '1' then
+						if (inval_ovr = '1') then
 							v_ovr <= '0';
-							if v_ovr = '0'and cspr_wb = '1' then
-								data_ovr <= wovr;
-							end if;
-						else
-							if v_ovr = '0'and cspr_wb = '1' then
-								v_ovr <= '1';
-								data_ovr <= wovr;
-							end if;
 						end if;
-						
+						if (v_ovr = '0'and cspr_wb = '1') then
+							v_ovr <= '1';
+							data_ovr <= wovr;
+						end if;
 
 					-- PC registre
 						if (inval_adr1 = x"F" and inval1 = '1') or(inval_adr2 = x"F" and inval2 = '1') then

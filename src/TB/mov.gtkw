@@ -1,0 +1,68 @@
+[*]
+[*] GTKWave Analyzer v3.3.61 (w)1999-2014 BSI
+[*] Wed Jan 18 19:25:54 2023
+[*]
+[dumpfile] "/home/etudiant/Desktop/VLSI/VLSI/src/TB/test.vcd"
+[dumpfile_mtime] "Wed Jan 18 19:19:45 2023"
+[dumpfile_size] 55774
+[savefile] "/home/etudiant/Desktop/VLSI/VLSI/src/TB/mov.gtkw"
+[timestart] 0
+[size] 1920 977
+[pos] -1 -1
+*-22.000000 6540000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] arm_core_i.
+[treeopen] arm_core_i.decod_i.
+[treeopen] arm_core_i.decod_i.reg_inst.
+[treeopen] arm_core_i.exec_i.
+[treeopen] arm_core_i.ifetch_i.
+[sst_width] 245
+[signals_width] 217
+[sst_expanded] 1
+[sst_vpaned_height] 564
+@28
+arm_core_i.decod_i.ck
+arm_core_i.decod_i.mov_i
+@c00022
+arm_core_i.decod_i.if_ir[31:0]
+@28
+(0)arm_core_i.decod_i.if_ir[31:0]
+(1)arm_core_i.decod_i.if_ir[31:0]
+(2)arm_core_i.decod_i.if_ir[31:0]
+(3)arm_core_i.decod_i.if_ir[31:0]
+(4)arm_core_i.decod_i.if_ir[31:0]
+(5)arm_core_i.decod_i.if_ir[31:0]
+(6)arm_core_i.decod_i.if_ir[31:0]
+(7)arm_core_i.decod_i.if_ir[31:0]
+(8)arm_core_i.decod_i.if_ir[31:0]
+(9)arm_core_i.decod_i.if_ir[31:0]
+(10)arm_core_i.decod_i.if_ir[31:0]
+(11)arm_core_i.decod_i.if_ir[31:0]
+(12)arm_core_i.decod_i.if_ir[31:0]
+(13)arm_core_i.decod_i.if_ir[31:0]
+(14)arm_core_i.decod_i.if_ir[31:0]
+(15)arm_core_i.decod_i.if_ir[31:0]
+(16)arm_core_i.decod_i.if_ir[31:0]
+(17)arm_core_i.decod_i.if_ir[31:0]
+(18)arm_core_i.decod_i.if_ir[31:0]
+(19)arm_core_i.decod_i.if_ir[31:0]
+(20)arm_core_i.decod_i.if_ir[31:0]
+(21)arm_core_i.decod_i.if_ir[31:0]
+(22)arm_core_i.decod_i.if_ir[31:0]
+(23)arm_core_i.decod_i.if_ir[31:0]
+(24)arm_core_i.decod_i.if_ir[31:0]
+(25)arm_core_i.decod_i.if_ir[31:0]
+(26)arm_core_i.decod_i.if_ir[31:0]
+(27)arm_core_i.decod_i.if_ir[31:0]
+(28)arm_core_i.decod_i.if_ir[31:0]
+(29)arm_core_i.decod_i.if_ir[31:0]
+(30)arm_core_i.decod_i.if_ir[31:0]
+(31)arm_core_i.decod_i.if_ir[31:0]
+@1401200
+-group_end
+@22
+arm_core_i.decod_i.reg_inst.data_r2[31:0]
+@28
+arm_core_i.decod_i.reg_inst.v_r2
+arm_core_i.decod_i.reg_inst.wen1
+[pattern_trace] 1
+[pattern_trace] 0

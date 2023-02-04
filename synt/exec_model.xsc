@@ -1,0 +1,717 @@
+N:alu_c:-1:0 ps
+N:alu_res 0:-1:0 ps
+N:alu_res 1:-1:0 ps
+N:alu_res 2:-1:0 ps
+N:alu_res 3:-1:0 ps
+N:alu_res 4:-1:0 ps
+N:alu_res 5:-1:0 ps
+N:alu_res 6:-1:0 ps
+N:alu_res 7:-1:0 ps
+N:alu_res 8:-1:0 ps
+N:alu_res 9:-1:0 ps
+N:alu_res 10:-1:0 ps
+N:alu_res 11:-1:0 ps
+N:alu_res 12:-1:0 ps
+N:alu_res 13:-1:0 ps
+N:alu_res 14:-1:0 ps
+N:alu_res 15:-1:0 ps
+N:alu_res 16:-1:0 ps
+N:alu_res 17:-1:0 ps
+N:alu_res 18:-1:0 ps
+N:alu_res 19:-1:0 ps
+N:alu_res 20:-1:0 ps
+N:alu_res 21:-1:0 ps
+N:alu_res 22:-1:0 ps
+N:alu_res 23:-1:0 ps
+N:alu_res 24:-1:0 ps
+N:alu_res 25:-1:0 ps
+N:alu_res 26:-1:0 ps
+N:alu_res 27:-1:0 ps
+N:alu_res 28:-1:0 ps
+N:alu_res 29:-1:0 ps
+N:alu_res 30:-1:0 ps
+N:alu_res 31:-1:0 ps
+N:aux0:-1:236 ps
+N:dec2exe_empty:-1:0 ps
+N:dec_alu_cmd 0:-1:0 ps
+N:dec_alu_cmd 1:-1:0 ps
+N:dec_comp_op1:-1:0 ps
+N:dec_comp_op2:-1:0 ps
+N:dec_exe_dest 0:-1:0 ps
+N:dec_exe_dest 1:-1:0 ps
+N:dec_exe_dest 2:-1:0 ps
+N:dec_exe_dest 3:-1:0 ps
+N:dec_exe_wb:-1:0 ps
+N:dec_flag_wb:-1:0 ps
+N:dec_mem_lb:-1:0 ps
+N:dec_mem_lw:-1:0 ps
+N:dec_mem_sb:-1:0 ps
+N:dec_mem_sw:-1:0 ps
+N:dec_op1 0:-1:0 ps
+N:dec_op1 1:-1:0 ps
+N:dec_op1 2:-1:0 ps
+N:dec_op1 3:-1:0 ps
+N:dec_op1 4:-1:0 ps
+N:dec_op1 5:-1:0 ps
+N:dec_op1 6:-1:0 ps
+N:dec_op1 7:-1:0 ps
+N:dec_op1 8:-1:0 ps
+N:dec_op1 9:-1:0 ps
+N:dec_op1 10:-1:0 ps
+N:dec_op1 11:-1:0 ps
+N:dec_op1 12:-1:0 ps
+N:dec_op1 13:-1:0 ps
+N:dec_op1 14:-1:0 ps
+N:dec_op1 15:-1:0 ps
+N:dec_op1 16:-1:0 ps
+N:dec_op1 17:-1:0 ps
+N:dec_op1 18:-1:0 ps
+N:dec_op1 19:-1:0 ps
+N:dec_op1 20:-1:0 ps
+N:dec_op1 21:-1:0 ps
+N:dec_op1 22:-1:0 ps
+N:dec_op1 23:-1:0 ps
+N:dec_op1 24:-1:0 ps
+N:dec_op1 25:-1:0 ps
+N:dec_op1 26:-1:0 ps
+N:dec_op1 27:-1:0 ps
+N:dec_op1 28:-1:0 ps
+N:dec_op1 29:-1:0 ps
+N:dec_op1 30:-1:0 ps
+N:dec_op1 31:-1:0 ps
+N:dec_pre_index:-1:0 ps
+N:exe2mem_full:-1:0 ps
+N:exe_c:-1:894 ps
+N:exe_dest 0:-1:0 ps
+N:exe_dest 1:-1:0 ps
+N:exe_dest 2:-1:0 ps
+N:exe_dest 3:-1:0 ps
+N:exe_flag_wb:-1:0 ps
+N:exe_pop:-1:116 ps
+N:exe_push:-1:620 ps
+N:exe_res 0:-1:0 ps
+N:exe_res 1:-1:0 ps
+N:exe_res 2:-1:0 ps
+N:exe_res 3:-1:0 ps
+N:exe_res 4:-1:0 ps
+N:exe_res 5:-1:0 ps
+N:exe_res 6:-1:0 ps
+N:exe_res 7:-1:0 ps
+N:exe_res 8:-1:0 ps
+N:exe_res 9:-1:0 ps
+N:exe_res 10:-1:0 ps
+N:exe_res 11:-1:0 ps
+N:exe_res 12:-1:0 ps
+N:exe_res 13:-1:0 ps
+N:exe_res 14:-1:0 ps
+N:exe_res 15:-1:0 ps
+N:exe_res 16:-1:0 ps
+N:exe_res 17:-1:0 ps
+N:exe_res 18:-1:0 ps
+N:exe_res 19:-1:0 ps
+N:exe_res 20:-1:0 ps
+N:exe_res 21:-1:0 ps
+N:exe_res 22:-1:0 ps
+N:exe_res 23:-1:0 ps
+N:exe_res 24:-1:0 ps
+N:exe_res 25:-1:0 ps
+N:exe_res 26:-1:0 ps
+N:exe_res 27:-1:0 ps
+N:exe_res 28:-1:0 ps
+N:exe_res 29:-1:0 ps
+N:exe_res 30:-1:0 ps
+N:exe_res 31:-1:0 ps
+N:exe_wb:-1:0 ps
+N:inv_x2_10_sig:-1:116 ps
+N:inv_x2_11_sig:-1:116 ps
+N:inv_x2_12_sig:-1:116 ps
+N:inv_x2_13_sig:-1:116 ps
+N:inv_x2_14_sig:-1:116 ps
+N:inv_x2_15_sig:-1:116 ps
+N:inv_x2_16_sig:-1:116 ps
+N:inv_x2_17_sig:-1:116 ps
+N:inv_x2_18_sig:-1:116 ps
+N:inv_x2_19_sig:-1:116 ps
+N:inv_x2_20_sig:-1:116 ps
+N:inv_x2_21_sig:-1:116 ps
+N:inv_x2_22_sig:-1:116 ps
+N:inv_x2_23_sig:-1:116 ps
+N:inv_x2_24_sig:-1:116 ps
+N:inv_x2_25_sig:-1:116 ps
+N:inv_x2_26_sig:-1:116 ps
+N:inv_x2_27_sig:-1:116 ps
+N:inv_x2_28_sig:-1:116 ps
+N:inv_x2_29_sig:-1:116 ps
+N:inv_x2_2_sig:-1:116 ps
+N:inv_x2_30_sig:-1:116 ps
+N:inv_x2_31_sig:-1:116 ps
+N:inv_x2_32_sig:-1:116 ps
+N:inv_x2_3_sig:-1:116 ps
+N:inv_x2_4_sig:-1:116 ps
+N:inv_x2_5_sig:-1:116 ps
+N:inv_x2_6_sig:-1:116 ps
+N:inv_x2_7_sig:-1:116 ps
+N:inv_x2_8_sig:-1:116 ps
+N:inv_x2_9_sig:-1:116 ps
+N:inv_x2_sig:-1:352 ps
+N:mem_adr 0:-1:657 ps
+N:mem_adr 1:-1:657 ps
+N:mem_adr 2:-1:657 ps
+N:mem_adr 3:-1:657 ps
+N:mem_adr 4:-1:657 ps
+N:mem_adr 5:-1:657 ps
+N:mem_adr 6:-1:657 ps
+N:mem_adr 7:-1:657 ps
+N:mem_adr 8:-1:657 ps
+N:mem_adr 9:-1:506 ps
+N:mem_adr 10:-1:657 ps
+N:mem_adr 11:-1:657 ps
+N:mem_adr 12:-1:657 ps
+N:mem_adr 13:-1:657 ps
+N:mem_adr 14:-1:657 ps
+N:mem_adr 15:-1:657 ps
+N:mem_adr 16:-1:657 ps
+N:mem_adr 17:-1:657 ps
+N:mem_adr 18:-1:657 ps
+N:mem_adr 19:-1:657 ps
+N:mem_adr 20:-1:657 ps
+N:mem_adr 21:-1:657 ps
+N:mem_adr 22:-1:657 ps
+N:mem_adr 23:-1:657 ps
+N:mem_adr 24:-1:657 ps
+N:mem_adr 25:-1:657 ps
+N:mem_adr 26:-1:657 ps
+N:mem_adr 27:-1:657 ps
+N:mem_adr 28:-1:657 ps
+N:mem_adr 29:-1:657 ps
+N:mem_adr 30:-1:657 ps
+N:mem_adr 31:-1:657 ps
+N:no4_x1_sig:-1:385 ps
+N:not_dec2exe_empty:-1:116 ps
+N:on12_x1_sig:-1:302 ps
+N:op1 0:-1:357 ps
+N:op1 1:-1:357 ps
+N:op1 2:-1:357 ps
+N:op1 3:-1:357 ps
+N:op1 4:-1:357 ps
+N:op1 5:-1:357 ps
+N:op1 6:-1:357 ps
+N:op1 7:-1:357 ps
+N:op1 8:-1:357 ps
+N:op1 9:-1:357 ps
+N:op1 10:-1:357 ps
+N:op1 11:-1:357 ps
+N:op1 12:-1:357 ps
+N:op1 13:-1:357 ps
+N:op1 14:-1:357 ps
+N:op1 15:-1:357 ps
+N:op1 16:-1:357 ps
+N:op1 17:-1:357 ps
+N:op1 18:-1:357 ps
+N:op1 19:-1:357 ps
+N:op1 20:-1:357 ps
+N:op1 21:-1:357 ps
+N:op1 22:-1:357 ps
+N:op1 23:-1:357 ps
+N:op1 24:-1:357 ps
+N:op1 25:-1:357 ps
+N:op1 26:-1:357 ps
+N:op1 27:-1:357 ps
+N:op1 28:-1:357 ps
+N:op1 29:-1:357 ps
+N:op1 30:-1:357 ps
+N:op1 31:-1:357 ps
+N:op2 0:-1:357 ps
+N:op2 1:-1:357 ps
+N:op2 2:-1:357 ps
+N:op2 3:-1:357 ps
+N:op2 4:-1:357 ps
+N:op2 5:-1:357 ps
+N:op2 6:-1:357 ps
+N:op2 7:-1:357 ps
+N:op2 8:-1:357 ps
+N:op2 9:-1:357 ps
+N:op2 10:-1:357 ps
+N:op2 11:-1:357 ps
+N:op2 12:-1:357 ps
+N:op2 13:-1:357 ps
+N:op2 14:-1:357 ps
+N:op2 15:-1:357 ps
+N:op2 16:-1:357 ps
+N:op2 17:-1:357 ps
+N:op2 18:-1:357 ps
+N:op2 19:-1:357 ps
+N:op2 20:-1:357 ps
+N:op2 21:-1:357 ps
+N:op2 22:-1:357 ps
+N:op2 23:-1:357 ps
+N:op2 24:-1:357 ps
+N:op2 25:-1:357 ps
+N:op2 26:-1:357 ps
+N:op2 27:-1:357 ps
+N:op2 28:-1:357 ps
+N:op2 29:-1:357 ps
+N:op2 30:-1:357 ps
+N:op2 31:-1:357 ps
+N:op2_shift 0:-1:0 ps
+N:op2_shift 1:-1:0 ps
+N:op2_shift 2:-1:0 ps
+N:op2_shift 3:-1:0 ps
+N:op2_shift 4:-1:0 ps
+N:op2_shift 5:-1:0 ps
+N:op2_shift 6:-1:0 ps
+N:op2_shift 7:-1:0 ps
+N:op2_shift 8:-1:0 ps
+N:op2_shift 9:-1:0 ps
+N:op2_shift 10:-1:0 ps
+N:op2_shift 11:-1:0 ps
+N:op2_shift 12:-1:0 ps
+N:op2_shift 13:-1:0 ps
+N:op2_shift 14:-1:0 ps
+N:op2_shift 15:-1:0 ps
+N:op2_shift 16:-1:0 ps
+N:op2_shift 17:-1:0 ps
+N:op2_shift 18:-1:0 ps
+N:op2_shift 19:-1:0 ps
+N:op2_shift 20:-1:0 ps
+N:op2_shift 21:-1:0 ps
+N:op2_shift 22:-1:0 ps
+N:op2_shift 23:-1:0 ps
+N:op2_shift 24:-1:0 ps
+N:op2_shift 25:-1:0 ps
+N:op2_shift 26:-1:0 ps
+N:op2_shift 27:-1:0 ps
+N:op2_shift 28:-1:0 ps
+N:op2_shift 29:-1:0 ps
+N:op2_shift 30:-1:0 ps
+N:op2_shift 31:-1:0 ps
+N:shift_c:-1:0 ps
+B:op2_31:-1:357 ps
+B:op2_30:-1:357 ps
+B:op2_29:-1:357 ps
+B:op2_28:-1:357 ps
+B:op2_27:-1:357 ps
+B:op2_26:-1:357 ps
+B:op2_25:-1:357 ps
+B:op2_24:-1:357 ps
+B:op2_23:-1:357 ps
+B:op2_22:-1:357 ps
+B:op2_21:-1:357 ps
+B:op2_20:-1:357 ps
+B:op2_19:-1:357 ps
+B:op2_18:-1:357 ps
+B:op2_17:-1:357 ps
+B:op2_16:-1:357 ps
+B:op2_15:-1:357 ps
+B:op2_14:-1:357 ps
+B:op2_13:-1:357 ps
+B:op2_12:-1:357 ps
+B:op2_11:-1:357 ps
+B:op2_10:-1:357 ps
+B:op2_9:-1:357 ps
+B:op2_8:-1:357 ps
+B:op2_7:-1:357 ps
+B:op2_6:-1:357 ps
+B:op2_5:-1:357 ps
+B:op2_4:-1:357 ps
+B:op2_3:-1:357 ps
+B:op2_2:-1:357 ps
+B:op2_1:-1:357 ps
+B:op2_0:-1:357 ps
+B:op1_31:-1:357 ps
+B:op1_30:-1:357 ps
+B:op1_29:-1:357 ps
+B:op1_28:-1:357 ps
+B:op1_27:-1:357 ps
+B:op1_26:-1:357 ps
+B:op1_25:-1:357 ps
+B:op1_24:-1:357 ps
+B:op1_23:-1:357 ps
+B:op1_22:-1:357 ps
+B:op1_21:-1:357 ps
+B:op1_20:-1:357 ps
+B:op1_19:-1:357 ps
+B:op1_18:-1:357 ps
+B:op1_17:-1:357 ps
+B:op1_16:-1:357 ps
+B:op1_15:-1:357 ps
+B:op1_14:-1:357 ps
+B:op1_13:-1:357 ps
+B:op1_12:-1:357 ps
+B:op1_11:-1:357 ps
+B:op1_10:-1:357 ps
+B:op1_9:-1:357 ps
+B:op1_8:-1:357 ps
+B:op1_7:-1:357 ps
+B:op1_6:-1:357 ps
+B:op1_5:-1:357 ps
+B:op1_4:-1:357 ps
+B:op1_3:-1:357 ps
+B:op1_2:-1:357 ps
+B:op1_1:-1:357 ps
+B:op1_0:-1:357 ps
+B:mem_adr_31:-1:657 ps
+B:inv_x2_32_ins:-1:116 ps
+B:mem_adr_30:-1:657 ps
+B:inv_x2_31_ins:-1:116 ps
+B:mem_adr_29:-1:657 ps
+B:inv_x2_30_ins:-1:116 ps
+B:mem_adr_28:-1:657 ps
+B:inv_x2_29_ins:-1:116 ps
+B:mem_adr_27:-1:657 ps
+B:inv_x2_28_ins:-1:116 ps
+B:mem_adr_26:-1:657 ps
+B:inv_x2_27_ins:-1:116 ps
+B:mem_adr_25:-1:657 ps
+B:inv_x2_26_ins:-1:116 ps
+B:mem_adr_24:-1:657 ps
+B:inv_x2_25_ins:-1:116 ps
+B:mem_adr_23:-1:657 ps
+B:inv_x2_24_ins:-1:116 ps
+B:mem_adr_22:-1:657 ps
+B:inv_x2_23_ins:-1:116 ps
+B:mem_adr_21:-1:657 ps
+B:inv_x2_22_ins:-1:116 ps
+B:mem_adr_20:-1:657 ps
+B:inv_x2_21_ins:-1:116 ps
+B:mem_adr_19:-1:657 ps
+B:inv_x2_20_ins:-1:116 ps
+B:mem_adr_18:-1:657 ps
+B:inv_x2_19_ins:-1:116 ps
+B:mem_adr_17:-1:657 ps
+B:inv_x2_18_ins:-1:116 ps
+B:mem_adr_16:-1:657 ps
+B:inv_x2_17_ins:-1:116 ps
+B:mem_adr_15:-1:657 ps
+B:inv_x2_16_ins:-1:116 ps
+B:mem_adr_14:-1:657 ps
+B:inv_x2_15_ins:-1:116 ps
+B:mem_adr_13:-1:657 ps
+B:inv_x2_14_ins:-1:116 ps
+B:mem_adr_12:-1:657 ps
+B:inv_x2_13_ins:-1:116 ps
+B:mem_adr_11:-1:657 ps
+B:inv_x2_12_ins:-1:116 ps
+B:mem_adr_10:-1:657 ps
+B:inv_x2_11_ins:-1:116 ps
+B:mem_adr_9:-1:506 ps
+B:mem_adr_8:-1:657 ps
+B:inv_x2_10_ins:-1:116 ps
+B:mem_adr_7:-1:657 ps
+B:inv_x2_9_ins:-1:116 ps
+B:mem_adr_6:-1:657 ps
+B:inv_x2_8_ins:-1:116 ps
+B:mem_adr_5:-1:657 ps
+B:inv_x2_7_ins:-1:116 ps
+B:mem_adr_4:-1:657 ps
+B:inv_x2_6_ins:-1:116 ps
+B:mem_adr_3:-1:657 ps
+B:inv_x2_5_ins:-1:116 ps
+B:mem_adr_2:-1:657 ps
+B:inv_x2_4_ins:-1:116 ps
+B:mem_adr_1:-1:657 ps
+B:inv_x2_3_ins:-1:116 ps
+B:mem_adr_0:-1:657 ps
+B:inv_x2_2_ins:-1:116 ps
+B:exe_push_ins:-1:620 ps
+B:on12_x1_ins:-1:302 ps
+B:no4_x1_ins:-1:385 ps
+B:exe_flag_wb_ins:-1:400 ps
+B:exe_wb_ins:-1:400 ps
+B:exe_dest_3:-1:400 ps
+B:exe_dest_2:-1:400 ps
+B:exe_dest_1:-1:400 ps
+B:exe_dest_0:-1:400 ps
+B:exe_c_ins:32:894 ps
+B:inv_x2_ins:32:352 ps
+B:exe_res_31:-1:400 ps
+B:exe_res_30:-1:400 ps
+B:exe_res_29:-1:400 ps
+B:exe_res_28:-1:400 ps
+B:exe_res_27:-1:400 ps
+B:exe_res_26:-1:400 ps
+B:exe_res_25:-1:400 ps
+B:exe_res_24:-1:400 ps
+B:exe_res_23:-1:400 ps
+B:exe_res_22:-1:400 ps
+B:exe_res_21:-1:400 ps
+B:exe_res_20:-1:400 ps
+B:exe_res_19:-1:400 ps
+B:exe_res_18:-1:400 ps
+B:exe_res_17:-1:400 ps
+B:exe_res_16:-1:400 ps
+B:exe_res_15:-1:400 ps
+B:exe_res_14:-1:400 ps
+B:exe_res_13:-1:400 ps
+B:exe_res_12:-1:400 ps
+B:exe_res_11:-1:400 ps
+B:exe_res_10:-1:400 ps
+B:exe_res_9:-1:400 ps
+B:exe_res_8:-1:400 ps
+B:exe_res_7:-1:400 ps
+B:exe_res_6:-1:400 ps
+B:exe_res_5:-1:400 ps
+B:exe_res_4:-1:400 ps
+B:exe_res_3:-1:400 ps
+B:exe_res_2:-1:400 ps
+B:exe_res_1:-1:400 ps
+B:exe_res_0:-1:400 ps
+B:exe_pop_ins:-1:516 ps
+B:aux0_ins:32:209 ps
+B:not_dec2exe_empty_ins:-1:116 ps
+C:dec2exe_empty:-1:0 ps
+C:exe_pop:-1:116 ps
+C:dec_op1 0:-1:0 ps
+C:dec_op1 1:-1:0 ps
+C:dec_op1 2:-1:0 ps
+C:dec_op1 3:-1:0 ps
+C:dec_op1 4:-1:0 ps
+C:dec_op1 5:-1:0 ps
+C:dec_op1 6:-1:0 ps
+C:dec_op1 7:-1:0 ps
+C:dec_op1 8:-1:0 ps
+C:dec_op1 9:-1:0 ps
+C:dec_op1 10:-1:0 ps
+C:dec_op1 11:-1:0 ps
+C:dec_op1 12:-1:0 ps
+C:dec_op1 13:-1:0 ps
+C:dec_op1 14:-1:0 ps
+C:dec_op1 15:-1:0 ps
+C:dec_op1 16:-1:0 ps
+C:dec_op1 17:-1:0 ps
+C:dec_op1 18:-1:0 ps
+C:dec_op1 19:-1:0 ps
+C:dec_op1 20:-1:0 ps
+C:dec_op1 21:-1:0 ps
+C:dec_op1 22:-1:0 ps
+C:dec_op1 23:-1:0 ps
+C:dec_op1 24:-1:0 ps
+C:dec_op1 25:-1:0 ps
+C:dec_op1 26:-1:0 ps
+C:dec_op1 27:-1:0 ps
+C:dec_op1 28:-1:0 ps
+C:dec_op1 29:-1:0 ps
+C:dec_op1 30:-1:0 ps
+C:dec_op1 31:-1:0 ps
+C:dec_exe_dest 0:-1:0 ps
+C:dec_exe_dest 1:-1:0 ps
+C:dec_exe_dest 2:-1:0 ps
+C:dec_exe_dest 3:-1:0 ps
+C:dec_exe_wb:-1:0 ps
+C:dec_flag_wb:-1:0 ps
+C:dec_pre_index:-1:0 ps
+C:dec_mem_lw:-1:0 ps
+C:dec_mem_lb:-1:0 ps
+C:dec_mem_sw:-1:0 ps
+C:dec_mem_sb:-1:0 ps
+C:dec_comp_op1:-1:0 ps
+C:dec_comp_op2:-1:0 ps
+C:dec_alu_cmd 0:32:0 ps
+C:dec_alu_cmd 1:-1:0 ps
+C:exe_res 0:-1:0 ps
+C:exe_res 1:-1:0 ps
+C:exe_res 2:-1:0 ps
+C:exe_res 3:-1:0 ps
+C:exe_res 4:-1:0 ps
+C:exe_res 5:-1:0 ps
+C:exe_res 6:-1:0 ps
+C:exe_res 7:-1:0 ps
+C:exe_res 8:-1:0 ps
+C:exe_res 9:-1:0 ps
+C:exe_res 10:-1:0 ps
+C:exe_res 11:-1:0 ps
+C:exe_res 12:-1:0 ps
+C:exe_res 13:-1:0 ps
+C:exe_res 14:-1:0 ps
+C:exe_res 15:-1:0 ps
+C:exe_res 16:-1:0 ps
+C:exe_res 17:-1:0 ps
+C:exe_res 18:-1:0 ps
+C:exe_res 19:-1:0 ps
+C:exe_res 20:-1:0 ps
+C:exe_res 21:-1:0 ps
+C:exe_res 22:-1:0 ps
+C:exe_res 23:-1:0 ps
+C:exe_res 24:-1:0 ps
+C:exe_res 25:-1:0 ps
+C:exe_res 26:-1:0 ps
+C:exe_res 27:-1:0 ps
+C:exe_res 28:-1:0 ps
+C:exe_res 29:-1:0 ps
+C:exe_res 30:-1:0 ps
+C:exe_res 31:-1:0 ps
+C:exe_c:32:894 ps
+C:exe_dest 0:-1:0 ps
+C:exe_dest 1:-1:0 ps
+C:exe_dest 2:-1:0 ps
+C:exe_dest 3:-1:0 ps
+C:exe_wb:-1:0 ps
+C:exe_flag_wb:-1:0 ps
+C:exe2mem_full:-1:0 ps
+C:exe_push:-1:620 ps
+C:mem_adr 0:-1:657 ps
+C:mem_adr 1:-1:657 ps
+C:mem_adr 2:-1:657 ps
+C:mem_adr 3:-1:657 ps
+C:mem_adr 4:-1:657 ps
+C:mem_adr 5:-1:657 ps
+C:mem_adr 6:-1:657 ps
+C:mem_adr 7:-1:657 ps
+C:mem_adr 8:-1:657 ps
+C:mem_adr 9:-1:506 ps
+C:mem_adr 10:-1:657 ps
+C:mem_adr 11:-1:657 ps
+C:mem_adr 12:-1:657 ps
+C:mem_adr 13:-1:657 ps
+C:mem_adr 14:-1:657 ps
+C:mem_adr 15:-1:657 ps
+C:mem_adr 16:-1:657 ps
+C:mem_adr 17:-1:657 ps
+C:mem_adr 18:-1:657 ps
+C:mem_adr 19:-1:657 ps
+C:mem_adr 20:-1:657 ps
+C:mem_adr 21:-1:657 ps
+C:mem_adr 22:-1:657 ps
+C:mem_adr 23:-1:657 ps
+C:mem_adr 24:-1:657 ps
+C:mem_adr 25:-1:657 ps
+C:mem_adr 26:-1:657 ps
+C:mem_adr 27:-1:657 ps
+C:mem_adr 28:-1:657 ps
+C:mem_adr 29:-1:657 ps
+C:mem_adr 30:-1:657 ps
+C:mem_adr 31:-1:657 ps
+C:alu_res 0:-1:0 ps
+C:alu_res 1:-1:0 ps
+C:alu_res 2:-1:0 ps
+C:alu_res 3:-1:0 ps
+C:alu_res 4:-1:0 ps
+C:alu_res 5:-1:0 ps
+C:alu_res 6:-1:0 ps
+C:alu_res 7:-1:0 ps
+C:alu_res 8:-1:0 ps
+C:alu_res 9:-1:0 ps
+C:alu_res 10:-1:0 ps
+C:alu_res 11:-1:0 ps
+C:alu_res 12:-1:0 ps
+C:alu_res 13:-1:0 ps
+C:alu_res 14:-1:0 ps
+C:alu_res 15:-1:0 ps
+C:alu_res 16:-1:0 ps
+C:alu_res 17:-1:0 ps
+C:alu_res 18:-1:0 ps
+C:alu_res 19:-1:0 ps
+C:alu_res 20:-1:0 ps
+C:alu_res 21:-1:0 ps
+C:alu_res 22:-1:0 ps
+C:alu_res 23:-1:0 ps
+C:alu_res 24:-1:0 ps
+C:alu_res 25:-1:0 ps
+C:alu_res 26:-1:0 ps
+C:alu_res 27:-1:0 ps
+C:alu_res 28:-1:0 ps
+C:alu_res 29:-1:0 ps
+C:alu_res 30:-1:0 ps
+C:alu_res 31:-1:0 ps
+C:op1 0:-1:357 ps
+C:op1 1:-1:357 ps
+C:op1 2:-1:357 ps
+C:op1 3:-1:357 ps
+C:op1 4:-1:357 ps
+C:op1 5:-1:357 ps
+C:op1 6:-1:357 ps
+C:op1 7:-1:357 ps
+C:op1 8:-1:357 ps
+C:op1 9:-1:357 ps
+C:op1 10:-1:357 ps
+C:op1 11:-1:357 ps
+C:op1 12:-1:357 ps
+C:op1 13:-1:357 ps
+C:op1 14:-1:357 ps
+C:op1 15:-1:357 ps
+C:op1 16:-1:357 ps
+C:op1 17:-1:357 ps
+C:op1 18:-1:357 ps
+C:op1 19:-1:357 ps
+C:op1 20:-1:357 ps
+C:op1 21:-1:357 ps
+C:op1 22:-1:357 ps
+C:op1 23:-1:357 ps
+C:op1 24:-1:357 ps
+C:op1 25:-1:357 ps
+C:op1 26:-1:357 ps
+C:op1 27:-1:357 ps
+C:op1 28:-1:357 ps
+C:op1 29:-1:357 ps
+C:op1 30:-1:357 ps
+C:op1 31:-1:357 ps
+C:op2_shift 0:-1:0 ps
+C:op2_shift 1:-1:0 ps
+C:op2_shift 2:-1:0 ps
+C:op2_shift 3:-1:0 ps
+C:op2_shift 4:-1:0 ps
+C:op2_shift 5:-1:0 ps
+C:op2_shift 6:-1:0 ps
+C:op2_shift 7:-1:0 ps
+C:op2_shift 8:-1:0 ps
+C:op2_shift 9:-1:0 ps
+C:op2_shift 10:-1:0 ps
+C:op2_shift 11:-1:0 ps
+C:op2_shift 12:-1:0 ps
+C:op2_shift 13:-1:0 ps
+C:op2_shift 14:-1:0 ps
+C:op2_shift 15:-1:0 ps
+C:op2_shift 16:-1:0 ps
+C:op2_shift 17:-1:0 ps
+C:op2_shift 18:-1:0 ps
+C:op2_shift 19:-1:0 ps
+C:op2_shift 20:-1:0 ps
+C:op2_shift 21:-1:0 ps
+C:op2_shift 22:-1:0 ps
+C:op2_shift 23:-1:0 ps
+C:op2_shift 24:-1:0 ps
+C:op2_shift 25:-1:0 ps
+C:op2_shift 26:-1:0 ps
+C:op2_shift 27:-1:0 ps
+C:op2_shift 28:-1:0 ps
+C:op2_shift 29:-1:0 ps
+C:op2_shift 30:-1:0 ps
+C:op2_shift 31:-1:0 ps
+C:op2 0:-1:357 ps
+C:op2 1:-1:357 ps
+C:op2 2:-1:357 ps
+C:op2 3:-1:357 ps
+C:op2 4:-1:357 ps
+C:op2 5:-1:357 ps
+C:op2 6:-1:357 ps
+C:op2 7:-1:357 ps
+C:op2 8:-1:357 ps
+C:op2 9:-1:357 ps
+C:op2 10:-1:357 ps
+C:op2 11:-1:357 ps
+C:op2 12:-1:357 ps
+C:op2 13:-1:357 ps
+C:op2 14:-1:357 ps
+C:op2 15:-1:357 ps
+C:op2 16:-1:357 ps
+C:op2 17:-1:357 ps
+C:op2 18:-1:357 ps
+C:op2 19:-1:357 ps
+C:op2 20:-1:357 ps
+C:op2 21:-1:357 ps
+C:op2 22:-1:357 ps
+C:op2 23:-1:357 ps
+C:op2 24:-1:357 ps
+C:op2 25:-1:357 ps
+C:op2 26:-1:357 ps
+C:op2 27:-1:357 ps
+C:op2 28:-1:357 ps
+C:op2 29:-1:357 ps
+C:op2 30:-1:357 ps
+C:op2 31:-1:357 ps
+C:alu_c:-1:0 ps
+C:shift_c:-1:0 ps
+P:dec_alu_cmd_0:dec_alu_cmd_0:aux0_ins:32:116 ps
+P:aux0_ins:aux0:inv_x2_ins:32:116 ps
+P:inv_x2_ins:inv_x2_sig:exe_c_ins:32:116 ps
+P:exe_c_ins:exe_c:exe_c:32:116 ps

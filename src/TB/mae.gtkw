@@ -1,0 +1,49 @@
+[*]
+[*] GTKWave Analyzer v3.3.61 (w)1999-2014 BSI
+[*] Fri Jan 20 11:37:08 2023
+[*]
+[dumpfile] "(null)"
+[savefile] "/users/enseig/li/Bureau/VLSI/src/TB/mae.gtkw"
+[timestart] 0
+[size] 1280 987
+[pos] 1919 -29
+*-22.000000 9660000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] arm_core_i.
+[treeopen] arm_core_i.decod_i.
+[treeopen] arm_core_i.decod_i.reg_inst.
+[treeopen] arm_core_i.exec_i.
+[treeopen] arm_core_i.ifetch_i.
+[sst_width] 245
+[signals_width] 234
+[sst_expanded] 1
+[sst_vpaned_height] 572
+@28
+arm_core_i.decod_i.ck
+arm_core_i.decod_i.reset_n
+arm_core_i.decod_i.mov_i
+arm_core_i.decod_i.add_i
+@22
+[color] 3
+arm_core_i.decod_i.if_ir[31:0]
+arm_core_i.decod_i.debug_state[3:0]
+@28
+arm_core_i.decod_i.dec2if_push
+arm_core_i.decod_i.dec2exe_push
+arm_core_i.decod_i.if2dec_pop
+@22
+[color] 3
+arm_core_i.decod_i.reg_inst.data_r2[31:0]
+[color] 3
+arm_core_i.decod_i.reg_inst.data_r5[31:0]
+[color] 3
+arm_core_i.decod_i.reg_inst.data_r6[31:0]
+[color] 4
+arm_core_i.decod_i.op1[31:0]
+[color] 4
+arm_core_i.decod_i.op2[31:0]
+[color] 2
+arm_core_i.decod_i.radr1[3:0]
+[color] 2
+arm_core_i.decod_i.radr2[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

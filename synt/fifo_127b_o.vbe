@@ -1,0 +1,929 @@
+-- VHDL data flow description generated from `fifo_127b_o`
+--		date : Fri Jan 20 17:58:29 2023
+
+
+-- Entity Declaration
+
+ENTITY fifo_127b_o IS
+  PORT (
+  din : in bit_vector(126 DOWNTO 0) ;	-- din
+  dout : out bit_vector(126 DOWNTO 0) ;	-- dout
+  push : in BIT;	-- push
+  pop : in BIT;	-- pop
+  full : out BIT;	-- full
+  empty : out BIT;	-- empty
+  reset_n : in BIT;	-- reset_n
+  ck : in BIT;	-- ck
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END fifo_127b_o;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF fifo_127b_o IS
+  SIGNAL fifo_d : REG_VECTOR(126 DOWNTO 0) REGISTER;	-- fifo_d
+  SIGNAL fifo_v : REG_BIT REGISTER;	-- fifo_v
+  SIGNAL aux0 : BIT;		-- aux0
+  SIGNAL aux1 : BIT;		-- aux1
+
+BEGIN
+  aux1 <= NOT(NOT(push) OR aux0);
+  aux0 <= (fifo_v AND NOT(pop));
+  label0 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_v <= GUARDED (reset_n AND (push OR aux0));
+  END BLOCK label0;
+  label1 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (0) <= GUARDED ((aux1 OR fifo_d(0)) AND (NOT(aux1) OR din(0)));
+  END BLOCK label1;
+  label2 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (1) <= GUARDED ((aux1 OR fifo_d(1)) AND (din(1) OR NOT(push) OR 
+aux0));
+  END BLOCK label2;
+  label3 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (2) <= GUARDED ((aux1 OR fifo_d(2)) AND (NOT(aux1) OR din(2)));
+  END BLOCK label3;
+  label4 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (3) <= GUARDED ((aux1 OR fifo_d(3)) AND (din(3) OR NOT(push) OR 
+aux0));
+  END BLOCK label4;
+  label5 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (4) <= GUARDED ((aux1 OR fifo_d(4)) AND (din(4) OR NOT(push) OR 
+aux0));
+  END BLOCK label5;
+  label6 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (5) <= GUARDED ((aux1 OR fifo_d(5)) AND (din(5) OR NOT(push) OR 
+aux0));
+  END BLOCK label6;
+  label7 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (6) <= GUARDED ((aux1 OR fifo_d(6)) AND (din(6) OR NOT(push) OR 
+aux0));
+  END BLOCK label7;
+  label8 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (7) <= GUARDED ((aux1 OR fifo_d(7)) AND (din(7) OR NOT(push) OR 
+aux0));
+  END BLOCK label8;
+  label9 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (8) <= GUARDED ((aux1 OR fifo_d(8)) AND (din(8) OR NOT(push) OR 
+aux0));
+  END BLOCK label9;
+  label10 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (9) <= GUARDED ((aux1 OR fifo_d(9)) AND (din(9) OR NOT(push) OR 
+aux0));
+  END BLOCK label10;
+  label11 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (10) <= GUARDED ((aux1 OR fifo_d(10)) AND (din(10) OR NOT(push) 
+OR aux0));
+  END BLOCK label11;
+  label12 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (11) <= GUARDED ((aux1 OR fifo_d(11)) AND (din(11) OR NOT(push) 
+OR aux0));
+  END BLOCK label12;
+  label13 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (12) <= GUARDED ((aux1 OR fifo_d(12)) AND (din(12) OR NOT(push) 
+OR aux0));
+  END BLOCK label13;
+  label14 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (13) <= GUARDED ((aux1 OR fifo_d(13)) AND (din(13) OR NOT(push) 
+OR aux0));
+  END BLOCK label14;
+  label15 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (14) <= GUARDED ((aux1 OR fifo_d(14)) AND (din(14) OR NOT(push) 
+OR aux0));
+  END BLOCK label15;
+  label16 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (15) <= GUARDED ((aux1 OR fifo_d(15)) AND (NOT(push) OR din(15) 
+OR aux0));
+  END BLOCK label16;
+  label17 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (16) <= GUARDED ((aux1 OR fifo_d(16)) AND (din(16) OR NOT(push) 
+OR aux0));
+  END BLOCK label17;
+  label18 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (17) <= GUARDED ((aux1 OR fifo_d(17)) AND (din(17) OR NOT(push) 
+OR aux0));
+  END BLOCK label18;
+  label19 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (18) <= GUARDED ((aux1 OR fifo_d(18)) AND (din(18) OR NOT(push) 
+OR aux0));
+  END BLOCK label19;
+  label20 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (19) <= GUARDED ((aux1 OR fifo_d(19)) AND (din(19) OR NOT(push) 
+OR aux0));
+  END BLOCK label20;
+  label21 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (20) <= GUARDED ((aux1 OR fifo_d(20)) AND (din(20) OR NOT(push) 
+OR aux0));
+  END BLOCK label21;
+  label22 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (21) <= GUARDED ((aux1 OR fifo_d(21)) AND (din(21) OR NOT(push) 
+OR aux0));
+  END BLOCK label22;
+  label23 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (22) <= GUARDED ((aux1 OR fifo_d(22)) AND (din(22) OR NOT(push) 
+OR aux0));
+  END BLOCK label23;
+  label24 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (23) <= GUARDED ((aux1 OR fifo_d(23)) AND (din(23) OR NOT(push) 
+OR aux0));
+  END BLOCK label24;
+  label25 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (24) <= GUARDED ((aux1 OR fifo_d(24)) AND (din(24) OR NOT(push) 
+OR aux0));
+  END BLOCK label25;
+  label26 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (25) <= GUARDED ((aux1 OR fifo_d(25)) AND (din(25) OR NOT(push) 
+OR aux0));
+  END BLOCK label26;
+  label27 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (26) <= GUARDED ((aux1 OR fifo_d(26)) AND (din(26) OR NOT(push) 
+OR aux0));
+  END BLOCK label27;
+  label28 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (27) <= GUARDED ((aux1 OR fifo_d(27)) AND (din(27) OR NOT(push) 
+OR aux0));
+  END BLOCK label28;
+  label29 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (28) <= GUARDED ((aux1 OR fifo_d(28)) AND (din(28) OR NOT(push) 
+OR aux0));
+  END BLOCK label29;
+  label30 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (29) <= GUARDED ((aux1 OR fifo_d(29)) AND (din(29) OR NOT(push) 
+OR aux0));
+  END BLOCK label30;
+  label31 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (30) <= GUARDED ((aux1 OR fifo_d(30)) AND (din(30) OR NOT(push) 
+OR aux0));
+  END BLOCK label31;
+  label32 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (31) <= GUARDED ((aux1 OR fifo_d(31)) AND (din(31) OR NOT(push) 
+OR aux0));
+  END BLOCK label32;
+  label33 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (32) <= GUARDED ((aux1 OR fifo_d(32)) AND (din(32) OR NOT(push) 
+OR aux0));
+  END BLOCK label33;
+  label34 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (33) <= GUARDED ((aux1 OR fifo_d(33)) AND (din(33) OR NOT(push) 
+OR aux0));
+  END BLOCK label34;
+  label35 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (34) <= GUARDED ((aux1 OR fifo_d(34)) AND (din(34) OR NOT(push) 
+OR aux0));
+  END BLOCK label35;
+  label36 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (35) <= GUARDED ((aux1 OR fifo_d(35)) AND (din(35) OR NOT(push) 
+OR aux0));
+  END BLOCK label36;
+  label37 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (36) <= GUARDED ((aux1 OR fifo_d(36)) AND (din(36) OR NOT(push) 
+OR aux0));
+  END BLOCK label37;
+  label38 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (37) <= GUARDED ((aux1 OR fifo_d(37)) AND (din(37) OR NOT(push) 
+OR aux0));
+  END BLOCK label38;
+  label39 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (38) <= GUARDED ((aux1 OR fifo_d(38)) AND (din(38) OR NOT(push) 
+OR aux0));
+  END BLOCK label39;
+  label40 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (39) <= GUARDED ((aux1 OR fifo_d(39)) AND (din(39) OR NOT(push) 
+OR aux0));
+  END BLOCK label40;
+  label41 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (40) <= GUARDED ((aux1 OR fifo_d(40)) AND (din(40) OR NOT(push) 
+OR aux0));
+  END BLOCK label41;
+  label42 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (41) <= GUARDED ((aux1 OR fifo_d(41)) AND (din(41) OR NOT(push) 
+OR aux0));
+  END BLOCK label42;
+  label43 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (42) <= GUARDED ((aux1 OR fifo_d(42)) AND (din(42) OR NOT(push) 
+OR aux0));
+  END BLOCK label43;
+  label44 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (43) <= GUARDED ((aux1 OR fifo_d(43)) AND (din(43) OR NOT(push) 
+OR aux0));
+  END BLOCK label44;
+  label45 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (44) <= GUARDED ((aux1 OR fifo_d(44)) AND (din(44) OR NOT(push) 
+OR aux0));
+  END BLOCK label45;
+  label46 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (45) <= GUARDED ((aux1 OR fifo_d(45)) AND (din(45) OR NOT(push) 
+OR aux0));
+  END BLOCK label46;
+  label47 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (46) <= GUARDED ((aux1 OR fifo_d(46)) AND (din(46) OR NOT(push) 
+OR aux0));
+  END BLOCK label47;
+  label48 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (47) <= GUARDED ((aux1 OR fifo_d(47)) AND (din(47) OR NOT(push) 
+OR aux0));
+  END BLOCK label48;
+  label49 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (48) <= GUARDED ((aux1 OR fifo_d(48)) AND (din(48) OR NOT(push) 
+OR aux0));
+  END BLOCK label49;
+  label50 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (49) <= GUARDED ((aux1 OR fifo_d(49)) AND (din(49) OR NOT(push) 
+OR aux0));
+  END BLOCK label50;
+  label51 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (50) <= GUARDED ((aux1 OR fifo_d(50)) AND (din(50) OR NOT(push) 
+OR aux0));
+  END BLOCK label51;
+  label52 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (51) <= GUARDED ((aux1 OR fifo_d(51)) AND (din(51) OR NOT(push) 
+OR aux0));
+  END BLOCK label52;
+  label53 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (52) <= GUARDED ((aux1 OR fifo_d(52)) AND (din(52) OR NOT(push) 
+OR aux0));
+  END BLOCK label53;
+  label54 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (53) <= GUARDED ((aux1 OR fifo_d(53)) AND (din(53) OR NOT(push) 
+OR aux0));
+  END BLOCK label54;
+  label55 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (54) <= GUARDED ((aux1 OR fifo_d(54)) AND (din(54) OR NOT(push) 
+OR aux0));
+  END BLOCK label55;
+  label56 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (55) <= GUARDED ((din(55) AND aux1) OR (fifo_d(55) AND NOT(aux1))
+);
+  END BLOCK label56;
+  label57 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (56) <= GUARDED ((aux1 OR fifo_d(56)) AND (din(56) OR NOT(push) 
+OR aux0));
+  END BLOCK label57;
+  label58 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (57) <= GUARDED ((aux1 OR fifo_d(57)) AND (din(57) OR NOT(push) 
+OR aux0));
+  END BLOCK label58;
+  label59 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (58) <= GUARDED ((aux1 OR fifo_d(58)) AND (din(58) OR NOT(push) 
+OR aux0));
+  END BLOCK label59;
+  label60 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (59) <= GUARDED ((aux1 OR fifo_d(59)) AND (din(59) OR NOT(push) 
+OR aux0));
+  END BLOCK label60;
+  label61 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (60) <= GUARDED ((aux1 OR fifo_d(60)) AND (din(60) OR NOT(push) 
+OR aux0));
+  END BLOCK label61;
+  label62 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (61) <= GUARDED ((aux1 OR fifo_d(61)) AND (din(61) OR NOT(push) 
+OR aux0));
+  END BLOCK label62;
+  label63 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (62) <= GUARDED ((aux1 OR fifo_d(62)) AND (din(62) OR NOT(push) 
+OR aux0));
+  END BLOCK label63;
+  label64 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (63) <= GUARDED ((aux1 OR fifo_d(63)) AND (din(63) OR NOT(push) 
+OR aux0));
+  END BLOCK label64;
+  label65 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (64) <= GUARDED ((aux1 OR fifo_d(64)) AND (din(64) OR NOT(push) 
+OR aux0));
+  END BLOCK label65;
+  label66 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (65) <= GUARDED ((aux1 OR fifo_d(65)) AND (din(65) OR NOT(push) 
+OR aux0));
+  END BLOCK label66;
+  label67 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (66) <= GUARDED ((aux1 OR fifo_d(66)) AND (din(66) OR NOT(push) 
+OR aux0));
+  END BLOCK label67;
+  label68 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (67) <= GUARDED ((aux1 OR fifo_d(67)) AND (din(67) OR NOT(push) 
+OR aux0));
+  END BLOCK label68;
+  label69 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (68) <= GUARDED ((aux1 OR fifo_d(68)) AND (din(68) OR NOT(push) 
+OR aux0));
+  END BLOCK label69;
+  label70 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (69) <= GUARDED ((aux1 OR fifo_d(69)) AND (din(69) OR NOT(push) 
+OR aux0));
+  END BLOCK label70;
+  label71 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (70) <= GUARDED ((aux1 OR fifo_d(70)) AND (din(70) OR NOT(push) 
+OR aux0));
+  END BLOCK label71;
+  label72 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (71) <= GUARDED ((aux1 OR fifo_d(71)) AND (din(71) OR NOT(push) 
+OR aux0));
+  END BLOCK label72;
+  label73 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (72) <= GUARDED ((aux1 OR fifo_d(72)) AND (din(72) OR NOT(push) 
+OR aux0));
+  END BLOCK label73;
+  label74 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (73) <= GUARDED ((aux1 OR fifo_d(73)) AND (din(73) OR NOT(push) 
+OR aux0));
+  END BLOCK label74;
+  label75 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (74) <= GUARDED ((aux1 OR fifo_d(74)) AND (din(74) OR NOT(push) 
+OR aux0));
+  END BLOCK label75;
+  label76 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (75) <= GUARDED ((aux1 OR fifo_d(75)) AND (din(75) OR NOT(push) 
+OR aux0));
+  END BLOCK label76;
+  label77 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (76) <= GUARDED ((aux1 OR fifo_d(76)) AND (din(76) OR NOT(push) 
+OR aux0));
+  END BLOCK label77;
+  label78 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (77) <= GUARDED ((aux1 OR fifo_d(77)) AND (din(77) OR NOT(push) 
+OR aux0));
+  END BLOCK label78;
+  label79 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (78) <= GUARDED ((din(78) AND aux1) OR (fifo_d(78) AND NOT(aux1))
+);
+  END BLOCK label79;
+  label80 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (79) <= GUARDED ((aux1 OR fifo_d(79)) AND (din(79) OR NOT(push) 
+OR aux0));
+  END BLOCK label80;
+  label81 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (80) <= GUARDED ((aux1 OR fifo_d(80)) AND (din(80) OR NOT(push) 
+OR aux0));
+  END BLOCK label81;
+  label82 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (81) <= GUARDED ((din(81) AND aux1) OR (fifo_d(81) AND NOT(aux1))
+);
+  END BLOCK label82;
+  label83 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (82) <= GUARDED ((aux1 OR fifo_d(82)) AND (din(82) OR NOT(push) 
+OR aux0));
+  END BLOCK label83;
+  label84 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (83) <= GUARDED ((aux1 OR fifo_d(83)) AND (din(83) OR NOT(push) 
+OR aux0));
+  END BLOCK label84;
+  label85 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (84) <= GUARDED ((aux1 OR fifo_d(84)) AND (din(84) OR NOT(push) 
+OR aux0));
+  END BLOCK label85;
+  label86 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (85) <= GUARDED ((din(85) AND aux1) OR (fifo_d(85) AND NOT(aux1))
+);
+  END BLOCK label86;
+  label87 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (86) <= GUARDED ((aux1 OR fifo_d(86)) AND (din(86) OR NOT(push) 
+OR aux0));
+  END BLOCK label87;
+  label88 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (87) <= GUARDED ((aux1 OR fifo_d(87)) AND (din(87) OR NOT(push) 
+OR aux0));
+  END BLOCK label88;
+  label89 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (88) <= GUARDED ((aux1 OR fifo_d(88)) AND (din(88) OR NOT(push) 
+OR aux0));
+  END BLOCK label89;
+  label90 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (89) <= GUARDED ((aux1 OR fifo_d(89)) AND (din(89) OR NOT(push) 
+OR aux0));
+  END BLOCK label90;
+  label91 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (90) <= GUARDED ((din(90) AND aux1) OR (fifo_d(90) AND NOT(aux1))
+);
+  END BLOCK label91;
+  label92 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (91) <= GUARDED ((aux1 OR fifo_d(91)) AND (din(91) OR NOT(push) 
+OR aux0));
+  END BLOCK label92;
+  label93 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (92) <= GUARDED ((aux1 OR fifo_d(92)) AND (din(92) OR NOT(push) 
+OR aux0));
+  END BLOCK label93;
+  label94 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (93) <= GUARDED ((aux1 OR fifo_d(93)) AND (din(93) OR NOT(push) 
+OR aux0));
+  END BLOCK label94;
+  label95 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (94) <= GUARDED ((din(94) AND aux1) OR (fifo_d(94) AND NOT(aux1))
+);
+  END BLOCK label95;
+  label96 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (95) <= GUARDED ((aux1 OR fifo_d(95)) AND (din(95) OR NOT(push) 
+OR aux0));
+  END BLOCK label96;
+  label97 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (96) <= GUARDED ((aux1 OR fifo_d(96)) AND (din(96) OR NOT(push) 
+OR aux0));
+  END BLOCK label97;
+  label98 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (97) <= GUARDED ((aux1 OR fifo_d(97)) AND (din(97) OR NOT(push) 
+OR aux0));
+  END BLOCK label98;
+  label99 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (98) <= GUARDED ((aux1 OR fifo_d(98)) AND (din(98) OR NOT(push) 
+OR aux0));
+  END BLOCK label99;
+  label100 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (99) <= GUARDED ((aux1 OR fifo_d(99)) AND (din(99) OR NOT(push) 
+OR aux0));
+  END BLOCK label100;
+  label101 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (100) <= GUARDED ((aux1 OR fifo_d(100)) AND (din(100) OR NOT(push)
+ OR aux0));
+  END BLOCK label101;
+  label102 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (101) <= GUARDED ((aux1 OR fifo_d(101)) AND (din(101) OR NOT(push)
+ OR aux0));
+  END BLOCK label102;
+  label103 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (102) <= GUARDED ((aux1 OR fifo_d(102)) AND (din(102) OR NOT(push)
+ OR aux0));
+  END BLOCK label103;
+  label104 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (103) <= GUARDED ((aux1 OR fifo_d(103)) AND (din(103) OR NOT(push)
+ OR aux0));
+  END BLOCK label104;
+  label105 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (104) <= GUARDED ((din(104) AND aux1) OR (fifo_d(104) AND NOT(aux1
+)));
+  END BLOCK label105;
+  label106 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (105) <= GUARDED ((din(105) AND aux1) OR (fifo_d(105) AND NOT(aux1
+)));
+  END BLOCK label106;
+  label107 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (106) <= GUARDED ((din(106) AND aux1) OR (fifo_d(106) AND NOT(aux1
+)));
+  END BLOCK label107;
+  label108 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (107) <= GUARDED ((aux1 OR fifo_d(107)) AND (din(107) OR NOT(push)
+ OR aux0));
+  END BLOCK label108;
+  label109 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (108) <= GUARDED ((din(108) AND aux1) OR (fifo_d(108) AND NOT(aux1
+)));
+  END BLOCK label109;
+  label110 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (109) <= GUARDED ((aux1 OR fifo_d(109)) AND (din(109) OR NOT(push)
+ OR aux0));
+  END BLOCK label110;
+  label111 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (110) <= GUARDED ((din(110) AND aux1) OR (fifo_d(110) AND NOT(aux1
+)));
+  END BLOCK label111;
+  label112 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (111) <= GUARDED ((aux1 OR fifo_d(111)) AND (din(111) OR NOT(push)
+ OR aux0));
+  END BLOCK label112;
+  label113 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (112) <= GUARDED ((din(112) AND aux1) OR (fifo_d(112) AND NOT(aux1
+)));
+  END BLOCK label113;
+  label114 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (113) <= GUARDED ((din(113) AND aux1) OR (fifo_d(113) AND NOT(aux1
+)));
+  END BLOCK label114;
+  label115 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (114) <= GUARDED ((din(114) AND aux1) OR (fifo_d(114) AND NOT(aux1
+)));
+  END BLOCK label115;
+  label116 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (115) <= GUARDED ((din(115) AND aux1) OR (fifo_d(115) AND NOT(aux1
+)));
+  END BLOCK label116;
+  label117 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (116) <= GUARDED ((din(116) AND aux1) OR (fifo_d(116) AND NOT(aux1
+)));
+  END BLOCK label117;
+  label118 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (117) <= GUARDED ((din(117) AND aux1) OR (fifo_d(117) AND NOT(aux1
+)));
+  END BLOCK label118;
+  label119 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (118) <= GUARDED ((din(118) AND aux1) OR (fifo_d(118) AND NOT(aux1
+)));
+  END BLOCK label119;
+  label120 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (119) <= GUARDED ((aux1 OR fifo_d(119)) AND (din(119) OR NOT(push)
+ OR aux0));
+  END BLOCK label120;
+  label121 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (120) <= GUARDED ((din(120) AND aux1) OR (fifo_d(120) AND NOT(aux1
+)));
+  END BLOCK label121;
+  label122 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (121) <= GUARDED ((din(121) AND aux1) OR (fifo_d(121) AND NOT(aux1
+)));
+  END BLOCK label122;
+  label123 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (122) <= GUARDED ((aux1 OR fifo_d(122)) AND (din(122) OR NOT(push)
+ OR aux0));
+  END BLOCK label123;
+  label124 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (123) <= GUARDED ((din(123) AND aux1) OR (fifo_d(123) AND NOT(aux1
+)));
+  END BLOCK label124;
+  label125 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (124) <= GUARDED ((din(124) AND aux1) OR (fifo_d(124) AND NOT(aux1
+)));
+  END BLOCK label125;
+  label126 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (125) <= GUARDED ((din(125) AND aux1) OR (fifo_d(125) AND NOT(aux1
+)));
+  END BLOCK label126;
+  label127 : BLOCK ((NOT((ck'STABLE)) AND ck) = '1')
+  BEGIN
+    fifo_d (126) <= GUARDED ((din(126) AND aux1) OR (fifo_d(126) AND NOT(aux1
+)));
+  END BLOCK label127;
+
+empty <= NOT(fifo_v);
+
+full <= aux0;
+
+dout (0) <= fifo_d(0);
+
+dout (1) <= fifo_d(1);
+
+dout (2) <= fifo_d(2);
+
+dout (3) <= fifo_d(3);
+
+dout (4) <= fifo_d(4);
+
+dout (5) <= fifo_d(5);
+
+dout (6) <= fifo_d(6);
+
+dout (7) <= fifo_d(7);
+
+dout (8) <= fifo_d(8);
+
+dout (9) <= fifo_d(9);
+
+dout (10) <= fifo_d(10);
+
+dout (11) <= fifo_d(11);
+
+dout (12) <= fifo_d(12);
+
+dout (13) <= fifo_d(13);
+
+dout (14) <= fifo_d(14);
+
+dout (15) <= fifo_d(15);
+
+dout (16) <= fifo_d(16);
+
+dout (17) <= fifo_d(17);
+
+dout (18) <= fifo_d(18);
+
+dout (19) <= fifo_d(19);
+
+dout (20) <= fifo_d(20);
+
+dout (21) <= fifo_d(21);
+
+dout (22) <= fifo_d(22);
+
+dout (23) <= fifo_d(23);
+
+dout (24) <= fifo_d(24);
+
+dout (25) <= fifo_d(25);
+
+dout (26) <= fifo_d(26);
+
+dout (27) <= fifo_d(27);
+
+dout (28) <= fifo_d(28);
+
+dout (29) <= fifo_d(29);
+
+dout (30) <= fifo_d(30);
+
+dout (31) <= fifo_d(31);
+
+dout (32) <= fifo_d(32);
+
+dout (33) <= fifo_d(33);
+
+dout (34) <= fifo_d(34);
+
+dout (35) <= fifo_d(35);
+
+dout (36) <= fifo_d(36);
+
+dout (37) <= fifo_d(37);
+
+dout (38) <= fifo_d(38);
+
+dout (39) <= fifo_d(39);
+
+dout (40) <= fifo_d(40);
+
+dout (41) <= fifo_d(41);
+
+dout (42) <= fifo_d(42);
+
+dout (43) <= fifo_d(43);
+
+dout (44) <= fifo_d(44);
+
+dout (45) <= fifo_d(45);
+
+dout (46) <= fifo_d(46);
+
+dout (47) <= fifo_d(47);
+
+dout (48) <= fifo_d(48);
+
+dout (49) <= fifo_d(49);
+
+dout (50) <= fifo_d(50);
+
+dout (51) <= fifo_d(51);
+
+dout (52) <= fifo_d(52);
+
+dout (53) <= fifo_d(53);
+
+dout (54) <= fifo_d(54);
+
+dout (55) <= fifo_d(55);
+
+dout (56) <= fifo_d(56);
+
+dout (57) <= fifo_d(57);
+
+dout (58) <= fifo_d(58);
+
+dout (59) <= fifo_d(59);
+
+dout (60) <= fifo_d(60);
+
+dout (61) <= fifo_d(61);
+
+dout (62) <= fifo_d(62);
+
+dout (63) <= fifo_d(63);
+
+dout (64) <= fifo_d(64);
+
+dout (65) <= fifo_d(65);
+
+dout (66) <= fifo_d(66);
+
+dout (67) <= fifo_d(67);
+
+dout (68) <= fifo_d(68);
+
+dout (69) <= fifo_d(69);
+
+dout (70) <= fifo_d(70);
+
+dout (71) <= fifo_d(71);
+
+dout (72) <= fifo_d(72);
+
+dout (73) <= fifo_d(73);
+
+dout (74) <= fifo_d(74);
+
+dout (75) <= fifo_d(75);
+
+dout (76) <= fifo_d(76);
+
+dout (77) <= fifo_d(77);
+
+dout (78) <= fifo_d(78);
+
+dout (79) <= fifo_d(79);
+
+dout (80) <= fifo_d(80);
+
+dout (81) <= fifo_d(81);
+
+dout (82) <= fifo_d(82);
+
+dout (83) <= fifo_d(83);
+
+dout (84) <= fifo_d(84);
+
+dout (85) <= fifo_d(85);
+
+dout (86) <= fifo_d(86);
+
+dout (87) <= fifo_d(87);
+
+dout (88) <= fifo_d(88);
+
+dout (89) <= fifo_d(89);
+
+dout (90) <= fifo_d(90);
+
+dout (91) <= fifo_d(91);
+
+dout (92) <= fifo_d(92);
+
+dout (93) <= fifo_d(93);
+
+dout (94) <= fifo_d(94);
+
+dout (95) <= fifo_d(95);
+
+dout (96) <= fifo_d(96);
+
+dout (97) <= fifo_d(97);
+
+dout (98) <= fifo_d(98);
+
+dout (99) <= fifo_d(99);
+
+dout (100) <= fifo_d(100);
+
+dout (101) <= fifo_d(101);
+
+dout (102) <= fifo_d(102);
+
+dout (103) <= fifo_d(103);
+
+dout (104) <= fifo_d(104);
+
+dout (105) <= fifo_d(105);
+
+dout (106) <= fifo_d(106);
+
+dout (107) <= fifo_d(107);
+
+dout (108) <= fifo_d(108);
+
+dout (109) <= fifo_d(109);
+
+dout (110) <= fifo_d(110);
+
+dout (111) <= fifo_d(111);
+
+dout (112) <= fifo_d(112);
+
+dout (113) <= fifo_d(113);
+
+dout (114) <= fifo_d(114);
+
+dout (115) <= fifo_d(115);
+
+dout (116) <= fifo_d(116);
+
+dout (117) <= fifo_d(117);
+
+dout (118) <= fifo_d(118);
+
+dout (119) <= fifo_d(119);
+
+dout (120) <= fifo_d(120);
+
+dout (121) <= fifo_d(121);
+
+dout (122) <= fifo_d(122);
+
+dout (123) <= fifo_d(123);
+
+dout (124) <= fifo_d(124);
+
+dout (125) <= fifo_d(125);
+
+dout (126) <= fifo_d(126);
+END;

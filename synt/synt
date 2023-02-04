@@ -1,0 +1,96 @@
+source /soc/alliance/etc/profile.d/alc_env.sh
+
+
+vasy -I vhdl -V -o -p -a -C 8 add_1.vhdl add_1
+boom -V -A -O add_1 add_1_o
+boog add_1_o add_1
+
+vasy -I vhdl -V -o -p -a -C 8 add_4.vhdl add_4
+boom -V -A -O add_4 add_4_o
+boog add_4_o add_4
+
+vasy -I vhdl -V -o -p -a -C 8 add_16.vhdl add_16
+boom -V -A -O add_16 add_16_o
+boog add_16_o add_16
+
+vasy -I vhdl -V -o -p -a -C 8 add_32.vhdl add_32
+boom -V -A -O add_32 add_32_o
+boog add_32_o add_32
+
+vasy -I vhdl -V -o -a -p -C 8 shifter.vhdl shifter
+boom -V -A -O shifter shifter_o
+boog shifter_o shifter
+
+
+vasy -I vhdl -V -o -a -p -C 8 alu.vhdl alu
+boom -V -A -O alu alu_o
+boog alu_o alu
+
+
+vasy -I vhdl -V -o -a -p exec.vhdl exec
+boom -V -O exec_model exec_model_o
+boog exec_model_o exec_model
+
+
+
+vasy -I vhdl -V -o -p -a fifo_72b.vhdl fifo
+boom -V fifo fifo_o
+boog fifo_o fifo
+vasy -I vhdl -V -o -p -a fifo_32b.vhdl fifo_32b
+boom -V fifo_32b fifo_32b_o
+boog fifo_32b_o fifo_32b
+vasy -I vhdl -V -o -p -a fifo_127b.vhdl fifo_127
+boom -V fifo_127 fifo_127b_o
+boog fifo_127b_o fifo_127b
+
+vasy -I vhdl -V -o -a -p -C 8 reg.vhdl Reg
+boom -V -O reg_model reg_o
+boog reg_o reg_model
+
+vasy -I vhdl -V -o -a -p decod.vhdl Decod
+
+
+vasy -I vhdl -V -o -p -a arm_chip.vhdl arm_chip
+
+exec.vst : exec.vhdl alu.vst fifo_72b.vst shifter.vst
+	
+
+
+
+
+
+decod_model_o.vbe : decod.vst decod_model.vbe 
+	boom -V -A -O decod_model decod_model_o
+
+decod_model.vst : decod_model_o.vbe
+	boog decod_model_o decod_model
+
+exec.vhd : exec.vst
+	vasy -I vst -s -o -S exec exec
+
+decod.vst : decod.vhdl reg.vst fifo_32b.vst fifo_129b.vst
+	vasy -I vhdl -V -o -a -p decod.vhdl decod
+
+ifetch.vst : ifetch.vhdl fifo_32b.vst
+	vasy -I vhdl -V -o -a -p ifetch.vhdl ifetch
+
+ifetch_model_o.vbe : ifetch.vst ifetch_model.vbe 
+	boom -V ifetch_model ifetch_model_o
+
+ifetch_model.vst : ifetch_model_o.vbe
+	boog ifetch_model_o ifetch_model
+
+mem.vbe : mem.vhdl
+	vasy -I vhdl -V -o -a -p mem.vhdl mem
+
+mem_o.vbe : mem.vbe 
+	boom -V mem mem_o
+
+mem.vst : mem_o.vbe
+	boog mem_o mem
+
+arm_core.vst : arm_core.vhdl
+	vasy -I vhdl -V -o -a arm_core.vhdl arm_core
+
+arm_chip.vst : arm_chip.vhdl
+	vasy -I vhdl -V -o -a arm_chip.vhdl arm_chip

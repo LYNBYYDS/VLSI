@@ -1,0 +1,357 @@
+-- VHDL data flow description generated from `exec_model_o`
+--		date : Fri Jan 20 18:07:43 2023
+
+
+-- Entity Declaration
+
+ENTITY exec_model_o IS
+  PORT (
+  shift_c : in BIT;	-- shift_c
+  alu_c : in BIT;	-- alu_c
+  op2 : out bit_vector(31 DOWNTO 0) ;	-- op2
+  op2_shift : in bit_vector(31 DOWNTO 0) ;	-- op2_shift
+  op1 : out bit_vector(31 DOWNTO 0) ;	-- op1
+  alu_res : in bit_vector(31 DOWNTO 0) ;	-- alu_res
+  mem_adr : out bit_vector(31 DOWNTO 0) ;	-- mem_adr
+  exe_push : out BIT;	-- exe_push
+  exe2mem_full : in BIT;	-- exe2mem_full
+  vss : in BIT;	-- vss
+  vdd : in BIT;	-- vdd
+  exe_flag_wb : out BIT;	-- exe_flag_wb
+  exe_wb : out BIT;	-- exe_wb
+  exe_dest : out bit_vector(3 DOWNTO 0) ;	-- exe_dest
+  exe_c : out BIT;	-- exe_c
+  exe_res : out bit_vector(31 DOWNTO 0) ;	-- exe_res
+  dec_alu_cmd : in bit_vector(1 DOWNTO 0) ;	-- dec_alu_cmd
+  dec_comp_op2 : in BIT;	-- dec_comp_op2
+  dec_comp_op1 : in BIT;	-- dec_comp_op1
+  dec_mem_sb : in BIT;	-- dec_mem_sb
+  dec_mem_sw : in BIT;	-- dec_mem_sw
+  dec_mem_lb : in BIT;	-- dec_mem_lb
+  dec_mem_lw : in BIT;	-- dec_mem_lw
+  dec_pre_index : in BIT;	-- dec_pre_index
+  dec_flag_wb : in BIT;	-- dec_flag_wb
+  dec_exe_wb : in BIT;	-- dec_exe_wb
+  dec_exe_dest : in bit_vector(3 DOWNTO 0) ;	-- dec_exe_dest
+  dec_op1 : in bit_vector(31 DOWNTO 0) ;	-- dec_op1
+  exe_pop : out BIT;	-- exe_pop
+  dec2exe_empty : in BIT	-- dec2exe_empty
+  );
+END exec_model_o;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF exec_model_o IS
+  SIGNAL aux0 : BIT;		-- aux0
+
+BEGIN
+  aux0 <= NOT(dec_alu_cmd(0) OR dec_alu_cmd(1));
+
+exe_pop <= NOT(dec2exe_empty);
+
+exe_res (0) <= alu_res(0);
+
+exe_res (1) <= alu_res(1);
+
+exe_res (2) <= alu_res(2);
+
+exe_res (3) <= alu_res(3);
+
+exe_res (4) <= alu_res(4);
+
+exe_res (5) <= alu_res(5);
+
+exe_res (6) <= alu_res(6);
+
+exe_res (7) <= alu_res(7);
+
+exe_res (8) <= alu_res(8);
+
+exe_res (9) <= alu_res(9);
+
+exe_res (10) <= alu_res(10);
+
+exe_res (11) <= alu_res(11);
+
+exe_res (12) <= alu_res(12);
+
+exe_res (13) <= alu_res(13);
+
+exe_res (14) <= alu_res(14);
+
+exe_res (15) <= alu_res(15);
+
+exe_res (16) <= alu_res(16);
+
+exe_res (17) <= alu_res(17);
+
+exe_res (18) <= alu_res(18);
+
+exe_res (19) <= alu_res(19);
+
+exe_res (20) <= alu_res(20);
+
+exe_res (21) <= alu_res(21);
+
+exe_res (22) <= alu_res(22);
+
+exe_res (23) <= alu_res(23);
+
+exe_res (24) <= alu_res(24);
+
+exe_res (25) <= alu_res(25);
+
+exe_res (26) <= alu_res(26);
+
+exe_res (27) <= alu_res(27);
+
+exe_res (28) <= alu_res(28);
+
+exe_res (29) <= alu_res(29);
+
+exe_res (30) <= alu_res(30);
+
+exe_res (31) <= alu_res(31);
+
+exe_c <= ((aux0 OR shift_c) AND (NOT(aux0) OR alu_c));
+
+exe_dest (0) <= dec_exe_dest(0);
+
+exe_dest (1) <= dec_exe_dest(1);
+
+exe_dest (2) <= dec_exe_dest(2);
+
+exe_dest (3) <= dec_exe_dest(3);
+
+exe_wb <= dec_exe_wb;
+
+exe_flag_wb <= dec_flag_wb;
+
+exe_push <= ((dec_mem_lb OR dec_mem_lw OR dec_mem_sw OR 
+dec_mem_sb) AND NOT(dec2exe_empty) AND NOT(exe2mem_full));
+
+mem_adr (0) <= ((dec_op1(0) AND dec_pre_index) OR (alu_res(0) 
+AND NOT(dec_pre_index)));
+
+mem_adr (1) <= ((dec_op1(1) AND dec_pre_index) OR (alu_res(1) 
+AND NOT(dec_pre_index)));
+
+mem_adr (2) <= ((dec_op1(2) AND dec_pre_index) OR (alu_res(2) 
+AND NOT(dec_pre_index)));
+
+mem_adr (3) <= ((dec_pre_index OR alu_res(3)) AND (dec_op1(3) OR
+ NOT(dec_pre_index)));
+
+mem_adr (4) <= ((dec_pre_index OR alu_res(4)) AND (dec_op1(4) OR
+ NOT(dec_pre_index)));
+
+mem_adr (5) <= ((dec_pre_index OR alu_res(5)) AND (dec_op1(5) OR
+ NOT(dec_pre_index)));
+
+mem_adr (6) <= ((dec_pre_index OR alu_res(6)) AND (dec_op1(6) OR
+ NOT(dec_pre_index)));
+
+mem_adr (7) <= ((dec_pre_index OR alu_res(7)) AND (dec_op1(7) OR
+ NOT(dec_pre_index)));
+
+mem_adr (8) <= ((dec_pre_index OR alu_res(8)) AND (dec_op1(8) OR
+ NOT(dec_pre_index)));
+
+mem_adr (9) <= ((dec_op1(9) AND dec_pre_index) OR (alu_res(9) 
+AND NOT(dec_pre_index)));
+
+mem_adr (10) <= ((dec_pre_index OR alu_res(10)) AND (dec_op1(10) 
+OR NOT(dec_pre_index)));
+
+mem_adr (11) <= ((dec_pre_index OR alu_res(11)) AND (dec_op1(11) 
+OR NOT(dec_pre_index)));
+
+mem_adr (12) <= ((dec_pre_index OR alu_res(12)) AND (dec_op1(12) 
+OR NOT(dec_pre_index)));
+
+mem_adr (13) <= ((dec_pre_index OR alu_res(13)) AND (dec_op1(13) 
+OR NOT(dec_pre_index)));
+
+mem_adr (14) <= ((dec_pre_index OR alu_res(14)) AND (dec_op1(14) 
+OR NOT(dec_pre_index)));
+
+mem_adr (15) <= ((dec_pre_index OR alu_res(15)) AND (dec_op1(15) 
+OR NOT(dec_pre_index)));
+
+mem_adr (16) <= ((dec_pre_index OR alu_res(16)) AND (dec_op1(16) 
+OR NOT(dec_pre_index)));
+
+mem_adr (17) <= ((dec_pre_index OR alu_res(17)) AND (dec_op1(17) 
+OR NOT(dec_pre_index)));
+
+mem_adr (18) <= ((dec_pre_index OR alu_res(18)) AND (dec_op1(18) 
+OR NOT(dec_pre_index)));
+
+mem_adr (19) <= ((dec_pre_index OR alu_res(19)) AND (dec_op1(19) 
+OR NOT(dec_pre_index)));
+
+mem_adr (20) <= ((dec_pre_index OR alu_res(20)) AND (dec_op1(20) 
+OR NOT(dec_pre_index)));
+
+mem_adr (21) <= ((dec_op1(21) AND dec_pre_index) OR (alu_res(21) 
+AND NOT(dec_pre_index)));
+
+mem_adr (22) <= ((dec_pre_index OR alu_res(22)) AND (dec_op1(22) 
+OR NOT(dec_pre_index)));
+
+mem_adr (23) <= ((dec_pre_index OR alu_res(23)) AND (dec_op1(23) 
+OR NOT(dec_pre_index)));
+
+mem_adr (24) <= ((dec_pre_index OR alu_res(24)) AND (dec_op1(24) 
+OR NOT(dec_pre_index)));
+
+mem_adr (25) <= ((dec_pre_index OR alu_res(25)) AND (dec_op1(25) 
+OR NOT(dec_pre_index)));
+
+mem_adr (26) <= ((dec_pre_index OR alu_res(26)) AND (dec_op1(26) 
+OR NOT(dec_pre_index)));
+
+mem_adr (27) <= ((dec_pre_index OR alu_res(27)) AND (dec_op1(27) 
+OR NOT(dec_pre_index)));
+
+mem_adr (28) <= ((dec_pre_index OR alu_res(28)) AND (dec_op1(28) 
+OR NOT(dec_pre_index)));
+
+mem_adr (29) <= ((dec_pre_index OR alu_res(29)) AND (dec_op1(29) 
+OR NOT(dec_pre_index)));
+
+mem_adr (30) <= ((dec_pre_index OR alu_res(30)) AND (dec_op1(30) 
+OR NOT(dec_pre_index)));
+
+mem_adr (31) <= ((dec_pre_index OR alu_res(31)) AND (dec_op1(31) 
+OR NOT(dec_pre_index)));
+
+op1 (0) <= (dec_op1(0) XOR dec_comp_op1);
+
+op1 (1) <= (dec_op1(1) XOR dec_comp_op1);
+
+op1 (2) <= (dec_op1(2) XOR dec_comp_op1);
+
+op1 (3) <= (dec_op1(3) XOR dec_comp_op1);
+
+op1 (4) <= (dec_op1(4) XOR dec_comp_op1);
+
+op1 (5) <= (dec_op1(5) XOR dec_comp_op1);
+
+op1 (6) <= (dec_op1(6) XOR dec_comp_op1);
+
+op1 (7) <= (dec_op1(7) XOR dec_comp_op1);
+
+op1 (8) <= (dec_op1(8) XOR dec_comp_op1);
+
+op1 (9) <= (dec_op1(9) XOR dec_comp_op1);
+
+op1 (10) <= (dec_op1(10) XOR dec_comp_op1);
+
+op1 (11) <= (dec_op1(11) XOR dec_comp_op1);
+
+op1 (12) <= (dec_op1(12) XOR dec_comp_op1);
+
+op1 (13) <= (dec_op1(13) XOR dec_comp_op1);
+
+op1 (14) <= (dec_op1(14) XOR dec_comp_op1);
+
+op1 (15) <= (dec_op1(15) XOR dec_comp_op1);
+
+op1 (16) <= (dec_op1(16) XOR dec_comp_op1);
+
+op1 (17) <= (dec_op1(17) XOR dec_comp_op1);
+
+op1 (18) <= (dec_op1(18) XOR dec_comp_op1);
+
+op1 (19) <= (dec_op1(19) XOR dec_comp_op1);
+
+op1 (20) <= (dec_op1(20) XOR dec_comp_op1);
+
+op1 (21) <= (dec_op1(21) XOR dec_comp_op1);
+
+op1 (22) <= (dec_op1(22) XOR dec_comp_op1);
+
+op1 (23) <= (dec_op1(23) XOR dec_comp_op1);
+
+op1 (24) <= (dec_op1(24) XOR dec_comp_op1);
+
+op1 (25) <= (dec_op1(25) XOR dec_comp_op1);
+
+op1 (26) <= (dec_op1(26) XOR dec_comp_op1);
+
+op1 (27) <= (dec_op1(27) XOR dec_comp_op1);
+
+op1 (28) <= (dec_op1(28) XOR dec_comp_op1);
+
+op1 (29) <= (dec_op1(29) XOR dec_comp_op1);
+
+op1 (30) <= (dec_op1(30) XOR dec_comp_op1);
+
+op1 (31) <= (dec_op1(31) XOR dec_comp_op1);
+
+op2 (0) <= (dec_comp_op2 XOR op2_shift(0));
+
+op2 (1) <= (dec_comp_op2 XOR op2_shift(1));
+
+op2 (2) <= (dec_comp_op2 XOR op2_shift(2));
+
+op2 (3) <= (dec_comp_op2 XOR op2_shift(3));
+
+op2 (4) <= (dec_comp_op2 XOR op2_shift(4));
+
+op2 (5) <= (dec_comp_op2 XOR op2_shift(5));
+
+op2 (6) <= (dec_comp_op2 XOR op2_shift(6));
+
+op2 (7) <= (dec_comp_op2 XOR op2_shift(7));
+
+op2 (8) <= (dec_comp_op2 XOR op2_shift(8));
+
+op2 (9) <= (dec_comp_op2 XOR op2_shift(9));
+
+op2 (10) <= (dec_comp_op2 XOR op2_shift(10));
+
+op2 (11) <= (dec_comp_op2 XOR op2_shift(11));
+
+op2 (12) <= (dec_comp_op2 XOR op2_shift(12));
+
+op2 (13) <= (dec_comp_op2 XOR op2_shift(13));
+
+op2 (14) <= (dec_comp_op2 XOR op2_shift(14));
+
+op2 (15) <= (dec_comp_op2 XOR op2_shift(15));
+
+op2 (16) <= (dec_comp_op2 XOR op2_shift(16));
+
+op2 (17) <= (op2_shift(17) XOR dec_comp_op2);
+
+op2 (18) <= (dec_comp_op2 XOR op2_shift(18));
+
+op2 (19) <= (dec_comp_op2 XOR op2_shift(19));
+
+op2 (20) <= (dec_comp_op2 XOR op2_shift(20));
+
+op2 (21) <= (dec_comp_op2 XOR op2_shift(21));
+
+op2 (22) <= (dec_comp_op2 XOR op2_shift(22));
+
+op2 (23) <= (dec_comp_op2 XOR op2_shift(23));
+
+op2 (24) <= (dec_comp_op2 XOR op2_shift(24));
+
+op2 (25) <= (dec_comp_op2 XOR op2_shift(25));
+
+op2 (26) <= (dec_comp_op2 XOR op2_shift(26));
+
+op2 (27) <= (dec_comp_op2 XOR op2_shift(27));
+
+op2 (28) <= (dec_comp_op2 XOR op2_shift(28));
+
+op2 (29) <= (dec_comp_op2 XOR op2_shift(29));
+
+op2 (30) <= (dec_comp_op2 XOR op2_shift(30));
+
+op2 (31) <= (dec_comp_op2 XOR op2_shift(31));
+END;

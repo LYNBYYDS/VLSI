@@ -1,0 +1,29 @@
+-- VHDL data flow description generated from `add_1_o`
+--		date : Fri Jan 20 13:53:37 2023
+
+
+-- Entity Declaration
+
+ENTITY add_1_o IS
+  PORT (
+  a : in BIT;	-- a
+  b : in BIT;	-- b
+  cin : in BIT;	-- cin
+  c : out BIT;	-- c
+  s : out BIT;	-- s
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END add_1_o;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF add_1_o IS
+
+BEGIN
+
+s <= (b XOR cin XOR a);
+
+c <= ((b AND (a OR cin)) OR (a AND cin));
+END;

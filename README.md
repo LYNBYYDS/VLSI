@@ -1,2 +1,0 @@
-# VLSI
-VLSI project

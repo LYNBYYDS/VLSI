@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.61 (w)1999-2014 BSI
-[*] Tue Jan 17 18:45:14 2023
+[*] Wed Jan 18 10:31:37 2023
 [*]
-[dumpfile] "/users/enseig/li/Bureau/gitt/VLSI/src/TB/test.vcd"
-[dumpfile_mtime] "Tue Jan 17 18:19:49 2023"
-[dumpfile_size] 52929
-[savefile] "/users/enseig/li/Bureau/gitt/VLSI/src/TB/gtkwave test1.gtkw"
+[dumpfile] "/home/etudiant/Desktop/VLSI/VLSI/src/TB/test.vcd"
+[dumpfile_mtime] "Wed Jan 18 10:28:16 2023"
+[dumpfile_size] 73009
+[savefile] "/home/etudiant/Desktop/VLSI/VLSI/src/TB/gtkwave test1.gtkw"
 [timestart] 0
 [size] 1920 977
-[pos] -51 -51
-*-23.000000 6500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -39 -39
+*-22.000000 12100000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] arm_core_i.
 [treeopen] arm_core_i.decod_i.
 [treeopen] arm_core_i.decod_i.reg_inst.
@@ -22,28 +22,14 @@
 @28
 arm_core_i.decod_i.ck
 arm_core_i.decod_i.mov_i
-arm_core_i.decod_i.alu_cmd[1:0]
-arm_core_i.decod_i.alu_cy
-@22
-arm_core_i.decod_i.alu_dest[3:0]
-@28
-arm_core_i.decod_i.alu_wb
-arm_core_i.decod_i.comp_op1
-arm_core_i.decod_i.comp_op2
+arm_core_i.decod_i.add_i
+arm_core_i.decod_i.and_i
+arm_core_i.exec_i.dec_alu_cmd[1:0]
 arm_core_i.decod_i.cond
 arm_core_i.decod_i.condv
-@22
-arm_core_i.decod_i.rdata1[31:0]
-arm_core_i.decod_i.rdata2[31:0]
-arm_core_i.decod_i.rdata3[31:0]
-arm_core_i.decod_i.reg_inst.data_r4[31:0]
-arm_core_i.decod_i.reg_inst.data_r3[31:0]
-arm_core_i.decod_i.reg_inst.data_r2[31:0]
-arm_core_i.decod_i.reg_inst.data_r1[31:0]
-arm_core_i.decod_i.reg_inst.data_r0[31:0]
-@800023
+@c00022
 arm_core_i.decod_i.if_ir[31:0]
-@29
+@28
 (0)arm_core_i.decod_i.if_ir[31:0]
 (1)arm_core_i.decod_i.if_ir[31:0]
 (2)arm_core_i.decod_i.if_ir[31:0]
@@ -76,43 +62,167 @@ arm_core_i.decod_i.if_ir[31:0]
 (29)arm_core_i.decod_i.if_ir[31:0]
 (30)arm_core_i.decod_i.if_ir[31:0]
 (31)arm_core_i.decod_i.if_ir[31:0]
-@1001201
+@1401200
 -group_end
+@22
+arm_core_i.decod_i.reg_inst.data_r0[31:0]
+@23
+arm_core_i.decod_i.reg_inst.data_r1[31:0]
+@22
+arm_core_i.decod_i.reg_inst.data_r2[31:0]
+arm_core_i.decod_i.reg_inst.data_r3[31:0]
+arm_core_i.decod_i.reg_inst.data_r4[31:0]
 @28
+arm_core_i.decod_i.reg_inst.data_cry
+arm_core_i.decod_i.reg_inst.data_neg
+arm_core_i.decod_i.reg_inst.data_zero
+arm_core_i.decod_i.reg_inst.data_ovr
 arm_core_i.decod_i.reg_inst.v_r3
-arm_core_i.decod_i.exe_wb
+@c00022
+arm_core_i.decod_i.dec2exec.din[126:0]
+@28
+(0)arm_core_i.decod_i.dec2exec.din[126:0]
+(1)arm_core_i.decod_i.dec2exec.din[126:0]
+(2)arm_core_i.decod_i.dec2exec.din[126:0]
+(3)arm_core_i.decod_i.dec2exec.din[126:0]
+(4)arm_core_i.decod_i.dec2exec.din[126:0]
+(5)arm_core_i.decod_i.dec2exec.din[126:0]
+(6)arm_core_i.decod_i.dec2exec.din[126:0]
+(7)arm_core_i.decod_i.dec2exec.din[126:0]
+(8)arm_core_i.decod_i.dec2exec.din[126:0]
+(9)arm_core_i.decod_i.dec2exec.din[126:0]
+(10)arm_core_i.decod_i.dec2exec.din[126:0]
+(11)arm_core_i.decod_i.dec2exec.din[126:0]
+(12)arm_core_i.decod_i.dec2exec.din[126:0]
+(13)arm_core_i.decod_i.dec2exec.din[126:0]
+(14)arm_core_i.decod_i.dec2exec.din[126:0]
+(15)arm_core_i.decod_i.dec2exec.din[126:0]
+(16)arm_core_i.decod_i.dec2exec.din[126:0]
+(17)arm_core_i.decod_i.dec2exec.din[126:0]
+(18)arm_core_i.decod_i.dec2exec.din[126:0]
+(19)arm_core_i.decod_i.dec2exec.din[126:0]
+(20)arm_core_i.decod_i.dec2exec.din[126:0]
+(21)arm_core_i.decod_i.dec2exec.din[126:0]
+(22)arm_core_i.decod_i.dec2exec.din[126:0]
+(23)arm_core_i.decod_i.dec2exec.din[126:0]
+(24)arm_core_i.decod_i.dec2exec.din[126:0]
+(25)arm_core_i.decod_i.dec2exec.din[126:0]
+(26)arm_core_i.decod_i.dec2exec.din[126:0]
+(27)arm_core_i.decod_i.dec2exec.din[126:0]
+(28)arm_core_i.decod_i.dec2exec.din[126:0]
+(29)arm_core_i.decod_i.dec2exec.din[126:0]
+(30)arm_core_i.decod_i.dec2exec.din[126:0]
+(31)arm_core_i.decod_i.dec2exec.din[126:0]
+(32)arm_core_i.decod_i.dec2exec.din[126:0]
+(33)arm_core_i.decod_i.dec2exec.din[126:0]
+(34)arm_core_i.decod_i.dec2exec.din[126:0]
+(35)arm_core_i.decod_i.dec2exec.din[126:0]
+(36)arm_core_i.decod_i.dec2exec.din[126:0]
+(37)arm_core_i.decod_i.dec2exec.din[126:0]
+(38)arm_core_i.decod_i.dec2exec.din[126:0]
+(39)arm_core_i.decod_i.dec2exec.din[126:0]
+(40)arm_core_i.decod_i.dec2exec.din[126:0]
+(41)arm_core_i.decod_i.dec2exec.din[126:0]
+(42)arm_core_i.decod_i.dec2exec.din[126:0]
+(43)arm_core_i.decod_i.dec2exec.din[126:0]
+(44)arm_core_i.decod_i.dec2exec.din[126:0]
+(45)arm_core_i.decod_i.dec2exec.din[126:0]
+(46)arm_core_i.decod_i.dec2exec.din[126:0]
+(47)arm_core_i.decod_i.dec2exec.din[126:0]
+(48)arm_core_i.decod_i.dec2exec.din[126:0]
+(49)arm_core_i.decod_i.dec2exec.din[126:0]
+(50)arm_core_i.decod_i.dec2exec.din[126:0]
+(51)arm_core_i.decod_i.dec2exec.din[126:0]
+(52)arm_core_i.decod_i.dec2exec.din[126:0]
+(53)arm_core_i.decod_i.dec2exec.din[126:0]
+(54)arm_core_i.decod_i.dec2exec.din[126:0]
+(55)arm_core_i.decod_i.dec2exec.din[126:0]
+(56)arm_core_i.decod_i.dec2exec.din[126:0]
+(57)arm_core_i.decod_i.dec2exec.din[126:0]
+(58)arm_core_i.decod_i.dec2exec.din[126:0]
+(59)arm_core_i.decod_i.dec2exec.din[126:0]
+(60)arm_core_i.decod_i.dec2exec.din[126:0]
+(61)arm_core_i.decod_i.dec2exec.din[126:0]
+(62)arm_core_i.decod_i.dec2exec.din[126:0]
+(63)arm_core_i.decod_i.dec2exec.din[126:0]
+(64)arm_core_i.decod_i.dec2exec.din[126:0]
+(65)arm_core_i.decod_i.dec2exec.din[126:0]
+(66)arm_core_i.decod_i.dec2exec.din[126:0]
+(67)arm_core_i.decod_i.dec2exec.din[126:0]
+(68)arm_core_i.decod_i.dec2exec.din[126:0]
+(69)arm_core_i.decod_i.dec2exec.din[126:0]
+(70)arm_core_i.decod_i.dec2exec.din[126:0]
+(71)arm_core_i.decod_i.dec2exec.din[126:0]
+(72)arm_core_i.decod_i.dec2exec.din[126:0]
+(73)arm_core_i.decod_i.dec2exec.din[126:0]
+(74)arm_core_i.decod_i.dec2exec.din[126:0]
+(75)arm_core_i.decod_i.dec2exec.din[126:0]
+(76)arm_core_i.decod_i.dec2exec.din[126:0]
+(77)arm_core_i.decod_i.dec2exec.din[126:0]
+(78)arm_core_i.decod_i.dec2exec.din[126:0]
+(79)arm_core_i.decod_i.dec2exec.din[126:0]
+(80)arm_core_i.decod_i.dec2exec.din[126:0]
+(81)arm_core_i.decod_i.dec2exec.din[126:0]
+(82)arm_core_i.decod_i.dec2exec.din[126:0]
+(83)arm_core_i.decod_i.dec2exec.din[126:0]
+(84)arm_core_i.decod_i.dec2exec.din[126:0]
+(85)arm_core_i.decod_i.dec2exec.din[126:0]
+(86)arm_core_i.decod_i.dec2exec.din[126:0]
+(87)arm_core_i.decod_i.dec2exec.din[126:0]
+(88)arm_core_i.decod_i.dec2exec.din[126:0]
+(89)arm_core_i.decod_i.dec2exec.din[126:0]
+(90)arm_core_i.decod_i.dec2exec.din[126:0]
+(91)arm_core_i.decod_i.dec2exec.din[126:0]
+(92)arm_core_i.decod_i.dec2exec.din[126:0]
+(93)arm_core_i.decod_i.dec2exec.din[126:0]
+(94)arm_core_i.decod_i.dec2exec.din[126:0]
+(95)arm_core_i.decod_i.dec2exec.din[126:0]
+(96)arm_core_i.decod_i.dec2exec.din[126:0]
+(97)arm_core_i.decod_i.dec2exec.din[126:0]
+(98)arm_core_i.decod_i.dec2exec.din[126:0]
+(99)arm_core_i.decod_i.dec2exec.din[126:0]
+(100)arm_core_i.decod_i.dec2exec.din[126:0]
+(101)arm_core_i.decod_i.dec2exec.din[126:0]
+(102)arm_core_i.decod_i.dec2exec.din[126:0]
+(103)arm_core_i.decod_i.dec2exec.din[126:0]
+(104)arm_core_i.decod_i.dec2exec.din[126:0]
+(105)arm_core_i.decod_i.dec2exec.din[126:0]
+(106)arm_core_i.decod_i.dec2exec.din[126:0]
+(107)arm_core_i.decod_i.dec2exec.din[126:0]
+(108)arm_core_i.decod_i.dec2exec.din[126:0]
+(109)arm_core_i.decod_i.dec2exec.din[126:0]
+(110)arm_core_i.decod_i.dec2exec.din[126:0]
+(111)arm_core_i.decod_i.dec2exec.din[126:0]
+(112)arm_core_i.decod_i.dec2exec.din[126:0]
+(113)arm_core_i.decod_i.dec2exec.din[126:0]
+(114)arm_core_i.decod_i.dec2exec.din[126:0]
+(115)arm_core_i.decod_i.dec2exec.din[126:0]
+(116)arm_core_i.decod_i.dec2exec.din[126:0]
+(117)arm_core_i.decod_i.dec2exec.din[126:0]
+(118)arm_core_i.decod_i.dec2exec.din[126:0]
+(119)arm_core_i.decod_i.dec2exec.din[126:0]
+(120)arm_core_i.decod_i.dec2exec.din[126:0]
+(121)arm_core_i.decod_i.dec2exec.din[126:0]
+(122)arm_core_i.decod_i.dec2exec.din[126:0]
+(123)arm_core_i.decod_i.dec2exec.din[126:0]
+(124)arm_core_i.decod_i.dec2exec.din[126:0]
+(125)arm_core_i.decod_i.dec2exec.din[126:0]
+(126)arm_core_i.decod_i.dec2exec.din[126:0]
+@1401200
+-group_end
+@22
+arm_core_i.decod_i.dec2exec.dout[126:0]
+@28
+arm_core_i.decod_i.reg_inst.reg_cry
+arm_core_i.decod_i.cry
+arm_core_i.decod_i.exe_flag_wb
+arm_core_i.decod_i.dec_flag_wb
 arm_core_i.decod_i.reg_inst.wen1
 @22
-arm_core_i.decod_i.reg_inst.wadr1[3:0]
 arm_core_i.decod_i.reg_inst.wdata1[31:0]
 arm_core_i.exec_i.exe_res[31:0]
+arm_core_i.exec_i.alu_res[31:0]
 arm_core_i.exec_i.op1[31:0]
 arm_core_i.exec_i.op2[31:0]
-arm_core_i.decod_i.inval_exe_adr[3:0]
-@28
-arm_core_i.decod_i.reg_inst.inval_czn
-arm_core_i.decod_i.reg_inst.inval_ovr
-arm_core_i.decod_i.inval_exe
-arm_core_i.decod_i.operv
-arm_core_i.decod_i.regops_t
-@22
-arm_core_i.decod_i.reg_inst.inval_adr1[3:0]
-arm_core_i.decod_i.reg_inst.inval_adr2[3:0]
-@28
-arm_core_i.decod_i.reg_inst.inval1
-arm_core_i.decod_i.regop_t
-@22
-arm_core_i.decod_i.if_ir[31:0]
-arm_core_i.decod_i.debug_state[3:0]
-@28
-arm_core_i.decod_i.if2dec_pop
-arm_core_i.decod_i.if2dec_empty
-arm_core_i.decod_i.dec2if_push
-arm_core_i.decod_i.dec2if_empty
-arm_core_i.decod_i.dec2if_full
-@22
-arm_core_i.decod_i.reg_inst.radr1[3:0]
-arm_core_i.decod_i.reg_inst.radr2[3:0]
-arm_core_i.decod_i.reg_inst.radr3[3:0]
 [pattern_trace] 1
 [pattern_trace] 0

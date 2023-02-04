@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.61 (w)1999-2014 BSI
+[*] Thu Jan 19 01:32:39 2023
+[*]
+[dumpfile] "/home/etudiant/Desktop/VLSI/VLSI/src/TB/test.vcd"
+[dumpfile_mtime] "Thu Jan 19 01:27:27 2023"
+[dumpfile_size] 88204
+[savefile] "/home/etudiant/Desktop/VLSI/VLSI/src/TB/opcode.gtkw"
+[timestart] 0
+[size] 1920 977
+[pos] -39 -39
+*-23.000000 6330000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] arm_core_i.
+[treeopen] arm_core_i.decod_i.
+[treeopen] arm_core_i.decod_i.reg_inst.
+[treeopen] arm_core_i.exec_i.
+[treeopen] arm_core_i.ifetch_i.
+[sst_width] 245
+[signals_width] 161
+[sst_expanded] 1
+[sst_vpaned_height] 564
+@28
+arm_core_i.decod_i.ck
+@23
+arm_core_i.decod_i.if_ir[31:0]
+@28
+arm_core_i.decod_i.and_i
+arm_core_i.decod_i.eor_i
+arm_core_i.decod_i.sub_i
+arm_core_i.decod_i.rsb_i
+arm_core_i.decod_i.add_i
+arm_core_i.decod_i.sbc_i
+arm_core_i.decod_i.rsc_i
+arm_core_i.decod_i.tst_i
+arm_core_i.decod_i.teq_i
+arm_core_i.decod_i.cmp_i
+arm_core_i.decod_i.cmn_i
+arm_core_i.decod_i.orr_i
+arm_core_i.decod_i.mov_i
+arm_core_i.decod_i.bic_i
+arm_core_i.decod_i.mvn_i
+[pattern_trace] 1
+[pattern_trace] 0
